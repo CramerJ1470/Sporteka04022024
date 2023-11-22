@@ -9,7 +9,7 @@
 /coverage
 
 # production
-configItems.js
+/configItems
 # misc
 
 .DS_Store
