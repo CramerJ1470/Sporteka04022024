@@ -1,9 +1,8 @@
-/***********************User section******************* */
-
 const RAPIDAPI_API_FOOTBALL_KEY =
 	require("./configItems.js").RAPIDAPI_API_FOOTBALL_KEY;
-
 const RAPIDAPI_ADDRESS = require("./configItems.js").RAPIDAPI_ADDRESS;
+
+/***********************User section******************* */
 export const login = async (username, password, applyFunc) => {
 	const url = "http://localhost:8090/api/user/login";
 	const body = JSON.stringify({ username, password });
@@ -49,7 +48,7 @@ export const logout = async () => {
 };
 /************Leagues Section ***************** */
 export const getLeagues = async (applyFunc) => {
-	console.log("key", RAPIDAPI_API_FOOTBALL_KEY);
+	
 	const url = "https://api-football-v1.p.rapidapi.com/v3/timezone";
 	const options = {
 		method: "GET",

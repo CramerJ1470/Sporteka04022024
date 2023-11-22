@@ -10,7 +10,7 @@
 
 # production
 /build
-/configItems
+src/configItems
 # misc
 
 .DS_Store
