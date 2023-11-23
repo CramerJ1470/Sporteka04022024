@@ -14,6 +14,39 @@
 	}
 }
 
+/* @media only screen and (max-width: 280px) {
+	p.centPage2 {
+		 
+		font-size: 20vw;
+	}
+	p.centPage1 {
+		 
+		font-size: 6vw;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	p.centPage2 {
+		 
+		font-size: 20vw;
+	}
+	p.centPage1 {
+		 
+		font-size: 6vw;
+	}
+} */
+@media only screen and (max-width: 912px) {
+	p.centPage2 {
+		margin-top: 20vh; 
+		font-size: 17.5vw;
+	}
+	p.centPage1 {
+
+		 
+		font-size: 5.25vw;
+	}
+}
+
 .App-header {
 	background-color: #282c34;
 	min-height: 100vh;
