@@ -16,7 +16,7 @@ function Home() {
 			<div>
 				<span className="top">
 					<div>
-						<p className="centPage2 kavoon">Sporteka</p>
+						<p className="centPage2 top kavoon">Sporteka</p>
 
 						<p className="centPage1 top kavoon">
 							Sport Blockchain Platform
