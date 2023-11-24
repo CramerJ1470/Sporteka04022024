@@ -1,0 +1,118 @@
+.App {
+	width: 100%;
+	text-align: center;
+}
+
+.App-logo {
+	height: 40vmin;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
+}
+
+/* @media only screen and (max-width: 280px) {
+	p.centPage2 {
+		 
+		font-size: 20vw;
+	}
+	p.centPage1 {
+		 
+		font-size: 6vw;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	p.centPage2 {
+		 
+		font-size: 20vw;
+	}
+	p.centPage1 {
+		 
+		font-size: 6vw;
+	}
+} */
+@media only screen and (max-width: 912px) {
+	p.centPage2 {
+		margin-top: 20vh; 
+		font-size: 17.5vw;
+	}
+	p.centPage1 {
+
+		 
+		font-size: 5.25vw;
+	}
+}
+
+.App-header {
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+
+.App-link {
+	color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+button {
+	text-align: center;
+	font-size: 40%;
+	position: relative;
+	width: 200%;
+	height: auto;
+	margin: 2rem;
+}
+
+button.centPage {
+	text-align: center;
+	font-size: 400%;
+	width: auto;
+	height: auto;
+	padding: 10%;
+	border-radius: 2rem;
+	display: inline-block;
+}
+.centPage2 {
+	text-align: center;
+	font-size: 10vw;
+	width: 100%;
+	height: auto;
+	margin-top: 5vw;
+	display: flexbox;
+	border-radius: 5%;
+	color: red;
+}
+.centPage1 {
+	text-align: center;
+	font-size: 3vw;
+	display: flexbox;
+	width: 100%;
+	height: auto;
+	margin: 0%;
+	border-radius: 5rem;
+}
+
+.kavoon {
+	font-family: "Kavoon", serif;
+}
+
+.top {
+	width: 100%;
+	text-align: center;
+}
