@@ -8,10 +8,15 @@ In the project directory, you can run:
 
 
 to clone 
-### git clone -b master https://github.com/Sporteka-chainlink-hack/sporteka11212023.git
+### git clone -b master https://github.com/Sporteka-chainlink-hack/sporteka11212023.git  
+
 ### cd sporteka11212023
 ### npm install
- 
+
+ get a free account at https://rapidapi.com/api-sports/api/api-football/
+in configItemsExample.js add your https://rapidapi.com/api-sports/api/api-football/    X-RapidAPI-Key into variable RAPIDAPI_API_FOOTBALL_KEY
+Rename configItemsExample.js to configItems.js
+
 
 ### `npm start`
 
