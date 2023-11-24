@@ -35,15 +35,18 @@
 		font-size: 6vw;
 	}
 } */
-@media only screen and (max-width: 912px) {
-	p.centPage2 {
-		margin-top: 20vh; 
-		font-size: 17.5vw;
+@media only screen and (max-width: 900px) {
+	.App {
+		width: 100%;
+		text-align: center;
 	}
-	p.centPage1 {
-
-		 
+	p.centPage2 {
+		margin-top: 15vh; 
+		font-size: 15vw;
+	}
+	p.centPage1 { 
 		font-size: 5.25vw;
+		text-align: center;
 	}
 }
 

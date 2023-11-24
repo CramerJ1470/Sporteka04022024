@@ -1,5 +1,7 @@
 /* home.css  MAY MODIFY LATER ON*/
-
+.container {
+  margin-bottom: 20px;
+}
 
 .buttons {
   display: flex;
