@@ -6,6 +6,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+
+to clone 
+### git clone -b master https://github.com/Sporteka-chainlink-hack/sporteka11212023.git
+### cd sporteka11212023
+### npm install
+ 
+
 ### `npm start`
 
 Runs the app in the development mode.\
