@@ -47,7 +47,7 @@ export const logout = async () => {
 	return result;
 };
 /************Leagues Section ***************** */
-export const getLeagues = async (applyFunc) => {
+export const getCups = async (applyFunc) => {
 	const url = "https://api-football-v1.p.rapidapi.com/v3/leagues?type=cup";
 	const options = {
 		method: "GET",
@@ -57,7 +57,30 @@ export const getLeagues = async (applyFunc) => {
 		},
 	};
 
-	let resultLeagues = [];
+	try {
+		const response = await fetch(url, options);
+		const result = await response.text();
+		const parsedResult = JSON.parse(result).response;
+		// data as an object make array
+
+		let array4Cups = Array.from(parsedResult);
+		console.log(array4Cups);
+	
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+export const getLeagues = async (applyFunc) => {
+	const url = "https://api-football-v1.p.rapidapi.com/v3/leagues";
+	const options = {
+		method: "GET",
+		headers: {
+			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
+			"X-RapidAPI-Host": RAPIDAPI_ADDRESS,
+		},
+	};
+
 	try {
 		const response = await fetch(url, options);
 		const result = await response.text();
@@ -65,30 +88,10 @@ export const getLeagues = async (applyFunc) => {
 		// data as an object make array
 
 		let array = Array.from(parsedResult);
-
-		for (let x = 0; x < array.length; x++) {
-			if (array[x].split("/").length === 2) {
-				let [continent, league] = array[x].split("/");
-				let resultSplit = { continent: continent, league: league };
-				resultLeagues.push(resultSplit);
-			} else if (array[x].split("/").length === 3) {
-				let [continent, country, league] = array[x].split("/");
-				let resultSplit = {
-					contenent: continent,
-					country: country,
-					league: league,
-				};
-				resultLeagues.push(resultSplit);
-			}
-		}
-		console.log(resultLeagues);
+	console.log(array);
 	} catch (error) {
 		console.error(error);
 	}
-
-	// res.json().then((characters) => {
-	// 	applyFunc([...characters]);
-	// });
 };
 
 export const addCharacter = async (description) => {

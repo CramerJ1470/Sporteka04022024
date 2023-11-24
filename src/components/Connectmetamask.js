@@ -14,27 +14,18 @@ function LandingPage(leagues) {
 				href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap"
 				rel="stylesheet"
 			></link>
-			<main className={styles.main}>
-				<div className={styles.center}>
-					<div className={styles.description}>
-						<span className="top">
-							<span className="top">
-								<div>
-									<p className="centPage2 kavoon">Sporteka</p>
 
-									<p className="centPage1 top kavoon">
-										Sport Blockchain Platform
-									</p>
-								</div>
-							</span>
-							<button className="centPage kavoon" onClick={""}>
-								Connect Wallet
-							</button>
-						</span>
-					</div>
-					<div></div>
-				</div>
-			</main>
+<span className="buttons">
+				<button className="centText centPage1 kavoon narrow" onClick={"connect"}>
+					Connect Wallet
+				</button>
+				<button className="centText centPage1 kavoon narrow" onClick={"register"}>
+					Register
+				</button>
+				<button className="centText centPage1 kavoon narrow" onClick={"login"}>
+					Login
+				</button>
+			</span>
 		</div>
 	);
 }

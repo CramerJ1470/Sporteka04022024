@@ -37,12 +37,10 @@
 } */
 @media only screen and (max-width: 912px) {
 	p.centPage2 {
-		margin-top: 20vh; 
+		margin-top: 20vh;
 		font-size: 17.5vw;
 	}
 	p.centPage1 {
-
-		 
 		font-size: 5.25vw;
 	}
 }
@@ -74,15 +72,15 @@ button {
 	text-align: center;
 	font-size: 40%;
 	position: relative;
-	width: 200%;
+	width: 50%;
 	height: auto;
 	margin: 2rem;
 }
 
-button.centPage {
+.centPage {
 	text-align: center;
-	font-size: 400%;
-	width: auto;
+	font-size: 200%;
+	width: 50%;
 	height: auto;
 	padding: 10%;
 	border-radius: 2rem;
@@ -113,6 +111,22 @@ button.centPage {
 }
 
 .top {
-	width: 100%;
 	text-align: center;
+}
+
+.narrow {
+	width: 60%;
+	margin-top: 2%;
+	margin-left: 20%;
+	display: flex;
+	text-align: center;
+}
+
+.buttons {
+	display: inline-flexbox;
+	text-justify: right;
+}
+
+.centText {
+	text-justify: right;
 }
