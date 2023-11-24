@@ -48,8 +48,7 @@ export const logout = async () => {
 };
 /************Leagues Section ***************** */
 export const getLeagues = async (applyFunc) => {
-	
-	const url = "https://api-football-v1.p.rapidapi.com/v3/timezone";
+	const url = "https://api-football-v1.p.rapidapi.com/v3/leagues?type=cup";
 	const options = {
 		method: "GET",
 		headers: {
