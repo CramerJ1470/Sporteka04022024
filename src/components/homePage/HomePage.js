@@ -1,9 +1,15 @@
 // HomePage.js
-import React from 'react';
-import './home.css'; // Import the specific homepage styles
-import Footer from '../footer/Footer'; // Import the footer component
+import React from "react";
+import { Link } from "react-router-dom";
+import "./home.css";
+import Footer from "../footer/Footer";
 
 function HomePage() {
+  const connectToWallet = () => {
+    // Add your wallet connection logic here
+    console.log("Connecting to Wallet...");
+  };
+
   return (
     <div>
       <div className="container">
@@ -13,9 +19,24 @@ function HomePage() {
             <p className="centPage1 top kavoon">Sport Blockchain Platform</p>
           </div>
         </span>
+        <div className="buttons">
+          {/* Register button */}
+          <Link to="/register" className="button">
+            Register
+          </Link>
+
+          {/* Login button */}
+          <Link to="/login" className="button">
+            Login
+          </Link>
+
+          {/* Connect to Wallet button */}
+          <Link className="button" onClick={connectToWallet}>
+            Connect to Wallet
+          </Link>
+        </div>
       </div>
 
-      {/* Add the footer */}
       <Footer />
     </div>
   );
