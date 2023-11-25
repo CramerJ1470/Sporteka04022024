@@ -18,7 +18,7 @@ import Leagues from "./components/Leagues";
 import Login from "./components/loginPage/Login";
 import Logout from "./components/Logout";
 import Navbar from "./components/navbar/Navbar";
-import Profile from "./components/Profile";
+import Profile from "./components/profilePage/Profile";
 import Register from "./components/registerPage/Register";
 // context
 import AuthContext from "./context/AuthContext";
@@ -96,8 +96,6 @@ function App() {
 								</>
 							) : (
 								<>
-									<Route path="/login" element={<Login />} />
-
 									<Route
 										path="/leagues"
 										element={<Leagues leagues={leagues} />}
@@ -105,7 +103,9 @@ function App() {
 
 									<Route
 										path="/profile"
-										element={<Profile isAuth={isAuth} />}
+										element={
+											<Profile isAuth={isAuth} />
+										}
 									/>
 
 									<Route
