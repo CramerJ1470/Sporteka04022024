@@ -5,6 +5,35 @@ import "./home.css"; // Import the specific homepage styles
 import Footer from "../footer/Footer"; // Import the footer component
 
 function HomePage() {
+	async function connectToWallet() {
+		await connect();
+	}
+	async function connect() {
+		if (typeof window.ethereum !== "undefined") {
+			try {
+				await window.ethereum.request({
+					method: "eth_requestAccounts",
+				});
+			} catch (error) {
+				console.log(error);
+			}
+			const accounts = await window.ethereum.request({
+				method: "eth_accounts",
+			});
+			// const accountName = window.getElementsByClass(
+			// 	"mm-box mm-text multichain-account-picker__label mm-text--body-md mm-text--font-weight-bold mm-text--ellipsis mm-box--color-text-default"
+			// )[0].innerText;
+			document.getElementById(
+				"connectButton"
+			).innerHTML = `Connected  to ${accounts[0]}`;
+			// console.log("accountName:", accountName);
+			console.log(accounts);
+		} else {
+			document.getElementById("connectButton").innerHTML =
+				"Please install MetaMask";
+		}
+	}
+
 	return (
 		<div>
 			<div className="container">
@@ -29,7 +58,11 @@ function HomePage() {
 					</Link>
 
 					{/* Connect to Wallet button */}
-					<Link className="button" >
+					<Link
+						id="connectButton"
+						className="button"
+						onClick={connectToWallet}
+					>
 						Connect to Wallet
 					</Link>
 				</div>
