@@ -23,9 +23,16 @@ function HomePage() {
 			// const accountName = window.getElementsByClass(
 			// 	"mm-box mm-text multichain-account-picker__label mm-text--body-md mm-text--font-weight-bold mm-text--ellipsis mm-box--color-text-default"
 			// )[0].innerText;
-			document.getElementById(
+			if (accounts[0] === undefined ){
+				document.getElementById(
+					"connectButton"
+				).innerHTML = "Please connect a wallet";
+			}
+			else {
+			 document.getElementById(
 				"connectButton"
 			).innerHTML = `Connected  to ${accounts[0]}`;
+			 }
 			// console.log("accountName:", accountName);
 			console.log(accounts);
 		} else {
