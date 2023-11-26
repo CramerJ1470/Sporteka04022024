@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './login.css';
 import { GoogleLogin } from 'react-google-login';
+import Navbar from '../navbar/Navbar';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -22,11 +23,14 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Login</h2>
+    <div>
+      <Navbar />
+      {/* LOGIN FORM */}
+      <div className="container">
+      {/* <h2>Login</h2> */}
       <form onSubmit={handleLogin}>
         <label>
-          Username:
+          Email:
           <input
             type="text"
             value={username}
@@ -52,9 +56,10 @@ const LoginPage = () => {
         onFailure={(err) => console.log('Google login failed:', err)}
         cookiePolicy={'single_host_origin'}
       />
-      <p>
+      <p className='click-link'>
         Don't have an account? <a href="/register" className="register-link" onClick={handleRegister}>Register</a>
       </p>
+    </div>
     </div>
   );
 };
