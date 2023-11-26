@@ -13,7 +13,7 @@
 
 .container {
   background-color: #fff;
-  padding: 20px;
+  padding: 50px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -25,18 +25,17 @@ h2 {
 
 form {
   display: flex;
-  flex-direction: column;
-  max-width: 300px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 label {
-  margin-bottom: 8px;
+  margin-bottom: 5px;
+  color: #333;
 }
 
 input {
   padding: 8px;
-  margin-bottom: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -55,6 +54,14 @@ button:hover {
   background-color: gray;
 }
 
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 .login-link {
   color: blue;
   text-decoration: none;
@@ -63,4 +70,16 @@ button:hover {
 .login-link:hover {
   text-decoration: underline;
   color: red;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  form {
+    flex-direction: column;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
 }
