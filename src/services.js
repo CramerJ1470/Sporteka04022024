@@ -1,5 +1,7 @@
 const RAPIDAPI_API_FOOTBALL_KEY =
 	require("./configItems.js").RAPIDAPI_API_FOOTBALL_KEY;
+	const RAPIDAPI_API_FOOTBALL_KEY_BETA =
+	require("./configItems.js").RAPIDAPI_API_FOOTBALL_KEY_BETA;
 const RAPIDAPI_ADDRESS = require("./configItems.js").RAPIDAPI_ADDRESS;
 
 /***********************User section******************* */
@@ -64,8 +66,7 @@ export const getCups = async (applyFunc) => {
 		// data as an object make array
 
 		let array4Cups = Array.from(parsedResult);
-		console.log(array4Cups);
-	
+		console.log("Cups: ",array4Cups);
 	} catch (error) {
 		console.error(error);
 	}
@@ -87,46 +88,57 @@ export const getLeagues = async (applyFunc) => {
 		const parsedResult = JSON.parse(result).response;
 		// data as an object make array
 
-		let array = Array.from(parsedResult);
-	console.log(array);
+		let leaguesArray = Array.from(parsedResult);
+		console.log("Leagues:", leaguesArray);
 	} catch (error) {
 		console.error(error);
 	}
 };
 
-export const addCharacter = async (description) => {
-	const { id, token } = JSON.parse(localStorage.getItem("userData"));
-	const url = "http://localhost:8090/api/character";
-	const body = JSON.stringify({ description, author: id });
-	const headers = {
-		"Content-Type": "application/json",
-		Authorization: `Bearer ${token}`,
+export const getCountries = async (applyFunc) => {
+	const url = "https://api-football-v1.p.rapidapi.com/v3/teams/countries";
+	const options = {
+		method: "GET",
+		headers: {
+			"X-RapidAPI-Key":
+			RAPIDAPI_API_FOOTBALL_KEY,
+			"X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
+		},
 	};
-	const res = await fetch(url, { method: "POST", body, headers });
-	const result = await res.json();
-	return result;
-};
 
-/*******************Movie Section ********************* */
-export const getMovies = async (applyFunc) => {
-	const url = "http://localhost:8090/api/movie";
-	const res = await fetch(url);
-	res.json().then((movies) => {
-		applyFunc([...movies]);
-	});
+	try {
+		const response = await fetch(url, options);
+		let res = await response.text;
+		res.json.then((countries) => {
+			applyFunc([...countries]);
+		});
+		console.log("countries:", res);
+	} catch (error) {
+		console.error(error);
+	}
 };
-
-export const addMovie = async (description) => {
-	const { id, token } = JSON.parse(localStorage.getItem("userData"));
-	const url = "http://localhost:8090/api/movie";
-	const body = JSON.stringify({ description, author: id });
-	const headers = {
-		"Content-Type": "application/json",
-		Authorization: `Bearer ${token}`,
+export const getTeams = async (applyFunc) => {
+	const url =
+		"https://api-football-beta.p.rapidapi.com/teams?league=39&season=2022";
+	const options = {
+		method: "GET",
+		headers: {
+			"X-RapidAPI-Key":
+			RAPIDAPI_API_FOOTBALL_KEY_BETA,
+			"X-RapidAPI-Host": "api-football-beta.p.rapidapi.com",
+		},
 	};
-	const res = await fetch(url, { method: "POST", body, headers });
-	const result = await res.json();
-	return result;
+
+	try {
+		const response = await fetch(url, options);
+		let res = await response.text;
+		res.json.then((countries) => {
+			applyFunc([...countries]);
+		});
+		console.log("Teams: ", res);
+	} catch (error) {
+		console.error(error);
+	}
 };
 
 /**********************Cart Section****************************/
@@ -250,60 +262,4 @@ export const getUser = async (userId) => {
 	const userData = JSON.parse(localStorage.getItem("userData"));
 	console.log(`userData: `, userData);
 	return userData;
-};
-
-export const postEditReviews = async (req) => {
-	console.log(`reviewsSentOver: `, req);
-
-	var myHeaders = new Headers();
-	const { id, token } = JSON.parse(localStorage.getItem("userData"));
-	myHeaders.append("Content-Type", "application/json");
-	myHeaders.append("Authorization", `Bearer ${token}`);
-
-	var requestOptions = {
-		method: "PUT",
-		headers: myHeaders,
-		body: JSON.stringify(req),
-	};
-	const { _id } = req;
-	console.log(`PER _id: `, _id);
-
-	fetch(`http://localhost:8090/api/user/${id}`, requestOptions)
-		.then((response) => response.json())
-		.then((result) => console.log(result.text))
-		.then((answer) => {
-			const { reviewsGiven } = req;
-			console.log(`put; `, reviewsGiven);
-			answer.reviewsGiven = reviewsGiven;
-		});
-};
-
-export const postReviews = async (req) => {
-	console.log(`reviewsSentOver: `, req.reviews);
-	console.log(`movieSentOver: `, req);
-
-	const { _id, reviews } = req;
-	console.log(_id);
-	console.log(`post reviews: `, reviews);
-	var myHeaders = new Headers();
-	const { token } = JSON.parse(localStorage.getItem("userData"));
-	myHeaders.append("Content-Type", "application/json");
-	myHeaders.append("Authorization", `Bearer ${token}`);
-
-	var requestOptions = {
-		method: "PUT",
-		headers: myHeaders,
-		body: JSON.stringify(req),
-	};
-
-	console.log(`PER movie_id: `, _id);
-
-	fetch(`http://localhost:8090/api/movie/${_id}`, requestOptions)
-		.then((response) => response.json())
-		.then((result) => console.log(result.text))
-		.then((answer) => {
-			const { reviews } = req;
-			console.log(`Put; `, reviews);
-			answer.reviews = reviews;
-		});
 };

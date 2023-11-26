@@ -119,3 +119,34 @@ button.centPage {
 	width: 100%;
 	text-align: center;
 }
+
+div.country {
+	display: inline-block;
+
+	background-color: white;
+	box-shadow: 5px 5px 5px #232b33;
+	text-shadow: 2px 2px 2px #607588;
+
+	min-width: 16rem;
+	max-width: 16rem;
+	margin: 20px;
+
+	object-fit: cover;
+	vertical-align: top;
+	text-align: center;
+}
+
+.Countries {
+	width: 100%;
+	/* border:1px solid red; */
+	height: 45vh;
+}
+
+.imagename {
+	height: 100%;
+}
+.imagename h2 {
+	font-style: bolder;
+	color: blue;
+	text-align: center;
+}
