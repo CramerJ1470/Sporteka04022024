@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import "./register.css"; // Import the common styles
 import Footer from "../footer/Footer";
+import { GoogleLogin } from "react-google-login";
 
 const RegisterPage = () => {
   const [username, setUsername] = useState("");
@@ -22,6 +23,11 @@ const RegisterPage = () => {
       // Set password match error
       setPasswordMatchError(true);
     }
+  };
+
+  const handleGoogleRegister = (googleData) => {
+    // ?? Implement Google registration logic here ?? //
+    console.log('Google registration data:', googleData);
   };
 
   return (
@@ -68,8 +74,16 @@ const RegisterPage = () => {
             <p style={{ color: "red" }}>Passwords do not match.</p>
           )}
           <br />
-          <button type="submit">Register</button>
+          <button className="btn" type="submit">Register</button>
         </form>
+        <GoogleLogin
+          className="btn"
+          clientId="YOUR_GOOGLE_CLIENT_ID"
+          buttonText="Register with Google"
+          onSuccess={handleGoogleRegister}
+          onFailure={(err) => console.log('Google registration failed:', err)}
+          cookiePolicy={'single_host_origin'}
+        />
         <p>
           Already have an account?{" "}
           <a href="/login" className="login-link">
@@ -85,3 +99,12 @@ const RegisterPage = () => {
 };
 
 export default RegisterPage;
+
+
+
+// -------------------------------------//
+// !!!!!!NOTES!!!!!!!! //
+
+// Replace "YOUR_GOOGLE_CLIENT_ID" with the actual Client ID you obtained from the Google Cloud Console.
+
+// Make sure to handle the Google registration logic appropriately in the handleGoogleRegister function. This might include sending the Google user data to your server for registration or integrating with your existing registration flow.
