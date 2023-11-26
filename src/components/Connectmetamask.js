@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../css/page.module.css";
 
-function LandingPage(leagues) {
+function ConnectMetaMask(leagues) {
 	return (
 		<div>
 			<link rel="preconnect" href="https://fonts.googleapis.com"></link>
@@ -39,4 +39,4 @@ function LandingPage(leagues) {
 	);
 }
 
-export default LandingPage;
+export default ConnectMetaMask;
