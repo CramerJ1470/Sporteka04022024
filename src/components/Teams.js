@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import {teamsList} from "../assets/teamsList";
 
 function Teams({teams}) {
-    console.log(teams);
+    console.log("teamsList:",teamsList);
   return (
     <div>
       
