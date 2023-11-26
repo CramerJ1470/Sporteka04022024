@@ -1,14 +1,13 @@
 // Navbar.js
 import React from "react";
-import { Link } from "react-router-dom";
+import "./navbar.css"; // Import the Navbar styles
 
 function Navbar() {
   return (
-    
-
-    <nav>
-
-    </nav>
+    <div className="navbar">
+      {/* Logo */}
+      <h1 className="logo-header">SportEka</h1>
+    </div>
   );
 }
 

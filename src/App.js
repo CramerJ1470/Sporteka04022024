@@ -15,7 +15,9 @@ import ProfilePage from "./components/profilePage/Profile";
 import AuthContext from "./context/AuthContext";
 import LeaguesContext from "./context/LeaguesContext";
 import { getLeagues } from "./services";
+
 // Import your Navbar component
+//import Navbar from "./components/navbar/Navbar";
 
 function App() {
   const [leagues, setLeagues] = useState([]);
@@ -39,7 +41,9 @@ function App() {
         }}
       >
         <div className="App">
-          {/* Include your Navbar component */}
+          {/* Include your Navbar component, acting up so commenting it out for now */}
+          {/* <Navbar /> */}
+
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
@@ -67,6 +71,8 @@ function App() {
               </>
             )}
           </Routes>
+
+          {/* Include your Footer component */}
           <Footer />
         </div>
       </LeaguesContext.Provider>

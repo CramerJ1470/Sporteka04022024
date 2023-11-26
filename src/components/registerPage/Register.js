@@ -1,14 +1,14 @@
 // RegisterPage.js
 import React, { useState } from "react";
 import "./register.css"; // Import the common styles
-import Footer from "../footer/Footer";
 import { GoogleLogin } from "react-google-login";
+import Navbar from "../navbar/Navbar";
 
 const RegisterPage = () => {
-  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [userType, setUserType] = useState("trader"); // Default to "Trader"
   const [passwordMatchError, setPasswordMatchError] = useState(false);
 
   const handleRegister = (e) => {
@@ -16,7 +16,7 @@ const RegisterPage = () => {
 
     // Check if passwords match
     if (password === confirmPassword) {
-      console.log("Registering with:", { username, email, password });
+      console.log("Registering with:", { email, password, userType });
       // Reset password match error
       setPasswordMatchError(false);
     } else {
@@ -26,24 +26,16 @@ const RegisterPage = () => {
   };
 
   const handleGoogleRegister = (googleData) => {
-    // ?? Implement Google registration logic here ?? //
-    console.log('Google registration data:', googleData);
+    // Implement Google registration logic here
+    console.log("Google registration data:", googleData);
   };
 
   return (
     <div>
+      <Navbar />
+      {/* REGISTRATION FORM */}
       <div className="container">
-        <h2>Register</h2>
         <form onSubmit={handleRegister}>
-          <label>
-            Username:
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </label>
-          <br />
           <label>
             Email:
             <input
@@ -73,33 +65,65 @@ const RegisterPage = () => {
           {passwordMatchError && (
             <p style={{ color: "red" }}>Passwords do not match.</p>
           )}
+
+          <label className="user-type">
+            User Type:
+            <div className="radio-buttons">
+              <label>
+                <input
+                  type="radio"
+                  value="trader"
+                  checked={userType === "trader"}
+                  onChange={() => setUserType("trader")}
+                />
+                Trader
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  value="partner"
+                  checked={userType === "partner"}
+                  onChange={() => setUserType("partner")}
+                />
+                Partner
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  value="club"
+                  checked={userType === "club"}
+                  onChange={() => setUserType("club")}
+                />
+                Club
+              </label>
+            </div>
+          </label>
+
           <br />
-          <button className="btn" type="submit">Register</button>
+          <button className="btn" type="submit">
+            Register
+          </button>
         </form>
         <GoogleLogin
           className="btn"
           clientId="YOUR_GOOGLE_CLIENT_ID"
           buttonText="Register with Google"
           onSuccess={handleGoogleRegister}
-          onFailure={(err) => console.log('Google registration failed:', err)}
-          cookiePolicy={'single_host_origin'}
+          onFailure={(err) => console.log("Google registration failed:", err)}
+          cookiePolicy={"single_host_origin"}
         />
-        <p>
+        <p className="click-link">
           Already have an account?{" "}
           <a href="/login" className="login-link">
             Login
           </a>
         </p>
       </div>
-
-      {/* Add the footer */}
-      <Footer />
     </div>
   );
 };
 
 export default RegisterPage;
-
 
 
 // -------------------------------------//

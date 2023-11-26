@@ -12,33 +12,44 @@
 }
 
 .container {
-  background-color: #fff;
+  background: #fff;
+  margin-top: 20px;
   padding: 50px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
+  margin: 0 0 20px;
   text-align: center;
-  color: #333;
 }
 
 form {
   display: flex;
   max-width: 700px;
-  margin: 0 auto;
+  padding-top: 10px;
 }
 
 label {
-  margin-bottom: 5px;
   color: #333;
 }
 
 input {
-  padding: 8px;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 4px;
 }
+
+input:focus {
+  outline: none;
+  border: 1px solid blue;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+}
+
 
 button {
   background: red;
@@ -46,7 +57,7 @@ button {
   padding: 10px;
   margin-top: 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -72,10 +83,33 @@ button:hover {
   color: red;
 }
 
+.click-link {
+  padding: 20px;
+}
+
+.user-type {
+  margin-bottom: 15px;
+}
+
+.radio-buttons {
+  display: flex;
+  flex-direction: row; /* Display radio buttons in a row */
+  gap: 10px;
+}
+
+.radio-buttons label {
+  display: flex;
+  align-items: center;
+}
+
+.radio-buttons input {
+  margin-right: 5px;
+}
+
 @media (max-width: 768px) {
-  .container {
+  /* .container {
     padding: 20px;
-  }
+  } */
   form {
     flex-direction: column;
   }
