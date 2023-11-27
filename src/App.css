@@ -41,10 +41,10 @@
 		text-align: center;
 	}
 	p.centPage2 {
-		margin-top: 15vh; 
+		margin-top: 15vh;
 		font-size: 15vw;
 	}
-	p.centPage1 { 
+	p.centPage1 {
 		font-size: 5.25vw;
 		text-align: center;
 	}
@@ -149,4 +149,23 @@ div.country {
 	font-style: bolder;
 	color: blue;
 	text-align: center;
+}
+
+.playercard {
+	display: inline-block;
+
+	background-color: white;
+	box-shadow: 5px 5px 5px #232b33;
+	text-shadow: 2px 2px 2px #607588;
+
+	min-width: 16rem;
+	max-width: 16rem;
+	margin: 20px;
+
+	object-fit: cover;
+	vertical-align: top;
+	text-align: center;
+}
+.Players {
+	max-width: 90vw;
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import './profile.css';
 import Footer from '../footer/Footer';
 
-const Profile = () => {
+const ProfilePage = () => {
   return (
     <div className="profile-container">
       <div className="profile-header">
@@ -30,4 +30,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ProfilePage;

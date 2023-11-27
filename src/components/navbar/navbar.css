@@ -1,0 +1,29 @@
+/* navbar.css */
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 5vh;
+    background-color: red;
+    color: white;
+    text-align: center;
+    /* z-index: 1000; Ensure the Navbar appears above other elements */
+  }
+  
+  .logo-header {
+    font-size: 1.5rem;
+    margin: 0;
+  }

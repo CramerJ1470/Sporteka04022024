@@ -1,66 +1,111 @@
-/* register.css */
+* register.css */
 
 /* Apply similar styling to the login page for consistency */
 .body {
-	font-family: Arial, sans-serif;
-	background-color: #f4f4f4;
-	margin: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-}
-
-.container {
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 8px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 h2 {
-	text-align: center;
-	color: #333;
+  margin: 0 0 20px;
+  text-align: center;
 }
 
 form {
-	display: flex;
-	flex-direction: column;
-	max-width: 300px;
-	margin: 0 auto;
+  display: flex;
+  max-width: 700px;
+  padding-top: 10px;
 }
 
 label {
-	margin-bottom: 8px;
+  color: #333;
 }
 
 input {
-	padding: 8px;
-	margin-bottom: 16px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
+  border: none;
+  border-radius: 4px;
 }
 
+input:focus {
+  outline: none;
+  border: 1px solid blue;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+}
+
+
 button {
-	background: red;
-	color: #fff;
-	padding: 10px;
-	margin-top: 0;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
+  background: red;
+  color: #fff;
+  padding: 10px;
+  margin-top: 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 button:hover {
-	background-color: gray;
+  background-color: gray;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .login-link {
-	color: blue;
-	text-decoration: none;
+  color: blue;
+  text-decoration: none;
 }
 
 .login-link:hover {
-	text-decoration: underline;
-	color: red;
+  text-decoration: underline;
+  color: red;
+}
+
+.click-link {
+  padding: 20px;
+}
+
+.user-type {
+  margin-bottom: 15px;
+}
+
+.radio-buttons {
+  display: flex;
+  flex-direction: row; /* Display radio buttons in a row */
+  gap: 10px;
+}
+
+.radio-buttons label {
+  display: flex;
+  align-items: center;
+}
+
+.radio-buttons input {
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  /* .container {
+    padding: 20px;
+  } */
+  form {
+    flex-direction: column;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
 }

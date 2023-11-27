@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import "./home.css"; // Import the specific homepage styles
 import Footer from "../footer/Footer"; // Import the footer component
 
-function HomePage() {
+function HomePage({teams,leagues,countries,cups}) {
 	async function connectToWallet() {
 		await connect();
 	}
+
+	//console.log("teams: ",teams);
 	async function connect() {
 		if (typeof window.ethereum !== "undefined") {
 			try {
@@ -43,7 +45,7 @@ function HomePage() {
 
 	return (
 		<div>
-			<div className="container">
+			
 				<span className="top">
 					<div>
 						<p className="centPage2 top kavoon">Sporteka</p>
@@ -73,7 +75,7 @@ function HomePage() {
 						Connect to Wallet
 					</Link>
 				</div>
-			</div>
+			
 			{/* Add the footer */}
 			<Footer />
 		</div>

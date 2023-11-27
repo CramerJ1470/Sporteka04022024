@@ -25,17 +25,7 @@
 
 /* Navigation Styles*/
 
-.Navigation {
-	width: 100%;
-	height: 14vh;
-	background-image: url("Pixar.jpg");
-	text-decoration-color: white;
-	position: fixed;
-	top: 0;
-	border-bottom: 2px solid #ffa000;
-	border-top: 2px solid #ffa000;
-	text-align: left;
-}
+
 
 /* Navigation Styles*/
 
@@ -145,14 +135,7 @@ aside .listItem:hover {
 
 /* Main Styles */
 
-.Main {
-	display: inline-block;
-	width: 100%;
-	height: auto;
-	/* border:1px solid blue; */
-	margin-bottom: 5%;
-	background-image: "../../assets/Pixar_Animation_Studios_2.jpg";
-}
+
 
 h1 {
 	text-align: center;

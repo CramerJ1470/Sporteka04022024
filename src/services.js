@@ -1,8 +1,11 @@
+import {teamsList} from "./assets/teamsList.js"
+
 const RAPIDAPI_API_FOOTBALL_KEY =
 	require("./configItems.js").RAPIDAPI_API_FOOTBALL_KEY;
-	const RAPIDAPI_API_FOOTBALL_KEY_BETA =
+const RAPIDAPI_API_FOOTBALL_KEY_BETA =
 	require("./configItems.js").RAPIDAPI_API_FOOTBALL_KEY_BETA;
 const RAPIDAPI_ADDRESS = require("./configItems.js").RAPIDAPI_ADDRESS;
+
 
 /***********************User section******************* */
 export const login = async (username, password, applyFunc) => {
@@ -66,7 +69,7 @@ export const getCups = async (applyFunc) => {
 		// data as an object make array
 
 		let array4Cups = Array.from(parsedResult);
-		console.log("Cups: ",array4Cups);
+		console.log("Cups: ", array4Cups);
 	} catch (error) {
 		console.error(error);
 	}
@@ -100,16 +103,15 @@ export const getCountries = async (applyFunc) => {
 	const options = {
 		method: "GET",
 		headers: {
-			"X-RapidAPI-Key":
-			RAPIDAPI_API_FOOTBALL_KEY,
+			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
 			"X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
 		},
 	};
 
 	try {
 		const response = await fetch(url, options);
-		let res = await response.text;
-		res.json.then((countries) => {
+		let res = await response.text();
+		res.json().then((countries) => {
 			applyFunc([...countries]);
 		});
 		console.log("countries:", res);
@@ -123,19 +125,19 @@ export const getTeams = async (applyFunc) => {
 	const options = {
 		method: "GET",
 		headers: {
-			"X-RapidAPI-Key":
-			RAPIDAPI_API_FOOTBALL_KEY_BETA,
+			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
 			"X-RapidAPI-Host": "api-football-beta.p.rapidapi.com",
 		},
 	};
 
 	try {
 		const response = await fetch(url, options);
-		let res = await response.text;
-		res.json.then((countries) => {
-			applyFunc([...countries]);
+		let res = await response.text();
+		console.log(JSON.parse(res));
+		JSON.parse(res).then((teams) => {
+			applyFunc([...teams]);
 		});
-		console.log("Teams: ", res);
+		
 	} catch (error) {
 		console.error(error);
 	}
