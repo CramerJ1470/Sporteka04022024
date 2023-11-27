@@ -8,6 +8,7 @@ const RegisterPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [userName, setUserName] = useState(""); // New state for user name
   const [userType, setUserType] = useState("trader"); // Default to "Trader"
   const [passwordMatchError, setPasswordMatchError] = useState(false);
 
@@ -16,7 +17,7 @@ const RegisterPage = () => {
 
     // Check if passwords match
     if (password === confirmPassword) {
-      console.log("Registering with:", { email, password, userType });
+      console.log("Registering with:", { email, password, userName, userType });
       // Reset password match error
       setPasswordMatchError(false);
     } else {
@@ -36,6 +37,15 @@ const RegisterPage = () => {
       {/* REGISTRATION FORM */}
       <div>
         <form onSubmit={handleRegister}>
+          <label>
+            User Name:
+            <input
+              type="text"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+          </label>
+          <br />
           <label>
             Email:
             <input

@@ -20,7 +20,7 @@ function ConnectMetaMask(leagues) {
 						<span className="top">
 							<span className="top">
 								<div>
-									<p className="centPage2 kavoon">Sporteka</p>
+									<p className="centPage2 kavoon">SportEka</p>
 
 									<p className="centPage1 top kavoon">
 										Sport Blockchain Platform
