@@ -15,6 +15,7 @@ import ProfilePage from "./components/profilePage/Profile";
 import AuthContext from "./context/AuthContext";
 import LeaguesContext from "./context/LeaguesContext";
 import { getLeagues } from "./services";
+import LeaderboardPage from "./components/leaderboard/LeaderboardPage";
 
 // Import your Navbar component
 //import Navbar from "./components/navbar/Navbar";
@@ -50,6 +51,7 @@ function App() {
             {!isAuth ? (
               <>
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="leaderboard" element={<LeaderboardPage />} />
                 <Route path="/register" element={<Register />} />
                 <Route
                   path="/connectmetamask"
