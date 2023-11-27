@@ -72,3 +72,14 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+
+
+// ----------------------------- //
+// !! NOTES ON LOGINPAGE.JS !! //
+
+// Replace "YOUR_GOOGLE_CLIENT_ID" with the actual Client ID you obtained from the Google Cloud Console.
+
+// In this example, I added a button for "Login with Google" (handleGoogleLogin function) to the login form. The GoogleLogin component is from the react-google-login package. It handles the OAuth flow for Google sign-in.
+
+// Remember to handle the Google login logic appropriately in the handleGoogleLogin function. This might include sending the Google user data to your server for authentication or integrating with your existing login flow.
