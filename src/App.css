@@ -51,7 +51,7 @@
 }
 
 .App-header {
-	background-color: #282c34;
+	background: #282c34;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -83,13 +83,10 @@ button {
 }
 
 button.centPage {
-	text-align: center;
-	font-size: 400%;
-	width: auto;
-	height: auto;
-	padding: 10%;
-	border-radius: 2rem;
-	display: inline-block;
+	position: relative;
+	border: 1px solid black;
+	border-radius: 5rem;
+
 }
 .centPage2 {
 	text-align: center;

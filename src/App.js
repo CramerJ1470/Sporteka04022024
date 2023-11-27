@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import "./css/workshop-styles.css";
-import Connectmetamask from "./components/Connectmetamask";
+
 import Footer from "./components/footer/Footer";
 import HomePage from "./components/homePage/HomePage";
 import LandingPage from "./components/landingPage/LandingPage";
@@ -16,6 +16,7 @@ import AuthContext from "./context/AuthContext";
 import LeaguesContext from "./context/LeaguesContext";
 import { getLeagues } from "./services";
 import LeaderboardPage from "./components/leaderboard/LeaderboardPage";
+import ConnectMetaMask from "./components/Connectmetamask";
 
 // Import your Navbar component
 //import Navbar from "./components/navbar/Navbar";
@@ -55,7 +56,7 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route
                   path="/connectmetamask"
-                  element={<Connectmetamask />}
+                  element={<ConnectMetaMask />}
                 />
               </>
             ) : (
