@@ -57,7 +57,7 @@ const LeaderboardPage = () => {
               alt="Mdi alphabet b box"
               src="mdi_alphabet-b-box.svg"
             />
-            <div className="text-wrapper-5">Prediction</div>
+            <div className="title">Prediction</div>
           </div>
         </div>
         
