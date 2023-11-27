@@ -64,10 +64,8 @@ export const getCups = async (applyFunc) => {
 
 	try {
 		const response = await fetch(url, options);
-		let res = await response.text();
-		console.log("cups:",JSON.parse(res));
-		JSON.parse(res).then((cups) => {
-			applyFunc([...cups]);
+		let res = await response.text().then((cups) => {
+			console.log("inside cups",cups);applyFunc([...cups]);
 		});
 	} catch (error) {
 		console.error(error);
@@ -86,10 +84,8 @@ export const getLeagues = async (applyFunc) => {
 
 	try {
 		const response = await fetch(url, options);
-		let res = await response.text();
-		console.log(JSON.parse(res));
-		JSON.parse(res).then((leagues) => {
-			applyFunc([...leagues]);
+		let res = await response.text().then((leagues) => {
+			console.log("inside leagues",leagues);applyFunc([...leagues]);
 		});
 	} catch (error) {
 		console.error(error);
@@ -108,10 +104,8 @@ export const getCountries = async (applyFunc) => {
 
 	try {
 		const response = await fetch(url, options);
-		let res = await response.text();
-		console.log(JSON.parse(res));
-		JSON.parse(res).then((countries) => {
-			applyFunc([...countries]);
+		let res = await response.text().then((countries) => {
+			console.log("inside countries",countries);applyFunc([...countries]);
 		});
 	} catch (error) {
 		console.error(error);
@@ -122,22 +116,19 @@ export const getTeams = async (applyFunc) => {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '0986cf5021mshf93698741a6b11ap1eec9bjsn92c9211ef7f1',
+		'X-RapidAPI-Key': RAPIDAPI_API_FOOTBALL_KEY,
 		'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
 	}
 };
 
-	try {
-		const response = await fetch(url, options);
-		let res = await response.text();
-		console.log(JSON.parse(res));
-		JSON.parse(res).then((teams) => {
-			applyFunc([...teams]);
-		});
-		
-	} catch (error) {
-		console.error(error);
-	}
+try {
+	const response = await fetch(url, options);
+	let res = await response.text().then((teams) => {
+		console.log("inside teams",teams);applyFunc([...teams]);
+	});
+} catch (error) {
+	console.error(error);
+}
 };
 
 /**********************Cart Section****************************/
