@@ -1,47 +1,35 @@
 import React from "react";
 import "./leaderboard.css";
-import {
-  MdHome,
-  MdSportsSoccer,
-  MdBatchPrediction,
-  MdTrendingUp,
-} from "react-icons/md";
-import {GiBabyfootPlayers} from "react-icons/gi";
 
 const LeaderboardPage = () => {
   return (
     <div className="frame">
       <div className="div">
         <div className="overlap">
-          <MdSportsSoccer className="icon" />
+          <img className="ion-football" alt="Ion football" src="ion_football.svg" />
           <div className="text-wrapper">Clubs</div>
         </div>
+        <img className="vector" src="home.svg" />
         <div className="text-wrapper-2">Home</div>
-        <MdHome className="icon" />
-        <div className="text-wrapper-3">Players</div>
-        <GiBabyfootPlayers className="icon" />
+        <img className="carbon-user-profile" alt="Carbon user profile" src="carbon_user-profile.svg" />
+        <div className="text-wrapper-3">players</div>
         <div className="overlap-group">
           <div className="text-wrapper-4">Trend</div>
-          <MdTrendingUp className="icon" />
+          <img className="mdi-chart-line" alt="Mdi chart line" src="mdi_chart-line.svg" />
         </div>
         <div className="overlap-2">
-          <div className="text-wrapper-5">Prediction</div>
-          <MdBatchPrediction className="icon" />
+          <div className="text-wrapper-5">prediction</div>
+          <img className="mdi-alphabet-b-box" alt="Mdi alphabet b box" src="mdi_alphabet-b-box.svg" />
         </div>
-        {/* 
-          Note: You might need to replace the "vector.svg", "ph-backspace-light.svg", 
-          and "NEWS.png" placeholders with their corresponding React icon components 
-          if there are available icons for them in the React Icons library.
-        */}
-        {/* <IconComponentForVector className="vector" /> */}
-        {/* <IconComponentForBackspaceLight className="icon" /> */}
-        {/* <IconComponentForLeaderboardNews className="icon LEADERBOARD-NEWS" /> */}
-        <div className="text-wrapper-6">Top Sport Traders</div>
+        <img className="vector" alt="Vector" src="home.svg" />
+        <img className="ph-backspace-light" alt="Ph backspace light" src="ph-backspace-light.svg" />
+        <img className="LEADERBOARD-NEWS" alt="Leaderboard NEWS" src="NEWS.png" />
+        <div className="text-wrapper-6">Top sport traders</div>
         <div className="text-wrapper-7">Names</div>
-        <div className="text-wrapper-8">No/Clubs</div>
+        <div className="text-wrapper-8">no/clubs</div>
         <div className="text-wrapper-9">ROI</div>
         <div className="ellipse" />
-        <div className="text-wrapper-10">James Karr</div>
+        <div className="text-wrapper-10">James karr</div>
       </div>
     </div>
   );
