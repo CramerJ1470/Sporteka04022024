@@ -20,7 +20,7 @@ body {
   background-color: red;
   color: white;
   text-align: center;
-  /* z-index: 1000; Ensure the Navbar appears above other elements */
+  z-index: 1000; /* Make sure it stays on top */
 }
 
 .logo-header {
