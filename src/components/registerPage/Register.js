@@ -1,7 +1,7 @@
 // RegisterPage.js
 import React, { useState } from "react";
 import "./register.css"; // Import the common styles
-import { GoogleLogin } from "react-google-login";
+// import { GoogleLogin } from "react-google-login";
 import Navbar from "../navbar/Navbar";
 
 const RegisterPage = () => {
@@ -31,10 +31,10 @@ const RegisterPage = () => {
 		}
 	};
 
-	const handleGoogleRegister = (googleData) => {
-		// Implement Google registration logic here
-		console.log("Google registration data:", googleData);
-	};
+	// const handleGoogleRegister = (googleData) => {
+	// 	// Implement Google registration logic here
+	// 	console.log("Google registration data:", googleData);
+	// };
 
 	return (
 		<div>
@@ -119,7 +119,7 @@ const RegisterPage = () => {
 						Register
 					</button>
 				</form>
-				<GoogleLogin
+				{/* <GoogleLogin
 					className="btn"
 					clientId="YOUR_GOOGLE_CLIENT_ID"
 					buttonText="Register with Google"
@@ -128,7 +128,7 @@ const RegisterPage = () => {
 						console.log("Google registration failed:", err)
 					}
 					cookiePolicy={"single_host_origin"}
-				/>
+				/> */}
 				<p className="click-link">
 					Already have an account?{" "}
 					<a href="/login" className="login-link">

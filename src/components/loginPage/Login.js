@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { GoogleLogin } from "react-google-login";
+// import { GoogleLogin } from "react-google-login";
 import Navbar from "../navbar/Navbar";
 
 const LoginPage = () => {
@@ -12,10 +12,10 @@ const LoginPage = () => {
 		console.log("Logging in with:", { loginIdentifier, password });
 	};
 
-	const handleGoogleLogin = (googleData) => {
-		// Implement Google login logic here
-		console.log("Google login data:", googleData);
-	};
+	// const handleGoogleLogin = (googleData) => {
+	// 	// Implement Google login logic here
+	// 	console.log("Google login data:", googleData);
+	// };
 
 	const handleRegister = () => {
 		console.log("Navigate to registration page or show registration form.");
@@ -47,7 +47,7 @@ const LoginPage = () => {
 					<br />
 					<button type="submit">Login</button>
 				</form>
-				<GoogleLogin
+				{/* <GoogleLogin
 					clientId="YOUR_GOOGLE_CLIENT_ID"
 					buttonText="Login with Google"
 					onSuccess={handleGoogleLogin}
@@ -55,7 +55,7 @@ const LoginPage = () => {
 						console.log("Google login failed:", err)
 					}
 					cookiePolicy={"single_host_origin"}
-				/>
+				/> */}
 				<p className="click-link">
 					Don't have an account?{" "}
 					<a

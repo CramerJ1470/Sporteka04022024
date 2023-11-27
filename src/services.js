@@ -64,12 +64,11 @@ export const getCups = async (applyFunc) => {
 
 	try {
 		const response = await fetch(url, options);
-		const result = await response.text();
-		const parsedResult = JSON.parse(result).response;
-		// data as an object make array
-
-		let array4Cups = Array.from(parsedResult);
-		console.log("Cups: ", array4Cups);
+		let res = await response.text();
+		console.log("cups:",JSON.parse(res));
+		JSON.parse(res).then((cups) => {
+			applyFunc([...cups]);
+		});
 	} catch (error) {
 		console.error(error);
 	}
@@ -87,12 +86,11 @@ export const getLeagues = async (applyFunc) => {
 
 	try {
 		const response = await fetch(url, options);
-		const result = await response.text();
-		const parsedResult = JSON.parse(result).response;
-		// data as an object make array
-
-		let leaguesArray = Array.from(parsedResult);
-		console.log("Leagues:", leaguesArray);
+		let res = await response.text();
+		console.log(JSON.parse(res));
+		JSON.parse(res).then((leagues) => {
+			applyFunc([...leagues]);
+		});
 	} catch (error) {
 		console.error(error);
 	}
@@ -111,10 +109,10 @@ export const getCountries = async (applyFunc) => {
 	try {
 		const response = await fetch(url, options);
 		let res = await response.text();
-		res.json().then((countries) => {
+		console.log(JSON.parse(res));
+		JSON.parse(res).then((countries) => {
 			applyFunc([...countries]);
 		});
-		console.log("countries:", res);
 	} catch (error) {
 		console.error(error);
 	}
@@ -125,7 +123,7 @@ export const getTeams = async (applyFunc) => {
 	const options = {
 		method: "GET",
 		headers: {
-			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
+			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY_BETA,
 			"X-RapidAPI-Host": "api-football-beta.p.rapidapi.com",
 		},
 	};
