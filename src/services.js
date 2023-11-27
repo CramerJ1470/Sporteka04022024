@@ -118,15 +118,14 @@ export const getCountries = async (applyFunc) => {
 	}
 };
 export const getTeams = async (applyFunc) => {
-	const url =
-		"https://api-football-beta.p.rapidapi.com/teams?league=39&season=2022";
-	const options = {
-		method: "GET",
-		headers: {
-			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY_BETA,
-			"X-RapidAPI-Host": "api-football-beta.p.rapidapi.com",
-		},
-	};
+	const url = 'https://api-football-v1.p.rapidapi.com/v2/teams/league/2';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '0986cf5021mshf93698741a6b11ap1eec9bjsn92c9211ef7f1',
+		'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+	}
+};
 
 	try {
 		const response = await fetch(url, options);
