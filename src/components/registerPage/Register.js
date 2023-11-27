@@ -34,7 +34,7 @@ const RegisterPage = () => {
     <div>
       <Navbar />
       {/* REGISTRATION FORM */}
-      <div className="container">
+      <div>
         <form onSubmit={handleRegister}>
           <label>
             Email:

@@ -2,7 +2,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
-import Footer from "../footer/Footer";
 
 function HomePage() {
   const connectToWallet = () => {
@@ -11,11 +10,11 @@ function HomePage() {
   };
 
   return (
-    <div>
-      <div className="container">
+
+      <div>
         <span className="top">
           <div>
-            <p className="centPage2 top kavoon">Sporteka</p>
+            <p className="centPage2 top kavoon">SportEka</p>
             <p className="centPage1 top kavoon">Sport Blockchain Platform</p>
           </div>
         </span>
@@ -37,8 +36,7 @@ function HomePage() {
         </div>
       </div>
 
-      <Footer />
-    </div>
+  
   );
 }
 
