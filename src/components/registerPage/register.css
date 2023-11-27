@@ -11,55 +11,101 @@
   height: 100vh;
 }
 
-.container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 h2 {
+  margin: 0 0 20px;
   text-align: center;
-  color: #333;
 }
 
 form {
   display: flex;
-  flex-direction: column;
-  max-width: 300px;
-  margin: 0 auto;
+  max-width: 700px;
+  padding-top: 10px;
 }
 
 label {
-  margin-bottom: 8px;
+  color: #333;
 }
 
 input {
-  padding: 8px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 4px;
 }
 
+input:focus {
+  outline: none;
+  border: 1px solid blue;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+}
+
+
 button {
-  background-color: #28a745;
+  background: red;
   color: #fff;
   padding: 10px;
   margin-top: 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: gray;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .login-link {
-  color: #007bff;
+  color: blue;
   text-decoration: none;
 }
 
 .login-link:hover {
   text-decoration: underline;
+  color: red;
+}
+
+.click-link {
+  padding: 20px;
+}
+
+.user-type {
+  margin-bottom: 15px;
+}
+
+.radio-buttons {
+  display: flex;
+  flex-direction: row; /* Display radio buttons in a row */
+  gap: 10px;
+}
+
+.radio-buttons label {
+  display: flex;
+  align-items: center;
+}
+
+.radio-buttons input {
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  /* .container {
+    padding: 20px;
+  } */
+  form {
+    flex-direction: column;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
 }

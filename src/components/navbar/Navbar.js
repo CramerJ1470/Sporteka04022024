@@ -1,17 +1,13 @@
-// Navbar.js
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./navbar.css"; // Import the Navbar styles
 
 function Navbar() {
-  return (
-    <nav>
-      <div>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-      </div>
-    </nav>
-  );
+	return (
+		<div className="navbar">
+			{/* Logo */}
+			<h1 className="logo-header">Sporteka</h1>
+		</div>
+	);
 }
 
 export default Navbar;

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../css/page.module.css";
 
-function LandingPage(leagues) {
+function ConnectMetaMask(leagues) {
 	return (
 		<div>
 			<link rel="preconnect" href="https://fonts.googleapis.com"></link>
@@ -20,7 +20,7 @@ function LandingPage(leagues) {
 						<span className="top">
 							<span className="top">
 								<div>
-									<p className="centPage2 kavoon">Sporteka</p>
+									<p className="centPage2 kavoon">SportEka</p>
 
 									<p className="centPage1 top kavoon">
 										Sport Blockchain Platform
@@ -39,4 +39,4 @@ function LandingPage(leagues) {
 	);
 }
 
-export default LandingPage;
+export default ConnectMetaMask;
