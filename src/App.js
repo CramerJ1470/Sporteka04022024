@@ -14,8 +14,8 @@ import Connectmetamask from "./components/Connectmetamask";
 import Footer from "./components/footer/Footer";
 import HomePage from "./components/homePage/HomePage";
 import Countries from "./components/Countries";
-import LandingPage from "./components/landingPage/LandingPage";
-import LeaderboardPage from "./components/leaderboard/LeaderboardPage";
+
+import LeaderboardPage from "./components/leaderboard/leaderboardPage";
 import Leagues from "./components/Leagues";
 import Login from "./components/loginPage/Login";
 import Logout from "./components/Logout";
