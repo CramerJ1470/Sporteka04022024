@@ -1,15 +1,11 @@
-### SportEka - A Sports Management System
+# Getting Started with Create React App
 
-## Introduction
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Available Scripts
+
+In the project directory, you can run:
 
 
-
-
-## Front End
-Run client side by putting the following commands in the terminal
-```npm run start```
-
-## Icons
-https://react-icons.github.io/react-icons/icons?name=fa 
-
-[Heroku Link](https://sporteka11212023-06b1d9ea20e9.herokuapp.com/)
+to clone 
+### git clone -b master https://github.com/Sporteka-chainlink-hack/sporteka11212023.git  

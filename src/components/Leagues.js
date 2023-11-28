@@ -95,6 +95,7 @@ const LeaguesComponent = () => {
         ))}
       </ul>
     </div>
+    
   );
 };
 
