@@ -15,7 +15,7 @@ import Footer from "./components/footer/Footer";
 import HomePage from "./components/homePage/HomePage";
 import Countries from "./components/Countries";
 
-import LeaderboardPage from "./components/leaderboard/leaderboardPage";
+import LeaderboardPage from "./components/leaderboard/LeaderboardPage";
 import Leagues from "./components/Leagues";
 import Login from "./components/loginPage/Login";
 import Logout from "./components/Logout";
@@ -176,7 +176,7 @@ function App() {
 										</>
 									) : (
 										<>
-										<Route
+											<Route
 												path="/register"
 												element={<Register />}
 											/>
