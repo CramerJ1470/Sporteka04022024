@@ -1,208 +1,50 @@
-.frame {
-	background-color: #ffffff;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	width: 100%;
+/* leaderboard.css */
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
 }
 
-.frame .div {
-	background-color: #ffffff;
-	height: 984px;
-	overflow: hidden;
-	position: relative;
-	width: 542px;
+.leaderboard-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.frame .overlap {
-	height: 70px;
-	left: 129px;
-	position: absolute;
-	top: 910px;
-	width: 61px;
+.leaderboard-header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.frame .ion-football {
-	height: 39px;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 51px;
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-.frame .text-wrapper {
-	color: #000000;
-	font-family: "Karma-SemiBold", Helvetica;
-	font-size: 20.6px;
-	font-weight: 600;
-	left: 0;
-	letter-spacing: 0;
-	line-height: normal;
-	position: absolute;
-	top: 38px;
-	width: 61px;
+.leaderboard-table th,
+.leaderboard-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
 }
 
-.frame .text-wrapper-2 {
-	color: #000000;
-	font-family: "Karma-SemiBold", Helvetica;
-	font-size: 20.6px;
-	font-weight: 600;
-	left: 0;
-	letter-spacing: 0;
-	line-height: normal;
-	position: absolute;
-	top: 948px;
-	width: 66px;
+.leaderboard-table th {
+  background-color: #f2f2f2;
 }
 
-.frame .carbon-user-profile {
-	height: 32px;
-	left: 240px;
-	position: absolute;
-	top: 910px;
-	width: 49px;
+.bottom-icons-container {
+  display: flex;
+  justify-content: space-between;
+
 }
 
-.frame .text-wrapper-3 {
-	color: #000000;
-	font-family: "Karma-SemiBold", Helvetica;
-	font-size: 20.6px;
-	font-weight: 600;
-	left: 224px;
-	letter-spacing: 0;
-	line-height: normal;
-	position: absolute;
-	top: 951px;
-	width: 81px;
+.icon {
+	margin-right: 20px;
 }
 
-.frame .overlap-group {
-	height: 67px;
-	left: 475px;
-	position: absolute;
-	top: 913px;
-	width: 68px;
-}
-
-.frame .text-wrapper-4 {
-	color: #000000;
-	font-family: "Karma-SemiBold", Helvetica;
-	font-size: 20.6px;
-	font-weight: 600;
-	left: 0;
-	letter-spacing: 0;
-	line-height: normal;
-	position: absolute;
-	top: 35px;
-	width: 68px;
-}
-
-.frame .mdi-chart-line {
-	height: 36px;
-	left: 18px;
-	position: absolute;
-	top: 0;
-	width: 44px;
-}
-
-.frame .overlap-2 {
-	height: 71px;
-	left: 349px;
-	position: absolute;
-	top: 910px;
-	width: 114px;
-}
-
-.frame .text-wrapper-5 {
-	color: #000000;
-	font-family: "Karma-SemiBold", Helvetica;
-	font-size: 18px;
-	font-weight: 600;
-	left: 0;
-	letter-spacing: 0;
-	line-height: normal;
-	position: absolute;
-	top: 43px;
-	width: 114px;
-}
-
-
-.frame .vector {
-	height: 33px;
-	left: 0;
-	position: absolute;
-	top: 914px;
-	width: 47px;
-}
-
-
-.frame .text-wrapper-6 {
-	color: #000000;
-	font-family: "Hind Mysuru-Regular", Helvetica;
-	font-size: 20px;
-	font-weight: 400;
-	left: 33px;
-	letter-spacing: 0;
-	line-height: normal;
-	position: absolute;
-	top: 68px;
-}
-
-.frame .text-wrapper-7 {
-	color: #000000;
-	font-family: "Hind Mysuru-Regular", Helvetica;
-	font-size: 17.6px;
-	font-weight: 400;
-	left: 77px;
-	letter-spacing: 0;
-	line-height: normal;
-	position: absolute;
-	top: 102px;
-}
-
-.frame .text-wrapper-8 {
-	color: #000000;
-	font-family: "Hind Mysuru-Regular", Helvetica;
-	font-size: 17.6px;
-	font-weight: 400;
-	left: 159px;
-	letter-spacing: 0;
-	line-height: normal;
-	position: absolute;
-	top: 104px;
-}
-
-.frame .text-wrapper-9 {
-	color: #000000;
-	font-family: "Hind Mysuru-Regular", Helvetica;
-	font-size: 17.6px;
-	font-weight: 400;
-	left: 271px;
-	letter-spacing: 0;
-	line-height: normal;
-	position: absolute;
-	top: 106px;
-}
-
-.frame .ellipse {
-	background-color: #d9d9d9;
-	border-radius: 15px/16px;
-	height: 32px;
-	left: 32px;
-	position: absolute;
-	top: 137px;
-	width: 30px;
-}
-
-.frame .text-wrapper-10 {
-	color: #000000;
-	font-family: "Hind Mysuru-Regular", Helvetica;
-	font-size: 17.6px;
-	font-weight: 400;
-	left: 70px;
-	letter-spacing: 0;
-	line-height: normal;
-	position: absolute;
-	top: 151px;
+.icon img {
+  width: 50px;
+  height: 50px;
+  margin: 5px 20px;
 }
