@@ -127,13 +127,6 @@
 	width: 114px;
 }
 
-.frame .mdi-alphabet-b-box {
-	height: 49px;
-	left: 12px;
-	position: absolute;
-	top: 0;
-	width: 52px;
-}
 
 .frame .vector {
 	height: 33px;
@@ -143,21 +136,6 @@
 	width: 47px;
 }
 
-.frame .ph-backspace-light {
-	height: 30px;
-	left: 14px;
-	position: absolute;
-	top: 22px;
-	width: 38px;
-}
-
-.frame .LEADERBOARD-NEWS {
-	height: 22px;
-	left: 149px;
-	position: absolute;
-	top: 27px;
-	width: 263px;
-}
 
 .frame .text-wrapper-6 {
 	color: #000000;
