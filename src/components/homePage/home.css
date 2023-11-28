@@ -28,9 +28,11 @@
 
 /* Add hover effect for buttons */
 .button:hover {
-	background: #ddd; /* Change the color on hover as desired */
+	background: blue; /* Change the color on hover as desired */
 	color: black;
+	text-transform: uppercase;
 	border: 2px solid white;
+	font-size: 14px;
 }
 
 /* Screen size */

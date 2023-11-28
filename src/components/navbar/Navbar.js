@@ -5,7 +5,7 @@ function Navbar() {
 	return (
 		<div className="navbar">
 			{/* Logo */}
-			<h1 className="logo-header">Sporteka</h1>
+			<h2 className="logo-header">Sporteka</h2>
 		</div>
 	);
 }

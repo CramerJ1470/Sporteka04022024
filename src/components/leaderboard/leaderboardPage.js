@@ -12,7 +12,7 @@ const LeaderboardPage = () => {
           alt="Ph backspace light"
           src="ph-backspace-light.svg"
         />
-      <h1 className="leaderboard">LEADERBOARD / NEWS</h1>
+      <h2 className="leaderboard">LEADERBOARD / NEWS</h2>
       </header>
     <div className="classification">
     <div className="">Top sport traders</div>
