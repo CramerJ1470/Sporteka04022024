@@ -1,60 +1,60 @@
 /* home.css  MAY MODIFY LATER ON*/
 .container {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .buttons {
-  display: flex;
-  justify-content: space-evenly; /* Evenly space the buttons horizontally */
-  margin-top: 20px; /* Adjust the margin as needed */
+	display: flex;
+	justify-content: space-evenly; /* Evenly space the buttons horizontally */
+	margin-top: 20px; /* Adjust the margin as needed */
 }
 
 .button {
-  /* Your existing button styles */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: red;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  font-size: 16px;
-  text-decoration: none;
-  border-radius: 10px;
-  margin: 20px;
-  width: 50%;
-  /* Add any other styling you need */
+	/* Your existing button styles */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: red;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	font-size: 16px;
+	text-decoration: none;
+	border-radius: 10px;
+	margin: 20px;
+	width: 50%;
+	/* Add any other styling you need */
 }
 
 /* Add hover effect for buttons */
 .button:hover {
-  background: #ddd; /* Change the color on hover as desired */
-  color: black;
-  border: 2px solid white;
+	background: #ddd; /* Change the color on hover as desired */
+	color: black;
+	border: 2px solid white;
 }
 
 /* Screen size */
 @media screen and (max-width: 600px) {
-  .buttons {
-    display: flex;
-    justify-content: center; /* Center the buttons horizontally */
-    align-items: center;
-    flex-direction: column; /* Stack the buttons vertically */
-    /* Add a border for testing */
-  }
-  .button {
-    margin: 10px; /* Adjust the margin as needed */
-    width: 50%; /* Adjust the width as needed */
-  }
-  .container {
-    flex-direction: column; /* Stack the items vertically */
-  }
-  .top {
-    order: 2; /* Change the order of the items */
-  }
-  p {
-    font-size: 20px; /* Adjust the font size as needed */
-    padding: 0 20px; /* Adjust the padding as needed */
-    text-align: center; /* Adjust the text alignment as needed */
-  }
+	.buttons {
+		display: flex;
+		justify-content: center; /* Center the buttons horizontally */
+		align-items: center;
+		flex-direction: column; /* Stack the buttons vertically */
+		/* Add a border for testing */
+	}
+	.button {
+		margin: 10px; /* Adjust the margin as needed */
+		width: 50%; /* Adjust the width as needed */
+	}
+	.container {
+		flex-direction: column; /* Stack the items vertically */
+	}
+	.top {
+		order: 2; /* Change the order of the items */
+	}
+	p {
+		font-size: 20px; /* Adjust the font size as needed */
+		padding: 0 20px; /* Adjust the padding as needed */
+		text-align: center; /* Adjust the text alignment as needed */
+	}
 }
