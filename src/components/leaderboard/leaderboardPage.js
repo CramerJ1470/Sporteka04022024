@@ -15,10 +15,10 @@ const LeaderboardPage = () => {
       <h1 className="leaderboard">LEADERBOARD / NEWS</h1>
       </header>
     <div className="classification">
-    <div className="">Top sport traders</div>
-        <div className="">Names</div>
-        <div className="">no/clubs</div>
-        <div className="">ROI</div>
+    <div className="types">Top sport traders</div>
+        <div className="types">Names</div>
+        <div className="types">no/clubs</div>
+        <div className="types">ROI</div>
     </div>
     <div className="profile">
         <div className="profile-name">James Karr</div>
