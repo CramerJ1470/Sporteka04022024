@@ -1,0 +1,65 @@
+/* TraderDashboard.css */
+
+/* Container styles */
+.trader-dashboard {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Side panel styles */
+.side-panel {
+  flex: 1;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.section-titles h4 {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* Main content styles */
+.main-content {
+  flex: 3;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.header h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-section {
+  margin-bottom: 30px;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .trader-dashboard {
+    flex-direction: column;
+  }
+
+  .side-panel,
+  .main-content {
+    width: 100%;
+  }
+
+  .side-panel {
+    padding: 10px;
+  }
+
+  .profile img {
+    width: 80px;
+    height: 80px;
+  }
+}

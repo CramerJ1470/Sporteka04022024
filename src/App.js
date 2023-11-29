@@ -25,6 +25,7 @@ import Profile from "./components/profilePage/Profile";
 import Register from "./components/registerPage/Register";
 import Teams from "./components/Teams";
 import LandingPage from "./components/landingPage/landingPage";
+import TraderDashboard from "./components/dashboard/TraderDashboard";
 
 // context
 import AuthContext from "./context/AuthContext";
@@ -125,6 +126,7 @@ function App() {
                     }
                   />
                   <Route path="/leaderboard" element={<LeaderboardPage />} />
+                  <Route path="/traderdashboard" element={<TraderDashboard />} />
                   <Route
                     path="/home"
                     element={
@@ -136,6 +138,7 @@ function App() {
                       />
                     }
                   />
+                  
                   {!isAuth ? (
                     <>
                       <Route path="/login" element={<Login />} />
