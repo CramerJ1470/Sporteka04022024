@@ -1,11 +1,24 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+# SportEka
+The is the Front End / clientside for the SportEka App
+> Note: Input what this app is for here
 
 
-to clone 
-### git clone -b master https://github.com/Sporteka-chainlink-hack/sporteka11212023.git  
+### Authors:
+ <a href="https://github.com/midnightmoet" target="_blank">**Lisa Miner**</a>
+ <a href="https://github.com/CramerJ1470" target="_blank">**John Cramer**</a>
+ <a href="https://github.com/richieart123" target="_blank">**Richie**</a>
+ <a href="https://github.com/EnebeliEmmanuel" target="_blank">**Emmanuel Enebeli**</a>
+ <a href="https://github.com/EndlessLucky" target="_blank">**Travon Jackson**</a>
+
+---
+
+## About:
+SportEka is an app in progress. Will add a better about section later
+
+## Operation
+
+To use this program (Note: This is a work in progress) :
+1. Clone this repo
+2. Run `npm i` to install the relevant packages
+3. Start the app with `npm start`. 
+4. Visit the app via `localhost:3000` on your machine 
