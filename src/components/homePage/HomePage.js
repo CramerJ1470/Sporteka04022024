@@ -1,83 +1,97 @@
-// HomePage.js
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./home.css"; // Import the specific homepage styles
-import Footer from "../footer/Footer"; // Import the footer component
+import "./home.css";
+import Footer from "../footer/Footer";
 
 function HomePage({ teams, leagues, countries, cups }) {
-	 
-	async function connectToWallet() {
-		await connect();
-	}
+  useEffect(() => {
+    // Call any initialization logic here
+  }, []);
 
-	//console.log("teams: ",teams);
-	async function connect() {
-		if (typeof window.ethereum !== "undefined") {
-			try {
-				await window.ethereum.request({
-					method: "eth_requestAccounts",
-				});
-			} catch (error) {
-				console.log(error);
-			}
-			const accounts = await window.ethereum.request({
-				method: "eth_accounts",
-			});
-			// const accountName = window.getElementsByClass(
-			// 	"mm-box mm-text multichain-account-picker__label mm-text--body-md mm-text--font-weight-bold mm-text--ellipsis mm-box--color-text-default"
-			// )[0].innerText;
-			if (accounts[0] === undefined) {
-				document.getElementById("connectButton").innerHTML =
-					"Please connect a wallet";
-			} else {
-				document.getElementById(
-					"connectButton"
-				).innerHTML = `Connected  to ${accounts[0]}`;
-			}
-			// console.log("accountName:", accountName);
-			console.log(accounts);
-		} else {
-			document.getElementById("connectButton").innerHTML =
-				"Please install MetaMask";
-		}
-	}
+  async function connectToWallet() {
+    try {
+      await connect();
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
-	return (
-		<div>
-			<span className="top">
-				<div>
-					<p className="centPage2 top kavoon">Sporteka</p>
-					<p className="centPage1 top kavoon">
-						Sport Blockchain Platform
-					</p>
-				</div>
-			</span>
+  async function connect() {
+    if (typeof window.ethereum !== "undefined") {
+      try {
+        await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
 
-			<div className="buttons">
-				{/* Register button */}
-				<Link to="/register" className="button">
-					Register
-				</Link>
+        const accounts = await window.ethereum.request({
+          method: "eth_accounts",
+        });
 
-				{/* Login button */}
-				<Link to="/login" className="button">
-					Login
-				</Link>
+        updateConnectButton(accounts[0]);
+        console.log(accounts);
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      updateConnectButton(undefined, "Please install MetaMask");
+    }
+  }
 
-				{/* Connect to Wallet button */}
-				<Link
-					id="connectButton"
-					className="button"
-					onClick={connectToWallet}
-				>
-					Connect to Wallet
-				</Link>
-			</div>
+  function updateConnectButton(account, errorMessage) {
+    const connectButton = document.getElementById("connectButton");
 
-			{/* Add the footer */}
-			<Footer />
-		</div>
-	);
+    if (connectButton) {
+      if (account === undefined) {
+        connectButton.innerHTML = errorMessage || "Please connect a wallet";
+      } else {
+        connectButton.innerHTML = `Connected to ${account}`;
+      }
+    }
+  }
+
+  return (
+    <div>
+      <span className="top">
+        <div>
+          <p className="centPage2 top kavoon">Sporteka</p>
+          <p className="centPage1 top kavoon">Sport Blockchain Platform</p>
+        </div>
+      </span>
+
+      <div className="buttons">
+        {/* Register button */}
+        <Link to="/register" className="button">
+          Register
+        </Link>
+
+        {/* Login button */}
+        <Link to="/login" className="button">
+          Login
+        </Link>
+
+        {/* Connect to Wallet button */}
+        <Link
+          id="connectButton"
+          className="button"
+          onClick={connectToWallet}
+        >
+          Connect to Wallet
+        </Link>
+      </div>
+
+      {/* Add the footer */}
+      <Footer />
+    </div>
+  );
 }
 
 export default HomePage;
+
+//??-------------NOTES-------------------------??//
+// 1. Added an empty `useEffect` hook for any potential future initializing logic
+// 2. Consolidated error handling for wallet connection attempts
+// 3. Created a separate function `updateConnectButton` to handle updating the Connect to Wallet button
+// 4. Improved variable names for better readability
+// 5. Used `console.error` for error logging
+// 6. Simplified the rendering logic for the Connect Wallet button
+

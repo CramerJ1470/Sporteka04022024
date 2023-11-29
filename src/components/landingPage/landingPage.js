@@ -9,7 +9,7 @@ function LandingPage() {
   return (
     <div>
       <div className="landing-container">
-        <h1 className="landing-title">Welcome to Sporteka</h1>
+        <h2 className="landing-title">Welcome to Sporteka</h2>
         <p className="landing-description">
           Discover the power of blockchain in the world of sports. Join Sporteka
           today and experience a new era of secure and transparent sports
