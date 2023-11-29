@@ -1,0 +1,245 @@
+.frame {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.frame .div {
+  background: #ffffff;
+  height: 620px;
+  position: relative;
+  width: 411px;
+}
+
+.frame .overlap {
+  height: 55px;
+  left: 8px;
+  position: absolute;
+  top: 59px;
+  width: 205px;
+}
+
+.frame .text-wrapper {
+  color: #000000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20.3px;
+  font-weight: 700;
+  left: 58px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 19px;
+}
+
+.frame .manchester-city-s {
+  height: 55px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 62px;
+}
+
+.frame .ph-backspace-light {
+  height: 30px;
+  left: 22px;
+  position: absolute;
+  top: 5px;
+  width: 38px;
+}
+
+.frame .overlap-group {
+  height: 35px;
+  left: 76px;
+  position: absolute;
+  top: 161px;
+  width: 133px;
+}
+
+.frame .rectangle {
+  background-color: #3a3838;
+  border-radius: 15px;
+  height: 32px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 96px;
+}
+
+.frame .text-wrapper-2 {
+  color: #fbf5f5;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 19.1px;
+  font-weight: 400;
+  left: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 1px;
+}
+
+.frame .rectangle-2 {
+  background: red;
+  border-radius: 15px;
+  height: 32px;
+  left: 56px;
+  position: absolute;
+  top: 0;
+  width: 77px;
+}
+
+.frame .text-wrapper-3 {
+  color: #fbf4f4;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 19.1px;
+  font-weight: 400;
+  left: 88px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 2px;
+}
+
+.frame .text-wrapper-4 {
+  color: #fbf4f4;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 19.1px;
+  font-weight: 400;
+  left: 166px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 278px;
+}
+
+.frame .div-wrapper {
+  background: red;
+  border-radius: 15px;
+  height: 38px;
+  left: 238px;
+  position: absolute;
+  top: 158px;
+  width: 164px;
+}
+
+.frame .text-wrapper-5 {
+  color: #ffffff;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 19.1px;
+  font-weight: 400;
+  left: 19px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 4px;
+}
+
+.frame .emojione-stadium {
+  height: 46px;
+  left: 16px;
+  position: absolute;
+  top: 150px;
+  width: 46px;
+}
+
+.frame .solar-wallet-bold {
+  height: 38px;
+  left: 16px;
+  position: absolute;
+  top: 231px;
+  width: 48px;
+}
+
+.frame .text-wrapper-6 {
+  color: #000000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18.5px;
+  font-weight: 700;
+  left: 86px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 239px;
+}
+
+.frame .text-wrapper-7 {
+  color: #000000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18.5px;
+  font-weight: 700;
+  left: 86px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 313px;
+}
+
+.frame .text-wrapper-8 {
+  color: #000000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18.5px;
+  font-weight: 700;
+  left: 86px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 370px;
+}
+
+.frame .help-support {
+  color: #000000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18.5px;
+  font-weight: 700;
+  left: 86px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 443px;
+}
+
+.frame .term-conditins {
+  color: #000000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18.5px;
+  font-weight: 700;
+  left: 88px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 508px;
+}
+
+.frame .mdi-account-cog {
+  height: 44px;
+  left: 22px;
+  position: absolute;
+  top: 299px;
+  width: 44px;
+}
+
+.frame .material-symbols {
+  height: 40px;
+  left: 26px;
+  position: absolute;
+  top: 367px;
+  width: 40px;
+}
+
+.frame .flat-color-icons {
+  height: 42px;
+  left: 36px;
+  position: absolute;
+  top: 437px;
+  width: 34px;
+}
+
+.frame .img {
+  height: 24px;
+  left: 40px;
+  position: absolute;
+  top: 509px;
+  width: 24px;
+}
