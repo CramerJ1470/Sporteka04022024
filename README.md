@@ -4,10 +4,14 @@ The is the Front End / clientside for the SportEka App
 
 
 ### Authors:
- <a href="https://github.com/midnightmoet" target="_blank">**Lisa Miner**</a>
- <a href="https://github.com/CramerJ1470" target="_blank">**John Cramer**</a>
  <a href="https://github.com/richieart123" target="_blank">**Richie**</a>
+ <br />
+ <a href="https://github.com/CramerJ1470" target="_blank">**John Cramer**</a>
+<br />
  <a href="https://github.com/EnebeliEmmanuel" target="_blank">**Emmanuel Enebeli**</a>
+<br />
+ <a href="https://github.com/midnightmoet" target="_blank">**Lisa Miner**</a>
+ <br />
  <a href="https://github.com/EndlessLucky" target="_blank">**Travon Jackson**</a>
 
 ---
