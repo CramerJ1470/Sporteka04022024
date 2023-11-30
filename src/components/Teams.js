@@ -1,21 +1,26 @@
-import React from 'react';
-import { teamsList } from "../assets/teamsList";
+import React from "react";
+import Team from "./Team";
 
 function Teams({ teams }) {
-  console.log("teamsList:", teamsList);
+	console.log(`teams teams:`, teams);
 
-  return (
-    <div>
-      {teamsList.map((team) => (
-        <div key={team.id}>
-          <h2>{team.name}</h2>
-          <p>Country: {team.country}</p>
-          <p>Founded: {team.founded}</p>
-          {/* Add other team information as needed */}
-        </div>
-      ))}
-    </div>
-  );
+	return (
+		<>
+			<div>
+				<h1>Teams</h1>
+
+				<div className="Players">
+					<div id="playerBack" >
+						{teams.map((team) => {
+							return <Team key={team.team_id} team={team} />;
+						})}
+					</div>
+				</div>
+
+				<div className="bottommargin"></div>
+			</div>
+		</>
+	);
 }
 
 export default Teams;

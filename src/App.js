@@ -27,6 +27,7 @@ import Teams from "./components/Teams";
 import LandingPage from "./components/landingPage/landingPage";
 import TraderDashboard from "./components/dashboard/TraderDashboard";
 import ClubDashboard from "./components/clubDashboard/ClubDashboard";
+import TeamDetails from "./components/TeamDetails";
 
 // context
 import AuthContext from "./context/AuthContext";
@@ -128,6 +129,15 @@ function App() {
 									<Route
 										path="/leaderboard"
 										element={<LeaderboardPage />}
+									/>
+									<Route
+										path="/teamdetails/:id"
+										element={
+											<TeamDetails
+												teams={teams}
+												isAuth={isAuth}
+											/>
+										}
 									/>
 									<Route
 										path="/traderdashboard"

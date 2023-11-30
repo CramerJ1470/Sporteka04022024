@@ -163,7 +163,17 @@ div.country {
 	object-fit: cover;
 	vertical-align: top;
 	text-align: center;
+border-radius: 1vh;
+padding: 1vh;
+height: 35vh;
 }
 .Players {
-	max-width: 90vw;
+margin-bottom: -800px;
+
+  
+    
+}
+
+div.bottommargin {
+	height: 50px;
 }
