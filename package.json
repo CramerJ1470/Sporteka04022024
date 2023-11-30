@@ -48,5 +48,8 @@
   },
   "engines": {
     "node": "20.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.5"
   }
 }
