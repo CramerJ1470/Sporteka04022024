@@ -5,7 +5,7 @@ import "./footer.css";
 const Footer = () => {
   return (
     <div className="footer">
-    <p>&copy; 2023 SportEka. All rights reserved.</p>
+    <p>&copy; 2023 SportEka</p>
   </div>
   );
 };
