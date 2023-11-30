@@ -11,18 +11,13 @@ import LeaguesContext from "./context/LeaguesContext";
 import CountriesContext from "./context/CountriesContext";
 import CupsContext from "./context/CupsContext";
 import TeamsContext from "./context/TeamsContext";
-import {
-  getLeagues,
-  getCups,
-  getCountries,
-  getTeams,
-} from "./services";
+import { getLeagues, getCups, getCountries, getTeams } from "./services";
 
 import Connectmetamask from "./components/Connectmetamask";
 import Footer from "./components/footer/Footer";
 import HomePage from "./components/homePage/HomePage";
 import Countries from "./components/Countries";
-import LeaderboardPage from "./components/leaderboard/leaderboardPage";
+import LeaderboardPage from "./components/leaderboard/LeaderboardPage";
 import Leagues from "./components/Leagues";
 import Login from "./components/loginPage/Login";
 import Logout from "./components/Logout";
@@ -35,25 +30,24 @@ import TraderDashboard from "./components/dashboard/TraderDashboard";
 import ClubDashboard from "./components/clubDashboard/ClubDashboard";
 import TeamDetails from "./components/TeamDetails";
 
-
 function App() {
-  const [leagues, setLeagues] = useState([]);
-  const [countries, setCountries] = useState([]);
-  const [cups, setCups] = useState([]);
-  const [teams, setTeams] = useState([]);
-  const [isAuth, setIsAuth] = useState(localStorage.getItem("userData"));
+	const [leagues, setLeagues] = useState([]);
+	const [countries, setCountries] = useState([]);
+	const [cups, setCups] = useState([]);
+	const [teams, setTeams] = useState([]);
+	const [isAuth, setIsAuth] = useState(localStorage.getItem("userData"));
 
-  useEffect(() => {
-    getLeagues(setLeagues);
-    getCountries(setCountries);
-    getCups(setCups);
-    getTeams(setTeams);
-  }, []);
+	useEffect(() => {
+		getLeagues(setLeagues);
+		getCountries(setCountries);
+		getCups(setCups);
+		getTeams(setTeams);
+	}, []);
 
-  const updateLeagues = () => getLeagues(setLeagues);
-  const updateCountries = () => getCountries(setCountries);
-  const updateCups = () => getCups(setCups);
-  const updateTeams = () => getTeams(setTeams);
+	const updateLeagues = () => getLeagues(setLeagues);
+	const updateCountries = () => getCountries(setCountries);
+	const updateCups = () => getCups(setCups);
+	const updateTeams = () => getTeams(setTeams);
 
 	return (
 		<AuthContext.Provider value={{ isAuth: isAuth, setIsAuth }}>
@@ -247,4 +241,3 @@ function App() {
 }
 
 export default App;
-
