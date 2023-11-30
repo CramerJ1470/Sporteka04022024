@@ -1,85 +1,59 @@
-import React from "react";
-// css
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import "./components/registerPage/register.css";
 import "./components/navbar/navbar.css";
 import "./components/loginPage/login.css";
 import "./components/footer/footer.css";
 import "./css/workshop-styles.css";
-//packages
-import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
-// components
-import Connectmetamask from "./components/Connectmetamask";
-import Footer from "./components/footer/Footer";
-import HomePage from "./components/homePage/HomePage";
-import Countries from "./components/Countries";
-
-import LeaderboardPage from "./components/leaderboard/LeaderboardPage";
-import Leagues from "./components/Leagues";
-import Login from "./components/loginPage/Login";
-import Logout from "./components/Logout";
-// import Navbar from "./components/navbar/Navbar";
-import Players from "./components/Players";
-import Profile from "./components/profilePage/Profile";
-import Register from "./components/registerPage/Register";
-import Teams from "./components/Teams";
-import LandingPage from "./components/landingPage/landingPage";
-import TraderDashboard from "./components/dashboard/TraderDashboard";
-import ClubDashboard from "./components/clubDashboard/ClubDashboard";
-import TeamDetails from "./components/TeamDetails";
-
-// context
 import AuthContext from "./context/AuthContext";
 import LeaguesContext from "./context/LeaguesContext";
 import CountriesContext from "./context/CountriesContext";
 import CupsContext from "./context/CupsContext";
 import TeamsContext from "./context/TeamsContext";
-// services
+import {
+  getLeagues,
+  getCups,
+  getCountries,
+  getTeams,
+} from "./services";
 
-import { getLeagues } from "./services";
-import { getCups } from "./services";
-import { getCountries } from "./services";
-import { getTeams } from "./services";
+import Connectmetamask from "./components/Connectmetamask";
+import Footer from "./components/footer/Footer";
+import HomePage from "./components/homePage/HomePage";
+import Countries from "./components/Countries";
+import LeaderboardPage from "./components/leaderboard/leaderboardPage";
+import Leagues from "./components/Leagues";
+import Login from "./components/loginPage/Login";
+import Logout from "./components/Logout";
+import Players from "./components/Players";
+import Profile from "./components/profilePage/Profile";
+import Register from "./components/registerPage/Register";
+import Teams from "./components/teams/Teams";
+import LandingPage from "./components/landingPage/landingPage";
+import TraderDashboard from "./components/dashboard/TraderDashboard";
+import ClubDashboard from "./components/clubDashboard/ClubDashboard";
+import TeamDetails from "./components/TeamDetails";
+
 
 function App() {
-	const [leagues, setLeagues] = useState([]);
-	const [countries, setCountries] = useState([]);
-	const [cups, setCups] = useState([]);
-	const [teams, setTeams] = useState([]);
-	const [isAuth, setIsAuth] = useState(localStorage.getItem("userData"));
+  const [leagues, setLeagues] = useState([]);
+  const [countries, setCountries] = useState([]);
+  const [cups, setCups] = useState([]);
+  const [teams, setTeams] = useState([]);
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("userData"));
 
-	useEffect(() => {
-		getLeagues(setLeagues);
-	}, []);
+  useEffect(() => {
+    getLeagues(setLeagues);
+    getCountries(setCountries);
+    getCups(setCups);
+    getTeams(setTeams);
+  }, []);
 
-	const updateLeagues = () => {
-		getLeagues(setLeagues);
-	};
-
-	useEffect(() => {
-		getCountries(setCountries);
-	}, []);
-
-	const updateCountries = () => {
-		getCountries(setCountries);
-	};
-
-	useEffect(() => {
-		getCups(setCups);
-	}, []);
-
-	const updateCups = () => {
-		getCups(setCups);
-	};
-
-	useEffect(() => {
-		getTeams(setTeams);
-	}, []);
-
-	const updateTeams = () => {
-		getTeams(setTeams);
-	};
+  const updateLeagues = () => getLeagues(setLeagues);
+  const updateCountries = () => getCountries(setCountries);
+  const updateCups = () => getCups(setCups);
+  const updateTeams = () => getTeams(setTeams);
 
 	return (
 		<AuthContext.Provider value={{ isAuth: isAuth, setIsAuth }}>
@@ -273,3 +247,4 @@ function App() {
 }
 
 export default App;
+
