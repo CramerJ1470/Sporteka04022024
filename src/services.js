@@ -1,11 +1,10 @@
-import {teamsList} from "./assets/teamsList.js"
+import { teamsList } from "./assets/teamsList.js";
 
 const RAPIDAPI_API_FOOTBALL_KEY =
 	require("./configItems.js").RAPIDAPI_API_FOOTBALL_KEY;
 const RAPIDAPI_API_FOOTBALL_KEY_BETA =
 	require("./configItems.js").RAPIDAPI_API_FOOTBALL_KEY_BETA;
 const RAPIDAPI_ADDRESS = require("./configItems.js").RAPIDAPI_ADDRESS;
-
 
 /***********************User section******************* */
 export const login = async (username, password, applyFunc) => {
@@ -64,8 +63,9 @@ export const getCups = async (applyFunc) => {
 
 	try {
 		const response = await fetch(url, options);
-		let res = await response.text().then((cups) => {
-			console.log("inside cups",cups);applyFunc([...cups]);
+		await response.json().then((cups) => {
+			// console.log("inside cups",cups.response);
+			applyFunc([...cups.response]);
 		});
 	} catch (error) {
 		console.error(error);
@@ -84,8 +84,9 @@ export const getLeagues = async (applyFunc) => {
 
 	try {
 		const response = await fetch(url, options);
-		let res = await response.text().then((leagues) => {
-			console.log("inside leagues",leagues);applyFunc([...leagues]);
+		await response.json().then((leagues) => {
+			// console.log("inside leagues", leagues.response);
+			applyFunc([...leagues.response]);
 		});
 	} catch (error) {
 		console.error(error);
@@ -104,31 +105,34 @@ export const getCountries = async (applyFunc) => {
 
 	try {
 		const response = await fetch(url, options);
-		let res = await response.text().then((countries) => {
-			console.log("inside countries",countries);applyFunc([...countries]);
+		await response.json().then((countries) => {
+			// console.log("inside countries", countries.response);
+			applyFunc([...countries.response]);
 		});
 	} catch (error) {
 		console.error(error);
 	}
 };
 export const getTeams = async (applyFunc) => {
-	const url = 'https://api-football-v1.p.rapidapi.com/v2/teams/league/2';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': RAPIDAPI_API_FOOTBALL_KEY,
-		'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
-	}
-};
+	const url = "https://api-football-v1.p.rapidapi.com/v2/teams/league/2";
+	const options = {
+		method: "GET",
+		headers: {
+			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
+			"X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
+		},
+	};
 
-try {
-	const response = await fetch(url, options);
-	let res = await response.text().then((teams) => {
-		console.log("inside teams",teams);applyFunc([...teams]);
-	});
-} catch (error) {
-	console.error(error);
-}
+	try {
+		const response = await fetch(url, options);
+		
+		response.json().then((teams) => {
+			// console.log("inside teams", teams.api.teams);
+			applyFunc([...teams.api.teams]);
+		});
+	} catch (error) {
+		console.error(error);
+	}
 };
 
 /**********************Cart Section****************************/

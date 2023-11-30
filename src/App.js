@@ -32,6 +32,9 @@ import Register from "./components/registerPage/Register";
 import Teams from "./components/teams/Teams";
 import LandingPage from "./components/landingPage/landingPage";
 import TraderDashboard from "./components/dashboard/TraderDashboard";
+import ClubDashboard from "./components/clubDashboard/ClubDashboard";
+import TeamDetails from "./components/TeamDetails";
+
 
 function App() {
   const [leagues, setLeagues] = useState([]);
@@ -52,119 +55,195 @@ function App() {
   const updateCups = () => getCups(setCups);
   const updateTeams = () => getTeams(setTeams);
 
-  return (
-    <AuthContext.Provider value={{ isAuth: isAuth, setIsAuth }}>
-      <LeaguesContext.Provider
-        value={{
-          leagues: leagues,
-          setLeagues,
-          updateLeagues,
-        }}
-      >
-        <CountriesContext.Provider
-          value={{
-            countries: countries,
-            setCountries,
-            updateCountries,
-          }}
-        >
-          <CupsContext.Provider
-            value={{
-              cups: cups,
-              setCups,
-              updateCups,
-            }}
-          >
-            <TeamsContext.Provider
-              value={{
-                teams: teams,
-                setTeams,
-                updateTeams,
-              }}
-            >
-              <div className="App">
-                {/* <Navbar /> */}
-                <Routes>
-                  <Route
-                    path="/"
-                    element={
-                      <HomePage
-                        teams={teams}
-                        leagues={leagues}
-                        countries={countries}
-                        cups={cups}
-                      />
-                    }
-                  />
-                  <Route path="/leaderboard" element={<LeaderboardPage />} />
-                  <Route
-                    path="/traderdashboard"
-                    element={<TraderDashboard />}
-                  />
-                  <Route
-                    path="/home"
-                    element={
-                      <HomePage
-                        teams={teams}
-                        leagues={leagues}
-                        countries={countries}
-                        cups={cups}
-                      />
-                    }
-                  />
-                  {!isAuth ? (
-                    <>
-                      <Route path="/login" element={<Login />} />
-                      <Route path="/register" element={<Register />} />
-                      <Route
-                        path="/connectmetamask"
-                        element={<Connectmetamask />}
-                      />
-                      <Route
-                        path="/countries"
-                        element={<Countries countries={countries} />}
-                      />
-                      <Route
-                        path="/leaderboard"
-                        element={<LeaderboardPage />}
-                      />
-                      <Route path="/teams" element={<Teams teams={teams} />} />
-                      <Route
-                        path="/landingpage"
-                        element={<LandingPage />}
-                      />
-                      <Route path="/players" element={<Players />} />
-                    </>
-                  ) : (
-                    <>
-                      <Route path="/register" element={<Register />} />
-                      <Route
-                        path="/leagues"
-                        element={<Leagues leagues={leagues} />}
-                      />
-                      <Route
-                        path="/profile"
-                        element={<Profile isAuth={isAuth} />}
-                      />
-                      <Route
-                        path="/countries"
-                        element={<Countries countries={countries} />}
-                      />
-                      <Route
-                        path="/logout"
-                        element={<Logout isAuth={isAuth} />}
-                      />
-                    </>
-                  )}
-                </Routes>
-                <Footer />
-              </div>
-            </TeamsContext.Provider>
-          </CupsContext.Provider>
-        </CountriesContext.Provider>
-      </LeaguesContext.Provider>
-    </AuthContext.Provider>
-  );
+	return (
+		<AuthContext.Provider value={{ isAuth: isAuth, setIsAuth }}>
+			<LeaguesContext.Provider
+				value={{
+					leagues: leagues,
+					setLeagues,
+					updateLeagues,
+				}}
+			>
+				<CountriesContext.Provider
+					value={{
+						countries: countries,
+						setCountries,
+						updateCountries,
+					}}
+				>
+					<CupsContext.Provider
+						value={{
+							cups: cups,
+							setCups,
+							updateCups,
+						}}
+					>
+						<TeamsContext.Provider
+							value={{
+								teams: teams,
+								setTeams,
+								updateTeams,
+							}}
+						>
+							<div className="App">
+								{/* <Navbar /> */}
+
+								<Routes>
+									<Route
+										path="/"
+										element={
+											<HomePage
+												teams={teams}
+												leagues={leagues}
+												countries={countries}
+												cups={cups}
+											/>
+										}
+									/>
+									<Route
+										path="/leaderboard"
+										element={<LeaderboardPage />}
+									/>
+									<Route
+										path="/teamdetails/:id"
+										element={
+											<TeamDetails
+												teams={teams}
+												isAuth={isAuth}
+											/>
+										}
+									/>
+									<Route
+										path="/traderdashboard"
+										element={<TraderDashboard />}
+									/>
+									<Route
+										path="/home"
+										element={
+											<HomePage
+												teams={teams}
+												leagues={leagues}
+												countries={countries}
+												cups={cups}
+											/>
+										}
+									/>
+
+									{!isAuth ? (
+										<>
+											<Route
+												path="/login"
+												element={<Login />}
+											/>
+											<Route
+												path="/register"
+												element={<Register />}
+											/>
+											<Route
+												path="/connectmetamask"
+												element={<Connectmetamask />}
+											/>
+											<Route
+												path="/countries"
+												element={
+													<Countries
+														countries={countries}
+													/>
+												}
+											/>
+											<Route
+												path="/leaderboard"
+												element={<LeaderboardPage />}
+											/>
+											<Route
+												path="/teams"
+												element={
+													<Teams teams={teams} />
+												}
+											/>
+											<Route
+												path="/landingpage"
+												element={
+													<LandingPage
+														leagues={leagues}
+														cups={cups}
+														teams={teams}
+													/>
+												}
+											/>
+											<Route
+												path="/profile"
+												element={
+													<Profile isAuth={isAuth} />
+												}
+											/>
+											<Route
+												path="/clubdashboard"
+												element={
+													<ClubDashboard
+														teams={teams}
+													/>
+												}
+											/>
+											<Route
+												path="/players"
+												element={
+													<Players teams={teams} />
+												}
+											/>
+											<Route
+												path="/traderdashboard"
+												element={<TraderDashboard />}
+											/>
+										</>
+									) : (
+										<>
+											<Route
+												path="/register"
+												element={<Register />}
+											/>
+											<Route
+												path="/leagues"
+												element={
+													<Leagues
+														leagues={leagues}
+													/>
+												}
+											/>
+
+											<Route
+												path="/profile"
+												element={
+													<Profile isAuth={isAuth} />
+												}
+											/>
+											<Route
+												path="/countries"
+												element={
+													<Countries
+														countries={countries}
+													/>
+												}
+											/>
+
+											<Route
+												path="/logout"
+												element={
+													<Logout isAuth={isAuth} />
+												}
+											/>
+										</>
+									)}
+								</Routes>
+
+								<Footer />
+							</div>
+						</TeamsContext.Provider>
+					</CupsContext.Provider>
+				</CountriesContext.Provider>
+			</LeaguesContext.Provider>
+		</AuthContext.Provider>
+	);
 }
 
 export default App;
