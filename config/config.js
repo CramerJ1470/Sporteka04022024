@@ -8,7 +8,7 @@
 // 		authCookieName: "x-auth-token",
 // 	},
 // };
-const db = require("./config/keys").mongoURI;
+const db = require("./keys").mongoURI;
 
 mongoose
 	.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
