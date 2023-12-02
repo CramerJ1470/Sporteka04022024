@@ -1,0 +1,14 @@
+[
+	{
+		"uploadedMovies": [""],
+		"uploadedCharacters": [""],
+		"reviewsGiven": [
+			{
+				"Toy Story": "What a wonderful story about friendship. Great characters!."
+			}
+		],
+		"_id": "621470701228a12f023f1621",
+		"username": "John27",
+		"password": "Test123"
+	}
+]

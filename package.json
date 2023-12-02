@@ -1,0 +1,23 @@
+{
+	"name": "sportekastaticdataserver",
+	"description": "description",
+	"authors": "SillyNFTier",
+	"version": "1.0.0",
+	"main": "pathToMain",
+	"scripts": {
+		"start": "nodemon index.js",
+		"server": "nodemon index.js"
+	},
+	"dependencies": {
+		"bcryptjs": "*",
+		"body-parser": "*",
+		"cookie-parser": "*",
+		"cors": "*",
+		"dotenv": "^16.3.1",
+		"express": "*",
+		"express-validator": "*",
+		"jsonwebtoken": "*",
+		"mongoose": "*",
+		"path": "^0.12.7"
+	}
+}
