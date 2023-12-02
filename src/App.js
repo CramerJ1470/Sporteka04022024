@@ -21,7 +21,7 @@ import LeaderboardPage from "./components/leaderboard/LeaderboardPage";
 import Leagues from "./components/Leagues";
 import Login from "./components/loginPage/Login";
 import Logout from "./components/Logout";
-import Players from "./components/Players";
+import Players from "./components/players/Players";
 import Profile from "./components/profilePage/Profile";
 import Register from "./components/registerPage/Register";
 import Teams from "./components/teams/Teams";
