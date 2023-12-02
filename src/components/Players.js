@@ -3,25 +3,38 @@ import Player from "./Player";
 import { playersList } from "../assets/players";
 
 function Players() {
-  console.log(playersList);
+  // Define your grid container style
+  const gridContainerStyle = {
+    width: "70%",
+    display: "-ms-grid",
+    display: "grid",
+    margin: "0 auto",
+    msGridColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+    gridGap: "10px",
+    padding: "20px", // Adjusted padding for better spacing
+    border: "1px solid #ccc",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Added a subtle box shadow
+    marginTop: "20px", // Added top margin
+  };
+
 
   return (
     <>
-      <div>
-        <div className="Players">
-          <div id="playerBack">
-            {playersList.map((player) => {
-              console.log(player);
-              return <Player key={player.id} player={player.player} />;
-            })}
+      <div className="grid-container" style={{ ...gridContainerStyle }}>
+        {playersList.map((player) => (
+          <div key={player.id} className="grid-item">
+            <Player player={player.player} />
           </div>
-        </div>
+        ))}
       </div>
     </>
   );
 }
 
 export default Players;
+
+
 
 //-------------NOTES-------------------------//
 // 1. Added a `key` prop to the mapped `Player` components to ensure a unique identifier for each player
