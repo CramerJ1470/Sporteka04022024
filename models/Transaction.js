@@ -4,10 +4,10 @@ const Model = mongoose.model;
 const { String, Number, Boolean, ObjectId } = Schema.Types;
 
 const transactionSchema = new Schema({
-	user: {
-		type: mongoose.Types.ObjectId,
+	username: {
+		type: String,
 		required: true,
-		ref: "User",
+		
 	},
 	tokentype: {
 		type: String,
@@ -22,7 +22,8 @@ const transactionSchema = new Schema({
 		required: true,
 	},
 	date: {
-		time: { type: Date, default: Date.now },
+		type: Date,
+		require: false,
 	},
 	contractaddress: {
 		type: String,

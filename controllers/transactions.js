@@ -11,7 +11,7 @@ module.exports = {
 			req.body;
 		const { _id } = req.user;
 
-		models.Transactions.create({
+		models.Transaction.create({
 			user_id: _id,
 			username: user,
 			tokentype,

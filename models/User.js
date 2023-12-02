@@ -4,9 +4,8 @@ const saltRounds = 10;
 
 const Schema = mongoose.Schema;
 const Model = mongoose.model;
-const { String, Number, Boolean, ObjectId } = Schema.Types;
-const {Transaction} = require("./Transaction");
-
+const { String, Number, Boolean, ObjectId, Array } = Schema.Types;
+const { Transaction } = require("./Transaction");
 
 const userSchema = new Schema({
 	username: {
@@ -16,19 +15,19 @@ const userSchema = new Schema({
 	},
 	password: {
 		type: String,
-		require: true,
+		require: false,
 	},
 	userid: {
 		type: String,
-		required: true,
+		required: false,
 	},
 	transactions: {
-		type: mongoose.Types.ObjectId,
-		ref: "Transaction",
+		type: Array,
+		required: false,
 	},
 	accountBalance: {
 		type: Number,
-		required: true,
+		required: false,
 	},
 });
 

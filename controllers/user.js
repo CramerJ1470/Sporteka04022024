@@ -8,20 +8,14 @@ module.exports = {
 			.then((users) => res.send(users))
 			.catch(next);
 	},
-
 	post: {
 		register: (req, res, next) => {
-			const {
-				username,
-				password,
-				sportekaid,
-				transactions,
-				accountBalance,
-			} = req.body;
+			const { username, password, userid, transactions, accountBalance } =
+				req.body;
 			models.User.create({
 				username,
 				password,
-				sportekaid,
+				userid,
 				transactions,
 				accountBalance,
 			})
