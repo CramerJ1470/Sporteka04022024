@@ -7,7 +7,7 @@ function HomePage({ teams, leagues, countries, cups }) {
   useEffect(() => {
     // Call any initialization logic here
   }, []);
-
+console.log(teams);
   async function connectToWallet() {
     try {
       await connect();
