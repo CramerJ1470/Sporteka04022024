@@ -1,7 +1,7 @@
 const router = require("../routes");
 
 module.exports = (app) => {
-	app.use("/api2/user", router.user);
+	app.use("/apisnt/user", router.user);
 
 	app.use("/apisnt/transactions", router.transactions);
 

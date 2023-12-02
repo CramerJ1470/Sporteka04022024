@@ -5,9 +5,8 @@ const saltRounds = 10;
 const Schema = mongoose.Schema;
 const Model = mongoose.model;
 const { String, Number, Boolean, ObjectId } = Schema.Types;
+const {Transaction} = require("./Transaction");
 
-const Movie = require("./Movie");
-const Character = require("./Character");
 
 const userSchema = new Schema({
 	username: {

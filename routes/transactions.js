@@ -6,7 +6,7 @@ router.get("/", transactions.get);
 
 router.post("/", auth(), transactions.post);
 
-router.put("/:id", auth(), transactions.put);
+// router.put("/:id", auth(), transactions.put);
 
 router.delete("/:id", auth(), transactions.delete);
 

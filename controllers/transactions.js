@@ -2,7 +2,7 @@ const models = require("../models");
 
 module.exports = {
 	get: (req, res, next) => {
-		models.Character.find()
+		models.Transaction.find()
 			.then((transactions) => res.send(transactions))
 			.catch(next);
 	},
@@ -13,6 +13,7 @@ module.exports = {
 
 		models.Transactions.create({
 			user_id: _id,
+			username: user,
 			tokentype,
 			tokenvalue,
 			quantity,
@@ -33,17 +34,17 @@ module.exports = {
 			})
 			.catch(next);
 	},
-	put: (req, res, next) => {
-		const id = req.params.id;
-		const { user, tokentype, tokenvalue, quantity, date, contractaddress } =
-			req.body;
-		models.Character.updateOne(
-			{ _id: id },
-			{ user, tokentype, tokenvalue, quantity, date, contractaddress }
-		)
-			.then((updatedTransaction) => res.send(updatedTransaction))
-			.catch(next);
-	},
+	// put: (req, res, next) => {
+	// 	const id = req.params.id;
+	// 	const { user, tokentype, tokenvalue, quantity, date, contractaddress } =
+	// 		req.body;
+	// 	models.Transaction.updateOne(
+	// 		{ _id: id },
+	// 		{ user, tokentype, tokenvalue, quantity, date, contractaddress }
+	// 	)
+	// 		.then((updatedTransaction) => res.send(updatedTransaction))
+	// 		.catch(next);
+	// },
 
 	delete: (req, res, next) => {
 		const id = req.params.id;

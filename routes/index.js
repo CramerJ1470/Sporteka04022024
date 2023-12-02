@@ -1,5 +1,5 @@
 const user = require("./user");
-const orders = require("./transactions");
+const transactions = require("./transactions");
 
 module.exports = {
 	user,
