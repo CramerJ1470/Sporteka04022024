@@ -24,5 +24,5 @@ SportEka is an app in progress. Will add a better about section later
 To use this program (Note: This is a work in progress) :
 1. Clone this repo
 2. Run `npm i` to install the relevant packages
-3. Start the app with `npm start`. 
+3. Start the app with `npm run start`. 
 4. Visit the app via `localhost:3000` on your machine 
