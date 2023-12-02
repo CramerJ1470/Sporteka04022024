@@ -6,7 +6,7 @@
 	"main": "pathToMain",
 	"scripts": {
 		"start": "nodemon index.js",
-		"server": "nodemon index.js",
+		"server": "nodemon index.js"
 		
 	},
 	"dependencies": {
