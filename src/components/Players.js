@@ -5,40 +5,25 @@ import { playersList } from "../assets/players";
 function Players() {
   // Define your grid container style
   const gridContainerStyle = {
+    width: "70%",
+    display: "-ms-grid",
     display: "grid",
-    gap: "10px", // Decreased gap
-    padding: "10px", // Decreased padding
+    margin: "0 auto",
+    msGridColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+    gridGap: "10px",
+    padding: "20px", // Adjusted padding for better spacing
     border: "1px solid #ccc",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Added a subtle box shadow
     marginTop: "20px", // Added top margin
   };
 
-  // Define your grid item style
-  const gridItemStyle = {
-    background: "#f0f0f0",
-    padding: "10px", // Decreased padding
-    border: "1px solid #ccc",
-    textAlign: "center",
-  };
-
-  // Responsive styles using media queries
-  const responsiveStyles = {
-    "@media (min-width: 768px)": {
-      gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", // Default for larger screens
-    },
-    "@media (min-width: 1024px)": {
-      gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", // Increase columns at a larger screen size
-    },
-    "@media (min-width: 1200px)": {
-      gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", // Further increase columns at an even larger screen size
-    },
-    // Add more media queries as needed
-  };
 
   return (
     <>
-      <div className="grid-container" style={{ ...gridContainerStyle, ...responsiveStyles }}>
+      <div className="grid-container" style={{ ...gridContainerStyle }}>
         {playersList.map((player) => (
-          <div key={player.id} className="grid-item" style={gridItemStyle}>
+          <div key={player.id} className="grid-item">
             <Player player={player.player} />
           </div>
         ))}
