@@ -19,7 +19,7 @@ function Teams({teams}) {
 					>
 						<div className="team-container">
 							<img src={team.logo} alt="logo" />
-							<h1>{team.name}</h1>
+							<h2>{team.name}</h2>
 							<p></p>
 							<p>Country: {team.country}</p>
 							<p>Founded: {team.founded}</p>

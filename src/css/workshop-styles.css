@@ -140,11 +140,18 @@ aside .listItem:hover {
 h1 {
 	text-align: center;
 	color: #234465;
-	text-decoration: underline;
 	margin-bottom: 2%;
 }
+
+h2 {
+	text-decoration: none;
+	text-align: center;
+	color: #234465;
+	margin-bottom: 2%;
+}
+
 h3 {
-	color: blue;
+	color: black;
 }
 
 /* Main Styles */
@@ -212,8 +219,8 @@ h3 {
 	height: 3vh;
 	position: fixed;
 	bottom: 0;
-	background-color: rgb(229, 236, 214);
-	color: #234465;
+	background: red;
+	color: white;
 	border-top: 2px solid #234465;
 	border-bottom: 2px solid #234465;
 	margin-bottom: 0%;
