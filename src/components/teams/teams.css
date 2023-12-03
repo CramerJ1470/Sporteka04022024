@@ -5,20 +5,24 @@
   border: 1px solid #ccc;
   margin: 10px;
   padding: 15px;
-  width: 200px; /* Set a fixed width for each team container */
+  width: 250px; /* Fixed width for each team container */
   box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
 }
 
 /* Style for the team name */
 .team-name {
-  font-size: 1.5em;
+  font-size: 1em;
   color: #333;
+  text-decoration: none; /* Removed text underline */
 }
 
 /* Style for additional information */
 .team-info {
   margin-top: 10px;
   color: #666;
+  text-decoration: none; /* Removed text underline */
 }
 
 /* Style for the overall container */
@@ -27,13 +31,13 @@
   flex-wrap: wrap;
   justify-content: space-around;
   height: 80vh;
-
+  text-decoration: none; /* Removed text underline */
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
   .team-container {
-    width: 100%; /* Make the teams take full width on smaller screens */
-    margin: 0 30px;
+    width: 100%; /* Full width on smaller screens */
+    margin: 0 10px; /* Adjusted margin for better spacing */
   }
 }

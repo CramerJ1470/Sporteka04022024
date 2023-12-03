@@ -9,7 +9,7 @@ function Team({ team }) {
 		<Link key={team.team_id} className="linkbutton" to={`/teamdetails/${team.team_id}`}>
 			<div id={team.team_id} className="playercard">
 				<img src={team.logo} alt="logo" />
-				<h1>{team.name}</h1>
+				<h2>{team.name}</h2>
 				<p></p>
 				<p>Country: {team.country}</p>
 				<p>Founded: {team.founded}</p>
