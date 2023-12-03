@@ -1,20 +1,23 @@
-const config = require("./config/config");
+const config = require("./config/database");
 const dbConnection = require("./config/database");
+//const Stripe = require('stripe');//
 const app = require("express")();
 const createError = require("http-errors");
 const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const { signupValidation, loginValidation } = require("./validation.js");
 const express = require("express");
+require("dotenv").config();
 
-dbConnection()
-	.then(() => {
+const port = process.env.PORT;
+
+dbConnection().then(() => {
 		require("./config/express")(app);
 
 		require("./config/routes")(app);
 		app.use(express.json());
 		app.use("/", express.static(__dirname + "/"));
+		//app.use('/', serveStatic(path.join(__dirname, '/public')));
 		app.use(function (err, req, res, next) {
 			console.error(err);
 			res.status(500).send(err.message);
@@ -36,8 +39,8 @@ dbConnection()
 			});
 		});
 		app.listen(
-			config.port,
-			console.log(`Listening on port ${config.port}!`)
+			port,
+			console.log(`Listening on port ${port}!`)
 		);
 	})
 	.catch(console.error);
