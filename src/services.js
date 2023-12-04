@@ -8,12 +8,13 @@ const RAPIDAPI_ADDRESS = require("./configItems.js").RAPIDAPI_ADDRESS;
 
 /***********************User section******************* */
 export const login = async (username, password, applyFunc) => {
-	const url = "http://localhost:8090/api/user/login";
+	const url = "http://localhost:8090/apisnt/user/login";
 	const body = JSON.stringify({ username, password });
 	const headers = { "Content-Type": "application/json" };
 	const res = await fetch(url, { method: "POST", body, headers });
 	if (res.ok) {
 		const result = await res.json();
+		console.log(result);
 		localStorage.setItem(
 			"userData",
 			JSON.stringify({
@@ -29,9 +30,9 @@ export const login = async (username, password, applyFunc) => {
 	}
 };
 
-export const register = async (username, email, password) => {
-	const url = "http://localhost:8090/api/user/register";
-	const body = JSON.stringify({ username, email, password });
+export const register = async (username, password, userType) => {
+	const url = "http://localhost:8090/apisnt/user/register";
+	const body = JSON.stringify({ username, password ,userType});
 	const headers = { "Content-Type": "application/json" };
 	const res = await fetch(url, { method: "POST", body, headers });
 	const result = await res.json();
@@ -39,7 +40,7 @@ export const register = async (username, email, password) => {
 };
 
 export const logout = async () => {
-	const url = "http://localhost:8090/api/user/logout";
+	const url = "http://localhost:8090/apisnt/user/logout";
 	const { token } = JSON.parse(localStorage.getItem("userData"));
 	const headers = {
 		"Content-Type": "application/json",
@@ -125,7 +126,7 @@ export const getTeams = async (applyFunc) => {
 
 	try {
 		const response = await fetch(url, options);
-		
+
 		response.json().then((teams) => {
 			// console.log("inside teams", teams.api.teams);
 			applyFunc([...teams.api.teams]);

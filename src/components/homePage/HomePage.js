@@ -1,12 +1,25 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect,useContext } from "react";
+
 import "./home.css";
 import Footer from "../footer/Footer";
+import AuthContext from "../../context/AuthContext";
+import { Link,NavLink, useNavigate } from "react-router-dom";
+import {logout} from "../../services";
 
-function HomePage({ teams, leagues, countries, cups }) {
+
+function HomePage({ teams, leagues, countries, cups}) {
   useEffect(() => {
     // Call any initialization logic here
   }, []);
+  
+ 
+  
+  const { setIsAuth, isAuth } = useContext(AuthContext);
+
+  if (localStorage.userData) {setIsAuth(true);}
+
+
+	const navigate = useNavigate();
 console.log(teams);
   async function connectToWallet() {
     try {
@@ -15,7 +28,16 @@ console.log(teams);
       console.error(error);
     }
   }
+  const logoutHandler = async () => {
+		const res = await logout();
+		console.log(res);
+		setIsAuth(false);
+		navigate("/");
+	};
 
+function leaderNavigate() {
+  navigate("/leaderboard");
+}
   async function connect() {
     if (typeof window.ethereum !== "undefined") {
       try {
@@ -57,19 +79,20 @@ console.log(teams);
           <p className="centPage1 top kavoon">Sport Blockchain Platform</p>
         </div>
       </span>
-
       <div className="buttons">
-        {/* Register button */}
+     
+       {!isAuth ? (<>
+      
         <Link to="/register" className="button">
           Register
         </Link>
-
-        {/* Login button */}
         <Link to="/login" className="button">
           Login
         </Link>
+        </>
 
-        {/* Connect to Wallet button */}
+        ):(
+          <>
         <Link
           id="connectButton"
           className="button"
@@ -77,9 +100,31 @@ console.log(teams);
         >
           Connect to Wallet
         </Link>
+        <Link
+          id="LeaderButton"
+          className="button"
+          onClick={leaderNavigate}
+        >
+          Go to leaderboard
+        </Link>
+        <Link
+          id="LogoutButton"
+          className="button"
+          onClick={logoutHandler}
+        >
+          Logout 
+        </Link>
+          </>
+        )
+      }
+      
       </div>
 
-      {/* Add the footer */}
+    
+
+    
+
+   
       <Footer />
     </div>
   );

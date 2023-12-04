@@ -1,15 +1,22 @@
 import React from "react";
-import { useState } from "react";
+import { useState ,useContext} from "react";
 import { GoogleLogin } from "@leecheuk/react-google-login";
 import Navbar from "../navbar/Navbar";
+import { login } from "../../services";
+import { Link,NavLink, useNavigate } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
 
 const LoginPage = () => {
-	const [loginIdentifier, setLoginIdentifier] = useState(""); // Changed from 'username' to 'loginIdentifier'
+	const { setIsAuth, isAuth } = useContext(AuthContext);
+	const navigate = useNavigate();
+	// Changed from 'username' to 'loginIdentifier'
 	const [password, setPassword] = useState("");
-
+	const [username, setUserName] = useState("");
 	const handleLogin = (e) => {
 		e.preventDefault();
-		console.log("Logging in with:", { loginIdentifier, password });
+
+		login(username, password,setIsAuth);
+		navigate("/");
 	};
 
 	const handleGoogleLogin = (googleData) => {
@@ -28,11 +35,11 @@ const LoginPage = () => {
 			<div>
 				<form onSubmit={handleLogin}>
 					<label>
-						Username or Email: {/* Updated label */}
+						Email: {/* Updated label */}
 						<input
 							type="text"
-							value={loginIdentifier}
-							onChange={(e) => setLoginIdentifier(e.target.value)}
+							value={username}
+							onChange={(e) => setUserName(e.target.value)}
 						/>
 					</label>
 					<br />
@@ -72,8 +79,6 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-
-
 
 // ----------------------------- //
 // !! NOTES ON LOGINPAGE.JS !! //

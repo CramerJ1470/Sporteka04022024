@@ -91,6 +91,7 @@ function App() {
 												leagues={leagues}
 												countries={countries}
 												cups={cups}
+												isAuth={isAuth}
 											/>
 										}
 									/>
@@ -111,6 +112,8 @@ function App() {
 										path="/traderdashboard"
 										element={<TraderDashboard />}
 									/>
+									<Route path="/login" element={<Login />} />
+
 									<Route
 										path="/home"
 										element={
@@ -119,6 +122,7 @@ function App() {
 												leagues={leagues}
 												countries={countries}
 												cups={cups}
+												isAuth={isAuth}
 											/>
 										}
 									/>
@@ -131,7 +135,9 @@ function App() {
 											/>
 											<Route
 												path="/register"
-												element={<Register />}
+												element={
+													<Register isAuth={isAuth} />
+												}
 											/>
 											<Route
 												path="/connectmetamask"
