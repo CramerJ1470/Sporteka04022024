@@ -9,20 +9,14 @@ module.exports = {
 			.catch(next);
 	},
 	post: {
-		register: (req, res, next) => {
-			const { username, password, userid, transactions, accountBalance } =
-				req.body;
-			models.User.create({
-				username,
-				password,
-				userid,
-				transactions,
-				accountBalance,
-			})
-				.then((createdUser) => res.send(createdUser))
-				.catch(next);
-		},
-
+		post: {
+			register: (req, res, next) => {
+				const { username,password,userType } = req.body;
+				models.User.create({ username,password,userType })
+					.then((createdUser) => res.send(createdUser))
+					.catch(next);
+			},
+		
 		login: (req, res, next) => {
 			const { username, password } = req.body;
 			models.User.findOne({ username })
@@ -69,4 +63,5 @@ module.exports = {
 			.then((removedUser) => res.send(removedUser))
 			.catch(next);
 	},
+}
 };

@@ -15,11 +15,11 @@ const userSchema = new Schema({
 	},
 	password: {
 		type: String,
-		require: false,
+		require: true,
 	},
-	userid: {
+	userType: {
 		type: String,
-		required: false,
+		require: false,
 	},
 	transactions: {
 		type: Array,

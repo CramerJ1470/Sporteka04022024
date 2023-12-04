@@ -11,7 +11,6 @@ const config = {
 	},
 };
 
-
 module.exports = () => {
 	console.log(`dbURL: `, config.development.dbURL);
 	return mongoose.connect(config.development.dbURL, {

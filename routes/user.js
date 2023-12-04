@@ -6,9 +6,9 @@ const { signupValidation, loginValidation } = require("../validation");
 
 router.get("/", controllers.user.get);
 
-router.post("/register", signupValidation, controllers.user.post.register);
+router.post("/register", controllers.user.post.register);
 
-router.post("/login", loginValidation, controllers.user.post.login);
+router.post("/login", controllers.user.post.login);
 
 router.post("/logout", controllers.user.post.logout);
 
