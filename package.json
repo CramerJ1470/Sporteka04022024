@@ -1,0 +1,17 @@
+{
+	"name": "sporteka12032023",
+	"version": "1.0.0",
+	"description": "Sporteka 12.02.2023 Hardhat.Server.Client",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"client": "cd client && npm run start",
+		"backend": "cd server && npm run server",
+		"start": "concurrently \"npm run backend\"  \"npm run client\""
+	},
+	"author": "Backend -John Cramer, Frontend-Lisa Miner, Smart Contracts-KJ Crypto",
+	"license": "ISC",
+	"dependencies": {
+		"concurrently": "^7.6.0"
+	}
+}
