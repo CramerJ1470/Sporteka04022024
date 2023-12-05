@@ -29,6 +29,8 @@ import LandingPage from "./components/landingPage/landingPage";
 import TraderDashboard from "./components/dashboard/TraderDashboard";
 import ClubDashboard from "./components/clubDashboard/ClubDashboard";
 import TeamDetails from "./components/TeamDetails";
+import RegisteredHomePage from "./components/registerHomePage/RegisteredHomePage";
+import LoggedInHomePage from "./components/loggedInHomePage/LoggedInHomePage";
 
 function App() {
 	const [leagues, setLeagues] = useState([]);
@@ -96,18 +98,20 @@ function App() {
 										}
 									/>
 									<Route
-										path="/leaderboard"
-										element={<LeaderboardPage />}
-									/>
-									<Route
-										path="/teamdetails/:id"
+										path="/registeredhomepage"
 										element={
-											<TeamDetails
-												teams={teams}
+											<RegisteredHomePage
 												isAuth={isAuth}
 											/>
 										}
 									/>
+									<Route
+										path="/loggedinhomepage"
+										element={
+											<LoggedInHomePage isAuth={isAuth} />
+										}
+									/>
+
 									<Route
 										path="/traderdashboard"
 										element={<TraderDashboard />}
@@ -153,7 +157,12 @@ function App() {
 											/>
 											<Route
 												path="/leaderboard"
-												element={<LeaderboardPage />}
+												element={
+													<LeaderboardPage
+														isAuth={isAuth}
+														teams={teams}
+													/>
+												}
 											/>
 											<Route
 												path="/teams"
@@ -195,22 +204,60 @@ function App() {
 												path="/traderdashboard"
 												element={<TraderDashboard />}
 											/>
+											<Route
+												path="/leaderboard"
+												element={<LeaderboardPage />}
+											/>
 										</>
 									) : (
 										<>
+											<Route
+												path="/teamdetails/:id"
+												element={
+													<TeamDetails
+														teams={teams}
+														isAuth={isAuth}
+													/>
+												}
+											/>
+											<Route
+												path="/leaderboard"
+												element={
+													<LeaderboardPage
+														isAuth={isAuth}
+														teams={teams}
+													/>
+												}
+											/>
+
+											<Route
+												path="/loggedinhomepage"
+												element={
+													<LoggedInHomePage
+														isAuth={isAuth}
+													/>
+												}
+											/>
 											<Route
 												path="/register"
 												element={<Register />}
 											/>
 											<Route
-												path="/leagues"
+												path="/teams"
 												element={
-													<Leagues
+													<Teams teams={teams} />
+												}
+											/>
+											<Route
+												path="/landingpage"
+												element={
+													<LandingPage
 														leagues={leagues}
+														cups={cups}
+														teams={teams}
 													/>
 												}
 											/>
-
 											<Route
 												path="/profile"
 												element={
@@ -218,12 +265,26 @@ function App() {
 												}
 											/>
 											<Route
-												path="/countries"
+												path="/clubdashboard"
 												element={
-													<Countries
-														countries={countries}
+													<ClubDashboard
+														teams={teams}
 													/>
 												}
+											/>
+											<Route
+												path="/players"
+												element={
+													<Players teams={teams} />
+												}
+											/>
+											<Route
+												path="/traderdashboard"
+												element={<TraderDashboard />}
+											/>
+											<Route
+												path="/leaderboard"
+												element={<LeaderboardPage />}
 											/>
 
 											<Route

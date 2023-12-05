@@ -1,23 +1,15 @@
 import React, { useEffect, useContext, useState } from "react";
 
-import "./home.css";
+import "./loggedInHomePage.css";
 import Footer from "../footer/Footer";
 import AuthContext from "../../context/AuthContext";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../services";
 
-function HomePage({ teams, leagues, countries, cups }) {
-	useEffect(() => {
-		// Call any initialization logic here
-	}, []);
-
-	const { setIsAuth, isAuth } = useContext(AuthContext);
-
-
-	
-
+function LoggedInHomePage({ teams }) {
 	const navigate = useNavigate();
-	console.log(teams);
+	const { isAuth, setIsAuth } = useContext(AuthContext);
+
 	async function connectToWallet() {
 		try {
 			await connect();
@@ -32,9 +24,6 @@ function HomePage({ teams, leagues, countries, cups }) {
 		navigate("/");
 	};
 
-	function leaderNavigate() {
-		navigate("/leaderboard");
-	}
 	async function connect() {
 		if (typeof window.ethereum !== "undefined") {
 			try {
@@ -80,40 +69,50 @@ function HomePage({ teams, leagues, countries, cups }) {
 				</div>
 			</span>
 			<div className="buttons">
-				{!isAuth ? (
-					<>
-						<Link to="/register" className="button">
-							Register
-						</Link>
-						<Link to="/login" className="button">
-							Login
-						</Link>
-					</>
-				) : (
-					<>
-						<Link
-							id="connectButton"
-							className="button"
-							onClick={connectToWallet}
-						>
-							Connect to Wallet
-						</Link>
-						<Link
-							id="LeaderButton"
-							className="button"
-							onClick={leaderNavigate}
-						>
-							Go to leaderboard
-						</Link>
-						<Link
-							id="LogoutButton"
-							className="button"
-							onClick={logoutHandler}
-						>
-							Logout
-						</Link>
-					</>
-				)}
+				<>
+					<Link
+						id="connectButton"
+						className="button"
+						onClick={connectToWallet}
+					>
+						Connect to Wallet
+					</Link>
+					<NavLink
+						to="/leaderboard"
+						id="leaderButton"
+						className="button"
+					>
+						Go to leaderboard
+					</NavLink>
+					<Link
+						id="logoutButton"
+						className="button"
+						onClick={logoutHandler}
+					>
+						Logout
+					</Link>
+				</>
+			</div>
+			<div className="buttons">
+				<>
+					<Link to="/matches" id="matchesButton" className="button">
+						Matches
+					</Link>
+					<NavLink
+						to="/traderdashboard"
+						id="dashboardButton"
+						className="button"
+					>
+						Trader Dashboard
+					</NavLink>
+					<NavLink
+						to="/profile"
+						id="profileButton"
+						className="button"
+					>
+						Profile
+					</NavLink>
+				</>
 			</div>
 
 			<Footer />
@@ -121,7 +120,7 @@ function HomePage({ teams, leagues, countries, cups }) {
 	);
 }
 
-export default HomePage;
+export default LoggedInHomePage;
 
 //??-------------NOTES-------------------------??//
 // 1. Added an empty `useEffect` hook for any potential future initializing logic

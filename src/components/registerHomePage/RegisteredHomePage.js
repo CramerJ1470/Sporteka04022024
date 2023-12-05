@@ -1,23 +1,20 @@
 import React, { useEffect, useContext, useState } from "react";
 
-import "./home.css";
+import "./registeredHomePage.css";
 import Footer from "../footer/Footer";
 import AuthContext from "../../context/AuthContext";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../services";
 
-function HomePage({ teams, leagues, countries, cups }) {
-	useEffect(() => {
-		// Call any initialization logic here
-	}, []);
-
-	const { setIsAuth, isAuth } = useContext(AuthContext);
 
 
+function RegisteredHomePage() {
+	
+	
 	
 
 	const navigate = useNavigate();
-	console.log(teams);
+
 	async function connectToWallet() {
 		try {
 			await connect();
@@ -28,7 +25,7 @@ function HomePage({ teams, leagues, countries, cups }) {
 	const logoutHandler = async () => {
 		const res = await logout();
 		console.log(res);
-		setIsAuth(false);
+		isAuth = false;
 		navigate("/");
 	};
 
@@ -80,40 +77,13 @@ function HomePage({ teams, leagues, countries, cups }) {
 				</div>
 			</span>
 			<div className="buttons">
-				{!isAuth ? (
-					<>
-						<Link to="/register" className="button">
-							Register
-						</Link>
+				
 						<Link to="/login" className="button">
 							Login
 						</Link>
-					</>
-				) : (
-					<>
-						<Link
-							id="connectButton"
-							className="button"
-							onClick={connectToWallet}
-						>
-							Connect to Wallet
-						</Link>
-						<Link
-							id="LeaderButton"
-							className="button"
-							onClick={leaderNavigate}
-						>
-							Go to leaderboard
-						</Link>
-						<Link
-							id="LogoutButton"
-							className="button"
-							onClick={logoutHandler}
-						>
-							Logout
-						</Link>
-					</>
-				)}
+			
+				
+			
 			</div>
 
 			<Footer />
@@ -121,7 +91,7 @@ function HomePage({ teams, leagues, countries, cups }) {
 	);
 }
 
-export default HomePage;
+export default RegisteredHomePage;
 
 //??-------------NOTES-------------------------??//
 // 1. Added an empty `useEffect` hook for any potential future initializing logic

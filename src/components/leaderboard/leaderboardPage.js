@@ -2,7 +2,7 @@ import React from "react";
 import "./leaderboard.css"; // Import the specific leaderboard styles
 import Navbar from "../navbar/Navbar"; // Import the navbar component
 
-const LeaderboardPage = () => {
+const LeaderboardPage = ({isAuth,teams}) => {
   // Sample leaderboard data
   const leaderboardData = [
     { name: "Player 1", score: 500, ranking: 1 },

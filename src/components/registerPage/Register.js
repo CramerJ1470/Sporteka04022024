@@ -8,6 +8,8 @@ import { register } from "../../services";
 import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
+
+	
 	const [registered, setRegistered] = useState("false");
 	const [username, setUserName] = useState("");
 	const [password, setPassword] = useState("");
@@ -15,6 +17,7 @@ const RegisterPage = () => {
 	//   const [userName, setUserName] = useState(""); // New state for user name
 	const [userType, setUserType] = useState("trader"); // Default to "Trader"
 	const [passwordMatchError, setPasswordMatchError] = useState(false);
+
 
 	const navigate = useNavigate();
 	const handleRegister = (e) => {
@@ -37,7 +40,8 @@ const RegisterPage = () => {
 		localStorage.setItem("registered", true);
 		register(username, password, userType);
 setRegistered(true);
-		navigate("/");
+		navigate("/registeredhomepage",{registered:registered,});
+
 	};
 
 	const handleGoogleRegister = (googleData) => {

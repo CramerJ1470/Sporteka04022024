@@ -11,6 +11,7 @@ export const login = async (username, password, applyFunc) => {
 	const url = "http://localhost:8090/apisnt/user/login";
 	const body = JSON.stringify({ username, password });
 	const headers = { "Content-Type": "application/json" };
+
 	const res = await fetch(url, { method: "POST", body, headers });
 	if (res.ok) {
 		const result = await res.json();
@@ -19,11 +20,13 @@ export const login = async (username, password, applyFunc) => {
 			"userData",
 			JSON.stringify({
 				token: result.token,
-				id: result.user._id,
-				username: result.user.username,
+				username: result.username,
+				_id:result._id
 			})
 		);
-		console.log(`localStorage: `, localStorage);
+
+		console.log(localStorage.getItem("userData"));
+
 		applyFunc(true);
 	} else {
 		applyFunc(false);
@@ -32,7 +35,7 @@ export const login = async (username, password, applyFunc) => {
 
 export const register = async (username, password, userType) => {
 	const url = "http://localhost:8090/apisnt/user/register";
-	const body = JSON.stringify({ username, password ,userType});
+	const body = JSON.stringify({ username, password, userType });
 	const headers = { "Content-Type": "application/json" };
 	const res = await fetch(url, { method: "POST", body, headers });
 	const result = await res.json();

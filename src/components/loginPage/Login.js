@@ -1,24 +1,26 @@
 import React from "react";
-import { useState ,useContext} from "react";
+import { useState, useContext } from "react";
 import { GoogleLogin } from "@leecheuk/react-google-login";
 import Navbar from "../navbar/Navbar";
 import { login } from "../../services";
-import { Link,NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 
 const LoginPage = () => {
-	const { setIsAuth, isAuth } = useContext(AuthContext);
+	const { isAuth, setIsAuth } = useContext(AuthContext);
 	const navigate = useNavigate();
+
 	// Changed from 'username' to 'loginIdentifier'
 	const [password, setPassword] = useState("");
 	const [username, setUserName] = useState("");
+
 	const handleLogin = (e) => {
 		e.preventDefault();
+console.log(username,password);
+		login(username, password, setIsAuth);
 
-		login(username, password,setIsAuth);
-		navigate("/");
+		navigate("/loggedinhomepage");
 	};
-
 	const handleGoogleLogin = (googleData) => {
 		// Implement Google login logic here
 		console.log("Google login data:", googleData);
