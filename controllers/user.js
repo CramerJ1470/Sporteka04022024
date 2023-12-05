@@ -9,17 +9,17 @@ module.exports = {
 			.catch(next);
 	},
 	post: {
-		post: {
-			register: (req, res, next) => {
-				const { username,password,userType } = req.body;
-				models.User.create({ username,password,userType })
-					.then((createdUser) => res.send(createdUser))
-					.catch(next);
-			},
-		
+		register: (req, res, next) => {
+			const { username, password, userType } = req.body;
+			models.User.create({ username, password, userType })
+				.then((createdUser) => res.send(createdUser))
+				.catch(next);
+		},
+
 		login: (req, res, next) => {
-			const { username, password } = req.body;
-			models.User.findOne({ username })
+			const { username, password} = req.body;
+			
+			models.User.findOne({username })
 				.then((user) =>
 					Promise.all([user, user.matchPassword(password)])
 				)
@@ -28,11 +28,12 @@ module.exports = {
 						res.status(401).send("Invalid password");
 						return;
 					}
-
+				
 					const token = utils.jwt.createToken({ id: user._id });
 					// res.cookie(config.authCookieName, token).send(user);
 
-					res.send({ user, token });
+					res.send({ token,user });
+				
 				})
 				.catch(next);
 		},
@@ -63,5 +64,4 @@ module.exports = {
 			.then((removedUser) => res.send(removedUser))
 			.catch(next);
 	},
-}
 };

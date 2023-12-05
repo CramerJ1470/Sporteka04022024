@@ -1,4 +1,4 @@
-const controllers = require("../controllers/");
+const controllers = require("../controllers");
 const router = require("express").Router();
 const bodyParser = require("body-parser");
 const cors = require("cors");

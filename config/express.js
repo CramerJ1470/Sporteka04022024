@@ -1,8 +1,8 @@
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const secret = "secret";
-require("dotenv").config();
+const env = process.env.NODE_ENV || "development";
+
 
 module.exports = (app) => {
 	app.use(cors());

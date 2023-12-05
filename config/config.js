@@ -14,4 +14,4 @@ const config = {
 // 	.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
 // 	.then(() => console.log("MongoDB connected"))
 // 	.catch((err) => console.log(err));
-// module.exports = config[env];
+module.exports = config[env];
