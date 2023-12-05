@@ -1,0 +1,174 @@
+.App {
+	width: 100%;
+	text-align: center;
+}
+
+.App-logo {
+	height: 40vmin;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
+}
+
+/* @media only screen and (max-width: 280px) {
+	p.centPage2 {
+		 
+		font-size: 20vw;
+	}
+	p.centPage1 {
+		 
+		font-size: 6vw;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	p.centPage2 {
+		 
+		font-size: 20vw;
+	}
+	p.centPage1 {
+		 
+		font-size: 6vw;
+	}
+} */
+@media only screen and (max-width: 900px) {
+	.App {
+		width: 100%;
+		text-align: center;
+	}
+	p.centPage2 {
+		margin-top: 15vh;
+		font-size: 15vw;
+	}
+	p.centPage1 {
+		font-size: 5.25vw;
+		text-align: center;
+	}
+}
+
+.App-header {
+	background: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+
+.App-link {
+	color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+button {
+	text-align: center;
+	font-size: 40%;
+	position: relative;
+	width: 200%;
+	height: auto;
+	margin: 2rem;
+}
+
+button.centPage {
+	position: relative;
+	border: 1px solid black;
+	border-radius: 5rem;
+}
+.centPage2 {
+	text-align: center;
+	font-size: 10vw;
+	width: 100%;
+	height: auto;
+	margin-top: 5vw;
+	display: flexbox;
+	border-radius: 5%;
+	color: red;
+}
+.centPage1 {
+	text-align: center;
+	font-size: 3vw;
+	display: flexbox;
+	width: 100%;
+	height: auto;
+	margin: 0%;
+	border-radius: 5rem;
+}
+
+.kavoon {
+	font-family: "Kavoon", sans-serif;
+}
+
+.top {
+	width: 100%;
+	text-align: center;
+}
+
+div.country {
+	display: inline-block;
+
+	background-color: white;
+	box-shadow: 5px 5px 5px #232b33;
+	text-shadow: 2px 2px 2px #607588;
+
+	min-width: 16rem;
+	max-width: 16rem;
+	margin: 20px;
+
+	object-fit: cover;
+	vertical-align: top;
+	text-align: center;
+}
+
+.Countries {
+	width: 100%;
+	/* border:1px solid red; */
+	height: 45vh;
+}
+
+.imagename {
+	height: 100%;
+}
+.imagename h2 {
+	font-style: bolder;
+	color: blue;
+	text-align: center;
+}
+
+.playercard {
+	display: inline-block;
+
+	background-color: white;
+	box-shadow: 5px 5px 5px #232b33;
+	text-shadow: 2px 2px 2px #607588;
+
+	min-width: 16rem;
+	max-width: 16rem;
+	margin: 20px;
+
+	object-fit: cover;
+	vertical-align: top;
+	text-align: center;
+	border-radius: 1vh;
+	padding: 1vh;
+	height: 35vh;
+}
+.Players {
+	margin-bottom: -800px;
+}
+
+div.bottommargin {
+	height: 50px;
+}
