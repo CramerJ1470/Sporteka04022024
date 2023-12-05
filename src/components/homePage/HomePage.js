@@ -13,9 +13,6 @@ function HomePage({ teams, leagues, countries, cups }) {
 
 	const { setIsAuth, isAuth } = useContext(AuthContext);
 
-
-	
-
 	const navigate = useNavigate();
 	console.log(teams);
 	async function connectToWallet() {

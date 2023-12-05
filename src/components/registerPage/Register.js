@@ -1,4 +1,4 @@
-import React, { useState,useContext } from "react";
+import React, { useState, useContext } from "react";
 import "./register.css"; // Import the common styles
 import { GoogleLogin } from "@leecheuk/react-google-login";
 import AuthContext from "../../context/AuthContext";
@@ -8,8 +8,6 @@ import { register } from "../../services";
 import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
-
-	
 	const [registered, setRegistered] = useState("false");
 	const [username, setUserName] = useState("");
 	const [password, setPassword] = useState("");
@@ -17,7 +15,6 @@ const RegisterPage = () => {
 	//   const [userName, setUserName] = useState(""); // New state for user name
 	const [userType, setUserType] = useState("trader"); // Default to "Trader"
 	const [passwordMatchError, setPasswordMatchError] = useState(false);
-
 
 	const navigate = useNavigate();
 	const handleRegister = (e) => {
@@ -39,9 +36,8 @@ const RegisterPage = () => {
 		}
 		localStorage.setItem("registered", true);
 		register(username, password, userType);
-setRegistered(true);
-		navigate("/registeredhomepage",{registered:registered,});
-
+		setRegistered(true);
+		navigate("/registeredhomepage", { registered: registered });
 	};
 
 	const handleGoogleRegister = (googleData) => {

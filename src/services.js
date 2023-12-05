@@ -21,7 +21,7 @@ export const login = async (username, password, applyFunc) => {
 			JSON.stringify({
 				token: result.token,
 				username: result.username,
-				_id:result._id
+				_id: result._id,
 			})
 		);
 

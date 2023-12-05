@@ -6,13 +6,7 @@ import AuthContext from "../../context/AuthContext";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../services";
 
-
-
 function RegisteredHomePage() {
-	
-	
-	
-
 	const navigate = useNavigate();
 
 	async function connectToWallet() {
@@ -25,7 +19,7 @@ function RegisteredHomePage() {
 	const logoutHandler = async () => {
 		const res = await logout();
 		console.log(res);
-		isAuth = false;
+		 
 		navigate("/");
 	};
 
@@ -77,13 +71,9 @@ function RegisteredHomePage() {
 				</div>
 			</span>
 			<div className="buttons">
-				
-						<Link to="/login" className="button">
-							Login
-						</Link>
-			
-				
-			
+				<Link to="/login" className="button">
+					Login
+				</Link>
 			</div>
 
 			<Footer />

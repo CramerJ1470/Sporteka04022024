@@ -36,18 +36,17 @@
 	}
 } */
 @media only screen and (max-width: 900px) {
-
-		.App {
-			width: 100%;
-			text-align: center;
-		}
-		p.centPage2 {
-			margin-top: 15vh;
-			font-size: 15vw;
-		}
-		p.centPage1 {
-			font-size: 5.25vw;
-			text-align: center;
+	.App {
+		width: 100%;
+		text-align: center;
+	}
+	p.centPage2 {
+		margin-top: 15vh;
+		font-size: 15vw;
+	}
+	p.centPage1 {
+		font-size: 5.25vw;
+		text-align: center;
 	}
 }
 
@@ -87,7 +86,6 @@ button.centPage {
 	position: relative;
 	border: 1px solid black;
 	border-radius: 5rem;
-
 }
 .centPage2 {
 	text-align: center;
@@ -163,15 +161,12 @@ div.country {
 	object-fit: cover;
 	vertical-align: top;
 	text-align: center;
-border-radius: 1vh;
-padding: 1vh;
-height: 35vh;
+	border-radius: 1vh;
+	padding: 1vh;
+	height: 35vh;
 }
 .Players {
-margin-bottom: -800px;
-
-  
-    
+	margin-bottom: -800px;
 }
 
 div.bottommargin {
