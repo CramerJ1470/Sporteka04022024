@@ -17,9 +17,9 @@ module.exports = {
 		},
 
 		login: (req, res, next) => {
-			const { username, password} = req.body;
-			
-			models.User.findOne({username })
+			const { username, password } = req.body;
+
+			models.User.findOne({ username })
 				.then((user) =>
 					Promise.all([user, user.matchPassword(password)])
 				)
@@ -28,12 +28,11 @@ module.exports = {
 						res.status(401).send("Invalid password");
 						return;
 					}
-				
+
 					const token = utils.jwt.createToken({ id: user._id });
 					// res.cookie(config.authCookieName, token).send(user);
 
-					res.send({ token,user });
-				
+					res.send({ token, user });
 				})
 				.catch(next);
 		},

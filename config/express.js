@@ -3,7 +3,6 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const env = process.env.NODE_ENV || "development";
 
-
 module.exports = (app) => {
 	app.use(cors());
 
