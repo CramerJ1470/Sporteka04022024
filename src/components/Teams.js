@@ -10,7 +10,7 @@ function Teams({ teams }) {
 				<h1>Teams</h1>
 
 				<div className="Players">
-					<div id="playerBack" >
+					<div id="playerBack">
 						{teams.map((team) => {
 							return <Team key={team.team_id} team={team} />;
 						})}

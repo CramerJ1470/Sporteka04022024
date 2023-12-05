@@ -3,16 +3,15 @@ import "./teams.css"; // Import the CSS file
 import Navbar from "../navbar/Navbar";
 import { Link } from "react-router-dom";
 
-function Teams({teams}) {
-  console.log("teams", teams);
+function Teams({ teams }) {
+	console.log("teams", teams);
 
-  return (
-    <div>
-      <Navbar />
-      <div className="team-list ">
-        {teams.map((team) => (
-          
-            <Link
+	return (
+		<div>
+			<Navbar />
+			<div className="team-list ">
+				{teams.map((team) => (
+					<Link
 						key={team.team_id}
 						className="linkbutton"
 						to={`/teamdetails/${team.team_id}`}
@@ -26,13 +25,11 @@ function Teams({teams}) {
 							<p>Venue: {team.venue_name}</p>
 						</div>
 					</Link>
-         ))}
-            {/* Add other team information as needed */}
-         
-        
-      </div>
-    </div>
-  );
+				))}
+				{/* Add other team information as needed */}
+			</div>
+		</div>
+	);
 }
 
 export default Teams;

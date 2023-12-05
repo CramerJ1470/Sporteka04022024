@@ -16,7 +16,7 @@ const LoginPage = () => {
 
 	const handleLogin = (e) => {
 		e.preventDefault();
-console.log(username,password);
+		console.log(username, password);
 		login(username, password, setIsAuth);
 
 		navigate("/loggedinhomepage");
