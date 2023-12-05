@@ -19,7 +19,7 @@ function RegisteredHomePage() {
 	const logoutHandler = async () => {
 		const res = await logout();
 		console.log(res);
-		isAuth = false;
+		 
 		navigate("/");
 	};
 
