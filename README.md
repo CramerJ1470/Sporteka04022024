@@ -1,6 +1,6 @@
 # Discord SillyNFTier#5653 J.Cramer
 
-# DIscord midnightnoet L.Miner
+# Discord midnightmoet L.Miner
 
 in file server\config\config.js:
 
@@ -21,6 +21,6 @@ dbURL: "mongodb+srv://<username>:<password>@cluster1.nymha.mongodb.net/<collecti
 you will need to npm install in root (sporteka12032023) folder
 you will need to cd into each directory (client, server) and npm install
 
-Run sporteka12022023 using "npm start"
+Run sporteka12022023 using "npm run start"
 
 client side , and server side concurrently
