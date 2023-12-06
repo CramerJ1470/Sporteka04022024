@@ -5,6 +5,7 @@ const RAPIDAPI_API_FOOTBALL_KEY =
 const RAPIDAPI_API_FOOTBALL_KEY_BETA =
 	require("./configItems.js").RAPIDAPI_API_FOOTBALL_KEY_BETA;
 const RAPIDAPI_ADDRESS = require("./configItems.js").RAPIDAPI_ADDRESS;
+const SPORTMONKS_API_TOKEN = require("./configItems.js").SPORTMONKS_API_TOKEN;
 
 /***********************User section******************* */
 export const login = async (username, password, applyFunc) => {
@@ -95,6 +96,34 @@ export const getLeagues = async (applyFunc) => {
 	} catch (error) {
 		console.error(error);
 	}
+};
+
+export const getSportmonksLeagues = async (applyFunc) => {
+	var myHeaders = new Headers();
+
+	var requestOptions = {
+		method: "GET",
+		redirect: "follow",
+		// headers: {"authorization": "Tl5oZDKYHaVVgKRYWcMsIZFr0K38F2DTgULddkq6kAuLHyfwzdhXae7rLfJB"}
+	};
+
+	await fetch(
+		`https://soccer.sportmonks.com/api/v2.0/leagues?api_token=${SPORTMONKS_API_TOKEN}`,
+		requestOptions
+	)
+		.then((response) =>(response.text()))
+		.then((result) => console.log(result))
+		.catch((error) => console.log("error", error));
+
+	// try {
+	// 	const response = await fetch(url, options);
+	// 	await response.json().then((leagues) => {
+	// 		// console.log("inside leagues", leagues.response);
+	// 		applyFunc([...leagues.response]);
+	// 	});
+	// } catch (error) {
+	// 	console.error(error);
+	// }
 };
 
 export const getCountries = async (applyFunc) => {

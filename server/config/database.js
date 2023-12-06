@@ -16,5 +16,6 @@ module.exports = async () => {
 	return await mongoose.connect(config.development.dbURL, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
-	});
+		serverSelectionTimeoutMS,
+	}).catch(err=> console.log(`err:`,err));
 };
