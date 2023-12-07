@@ -7,14 +7,13 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../services";
 
 function HomePage({ teams, leagues, countries, cups }) {
-	useEffect(() => {
-		// Call any initialization logic here
-	}, []);
+
 
 	const { setIsAuth, isAuth } = useContext(AuthContext);
 
 	const navigate = useNavigate();
-	console.log(teams);
+	console.log(`teams:`,teams);
+	console.log(`leagues:`,leagues);
 	async function connectToWallet() {
 		try {
 			await connect();

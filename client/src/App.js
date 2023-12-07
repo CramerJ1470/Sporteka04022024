@@ -11,7 +11,15 @@ import LeaguesContext from "./context/LeaguesContext";
 import CountriesContext from "./context/CountriesContext";
 import CupsContext from "./context/CupsContext";
 import TeamsContext from "./context/TeamsContext";
-import { getLeagues, getCups, getCountries, getTeams } from "./services";
+import PlayersContext from "./context/TeamsContext";
+import {
+	getLeagues,
+	getCups,
+	getCountries,
+	getTeams,
+	getSportmonksTeams,
+	getSportmonksPlayers,
+} from "./services";
 
 import Connectmetamask from "./components/Connectmetamask";
 import Footer from "./components/footer/Footer";
@@ -28,11 +36,12 @@ import Teams from "./components/teams/Teams";
 import LandingPage from "./components/landingPage/landingPage";
 import TraderDashboard from "./components/dashboard/TraderDashboard";
 import ClubDashboard from "./components/clubDashboard/ClubDashboard";
-import TeamDetails from "./components/TeamDetails";
+import TeamDetails from "./components/teams/TeamDetails";
 import RegisteredHomePage from "./components/registerHomePage/RegisteredHomePage";
 import LoggedInHomePage from "./components/loggedInHomePage/LoggedInHomePage";
 
 function App() {
+	const [players, setPlayers] = useState([]);
 	const [leagues, setLeagues] = useState([]);
 	const [countries, setCountries] = useState([]);
 	const [cups, setCups] = useState([]);
@@ -40,12 +49,14 @@ function App() {
 	const [isAuth, setIsAuth] = useState(localStorage.getItem("userData"));
 
 	useEffect(() => {
+		// getLeagues(setLeagues);
+		getSportmonksPlayers(setPlayers);
 		getLeagues(setLeagues);
 		getCountries(setCountries);
 		getCups(setCups);
-		getTeams(setTeams);
+		getSportmonksTeams(setTeams);
 	}, []);
-
+	const updatePlayers = () => getSportmonksPlayers(setPlayers);
 	const updateLeagues = () => getLeagues(setLeagues);
 	const updateCountries = () => getCountries(setCountries);
 	const updateCups = () => getCups(setCups);
@@ -74,11 +85,11 @@ function App() {
 							updateCups,
 						}}
 					>
-						<TeamsContext.Provider
+						<PlayersContext.Provider
 							value={{
-								teams: teams,
-								setTeams,
-								updateTeams,
+								players: players,
+								setPlayers,
+								updatePlayers,
 							}}
 						>
 							<div className="App">
@@ -299,7 +310,7 @@ function App() {
 
 								<Footer />
 							</div>
-						</TeamsContext.Provider>
+						</PlayersContext.Provider>
 					</CupsContext.Provider>
 				</CountriesContext.Provider>
 			</LeaguesContext.Provider>
