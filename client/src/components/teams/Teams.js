@@ -2,33 +2,28 @@ import React from "react";
 import "./teams.css"; // Import the CSS file
 import Navbar from "../navbar/Navbar";
 import { Link } from "react-router-dom";
+import Team from "./Team";
 
 function Teams({ teams }) {
 	console.log("teams", teams);
 
 	return (
+		<>
 		<div>
-			<Navbar />
-			<div className="team-list ">
-				{teams.map((team) => (
-					<Link
-						key={team.team_id}
-						className="linkbutton"
-						to={`/teamdetails/${team.team_id}`}
-					>
-						<div className="team-container">
-							<img src={team.logo} alt="logo" />
-							<h2>{team.name}</h2>
-							<p></p>
-							<p>Country: {team.country}</p>
-							<p>Founded: {team.founded}</p>
-							<p>Venue: {team.venue_name}</p>
-						</div>
-					</Link>
-				))}
-				{/* Add other team information as needed */}
+			<h1>Teams</h1>
+
+			<div className="Players">
+				<div id="playerBack">
+					{teams.map((team) => {
+						return <Team key={team.id} team={team} />;
+					})}
+				</div>
 			</div>
+
+			<div className="bottommargin"></div>
 		</div>
+	</>
+	
 	);
 }
 

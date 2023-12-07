@@ -1,0 +1,17 @@
+.trailer {
+	display: flex;
+	margin-left: -5%;
+	width: 112%;
+	height: 31.5%;
+	border: 3px solid #73ad21;
+	display: grid;
+	place-items: center;
+}
+
+.mid {
+	text-align: center;
+}
+
+.cent {
+	text-align: center;
+}

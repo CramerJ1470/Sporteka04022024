@@ -6,6 +6,12 @@ const RAPIDAPI_API_FOOTBALL_KEY_BETA =
 	require("./configItems.js").RAPIDAPI_API_FOOTBALL_KEY_BETA;
 const RAPIDAPI_ADDRESS = require("./configItems.js").RAPIDAPI_ADDRESS;
 const SPORTMONKS_API_TOKEN = require("./configItems.js").SPORTMONKS_API_TOKEN;
+const sportmonksteams =
+	require("./assets/TeamsPLayersBySeasonId").TeamsPlayerBySeasonId;
+const TeamsPlayerBySeasonId =
+	require("./assets/TeamsPLayersBySeasonId").TeamsPlayerBySeasonId;
+const liveStandingByLeagueData =
+	require("./assets/liveStandingByLeague").liveStandingByLeagueData;
 
 /***********************User section******************* */
 export const login = async (username, password, applyFunc) => {
@@ -78,43 +84,14 @@ export const getCups = async (applyFunc) => {
 };
 
 export const getLeagues = async (applyFunc) => {
-	const url = "https://api-football-v1.p.rapidapi.com/v3/leagues";
-	const options = {
-		method: "GET",
-		headers: {
-			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
-			"X-RapidAPI-Host": RAPIDAPI_ADDRESS,
-		},
-	};
-
-	try {
-		const response = await fetch(url, options);
-		await response.json().then((leagues) => {
-			// console.log("inside leagues", leagues.response);
-			applyFunc([...leagues.response]);
-		});
-	} catch (error) {
-		console.error(error);
-	}
-};
-
-export const getSportmonksLeagues = async (applyFunc) => {
-	var myHeaders = new Headers();
-
-	var requestOptions = {
-		method: "GET",
-		redirect: "follow",
-		// headers: {"authorization": "Tl5oZDKYHaVVgKRYWcMsIZFr0K38F2DTgULddkq6kAuLHyfwzdhXae7rLfJB"}
-	};
-
-	await fetch(
-		`https://soccer.sportmonks.com/api/v2.0/leagues?api_token=${SPORTMONKS_API_TOKEN}`,
-		requestOptions
-	)
-		.then((response) =>(response.text()))
-		.then((result) => console.log(result))
-		.catch((error) => console.log("error", error));
-
+	// const url = "https://api-football-v1.p.rapidapi.com/v3/leagues";
+	// const options = {
+	// 	method: "GET",
+	// 	headers: {
+	// 		"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
+	// 		"X-RapidAPI-Host": RAPIDAPI_ADDRESS,
+	// 	},
+	// };
 	// try {
 	// 	const response = await fetch(url, options);
 	// 	await response.json().then((leagues) => {
@@ -124,6 +101,21 @@ export const getSportmonksLeagues = async (applyFunc) => {
 	// } catch (error) {
 	// 	console.error(error);
 	// }
+};
+
+export const getSportmonksTeams = async (applyFunc) => {
+	var teams = sportmonksteams.data;
+	applyFunc([...teams]);
+};
+
+export const getSportmonksPlayers = async (applyFunc) => {
+	var players = TeamsPlayerBySeasonId.data;
+	applyFunc([...players]);
+};
+
+export const getliveStandingByLeagueData = async () => {
+	var liveLeagueData = liveStandingByLeagueData.data;
+	return liveLeagueData;
 };
 
 export const getCountries = async (applyFunc) => {
@@ -136,15 +128,11 @@ export const getCountries = async (applyFunc) => {
 		},
 	};
 
-	try {
-		const response = await fetch(url, options);
-		await response.json().then((countries) => {
-			// console.log("inside countries", countries.response);
-			applyFunc([...countries.response]);
-		});
-	} catch (error) {
-		console.error(error);
-	}
+	const response = await fetch(url, options);
+	await response.json().then((countries) => {
+		// console.log("inside countries", countries.response);
+		applyFunc([...countries.response]);
+	});
 };
 export const getTeams = async (applyFunc) => {
 	const url = "https://api-football-v1.p.rapidapi.com/v2/teams/league/2";
@@ -290,3 +278,5 @@ export const getUser = async (userId) => {
 	console.log(`userData: `, userData);
 	return userData;
 };
+
+//

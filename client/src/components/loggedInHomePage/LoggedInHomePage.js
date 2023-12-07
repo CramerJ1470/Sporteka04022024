@@ -77,20 +77,16 @@ function LoggedInHomePage({ teams }) {
 					>
 						Connect to Wallet
 					</Link>
-					<NavLink
-						to="/leaderboard"
-						id="leaderButton"
-						className="button"
-					>
-						Go to leaderboard
+					<NavLink to="/teams" id="teamsButton" className="button">
+						Team Tokens
 					</NavLink>
-					<Link
-						id="logoutButton"
+					<NavLink
+						to="/players"
+						id="playersButton"
 						className="button"
-						onClick={logoutHandler}
 					>
-						Logout
-					</Link>
+						Player Tokens
+					</NavLink>
 				</>
 			</div>
 			<div className="buttons">
@@ -106,13 +102,25 @@ function LoggedInHomePage({ teams }) {
 						Trader Dashboard
 					</NavLink>
 					<NavLink
-						to="/profile"
-						id="profileButton"
+						to="/leaderboard"
+						id="leaderButton"
 						className="button"
 					>
-						Profile
+						Go to leaderboard
 					</NavLink>
 				</>
+			</div>
+			<div className="buttons">
+				<NavLink to="/profile" id="profileButton" className="button">
+					Profile
+				</NavLink>
+				<Link
+					id="logoutButton"
+					className="button"
+					onClick={logoutHandler}
+				>
+					Logout
+				</Link>
 			</div>
 
 			<Footer />
