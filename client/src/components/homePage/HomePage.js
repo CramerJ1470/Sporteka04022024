@@ -1,5 +1,4 @@
 import React, { useEffect, useContext, useState } from "react";
-
 import "./home.css";
 import Footer from "../footer/Footer";
 import AuthContext from "../../context/AuthContext";

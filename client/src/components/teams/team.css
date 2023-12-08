@@ -24,7 +24,6 @@
   max-width: 50%; /* Ensure the image doesn't exceed the container width */
   max-height: 50%;
   border-radius: 5px; /* Add some border-radius to the image */
-  border: 1px solid black;
 
 }
 
@@ -38,10 +37,22 @@
   margin: 5px 0;
 }
 
+.teams-container h3 {
+  text-align: center;
+  font-size: 3em;
+}
 /* Responsive styles */
 @media (max-width: 768px) {
+  .teams-container {
+    flex-direction: column;
+  }
+
   .playercard {
     width: 100%;
     margin: 0 10px;
+  }
+
+  .teams-container h3 {
+    font-size: 2em;
   }
 }
