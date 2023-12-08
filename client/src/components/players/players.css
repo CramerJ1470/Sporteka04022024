@@ -1,43 +1,36 @@
-/* teams.css */
-.page {
-  height: 95vh;
-}
+/* players.css */
 
-.page h3 {
-  font-size: 2.5em;
-}
-
-/* Style for the container of each team */
-.team-container {
+/* Style for the container of each player */
+.player-container {
   border: 1px solid #ccc;
   margin: 10px;
-  padding: 15px;
-  width: 250px; /* Fixed width for each team container */
+  padding: 10px;
+  width: 250px; /* Fixed width for each player container */
   box-sizing: border-box;
   border-radius: 5px;
   box-shadow: 0 0 5px #ccc;
 }
 
-.team-container:hover {
+.player-container:hover {
   box-shadow: 0 0 5px red;
 }
 
-/* Style for the team name */
-.team-name {
+/* Style for the player name */
+.player-name {
   font-size: 1em;
   color: #333;
   text-decoration: none; /* Removed text underline */
 }
 
 /* Style for additional information */
-.team-info {
+.player-info {
   margin-top: 10px;
   color: #666;
   text-decoration: none; /* Removed text underline */
 }
 
 /* Style for the overall container */
-.team-list {
+.player-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -47,12 +40,13 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .team-container {
+  .player-container {
     width: 100%; /* Full width on smaller screens */
     margin: 0 10px; /* Adjusted margin for better spacing */
+    margin-bottom: 10px;
+    font-size: 0.7em; /* Adjusted font size for better spacing */
   }
-
-  .page h3 {
-    font-size: 2em;
+  .player-container p {
+    font-size: 1.25em; /* Adjusted font size for better spacing */
   }
 }

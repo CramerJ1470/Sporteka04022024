@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import "./register.css"; // Import the common styles
 import { GoogleLogin } from "@leecheuk/react-google-login";
 import AuthContext from "../../context/AuthContext";
-import Navbar from "../navbar/Navbar";
 
 import { register } from "../../services";
 import { useNavigate } from "react-router-dom";
@@ -47,7 +46,6 @@ const RegisterPage = () => {
 
 	return (
 		<div>
-			<Navbar />
 			{/* REGISTRATION FORM */}
 			<div className="container">
 				<form onSubmit={handleRegister}>

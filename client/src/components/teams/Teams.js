@@ -1,17 +1,16 @@
 import React from "react";
 import "./teams.css"; // Import the CSS file
-import Navbar from "../navbar/Navbar";
 import { Link } from "react-router-dom";
 import Team from "./Team";
+
 
 function Teams({ teams }) {
 	console.log("teams", teams);
 
 	return (
-		<>
-		<div>
-			<h1>Teams</h1>
-
+		<div className="page">
+			<h3>Teams</h3>
+		<div className="teams-container">
 			<div className="Players">
 				<div id="playerBack">
 					{teams.map((team) => {
@@ -19,10 +18,15 @@ function Teams({ teams }) {
 					})}
 				</div>
 			</div>
-
 			<div className="bottommargin"></div>
+			{/* WILL STYLE THIS ANOTHER DAY */}
+			{/* <div className="button">
+				<Link to="/loggedinhomepage">
+					<button className="btn btn-primary">Back</button>
+				</Link>
+			</div> */}
 		</div>
-	</>
+	</div>
 	
 	);
 }

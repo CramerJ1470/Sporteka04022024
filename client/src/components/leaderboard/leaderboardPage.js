@@ -94,7 +94,7 @@ const LeaderboardPage = ({ isAuth, teams }) => {
             <p>Clubs</p>
           </div>
         </a>
-        <a href="/player">
+        <a href="/players">
           <div className="icon">
             <img src="carbon_user-profile.svg" alt="Icon 3" />
             <p>Player</p>
