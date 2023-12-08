@@ -10,7 +10,7 @@ function Video({ video }) {
 		<>
 			<div className="trailer">
 				<iframe
-					width="560"
+					width="500"
 					height="315"
 					src={video.url}
 					title="YouTube video player"

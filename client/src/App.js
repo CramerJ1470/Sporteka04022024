@@ -34,7 +34,7 @@ import Profile from "./components/profilePage/Profile";
 import Register from "./components/registerPage/Register";
 import Teams from "./components/teams/Teams";
 import LandingPage from "./components/landingPage/landingPage";
-import TraderDashboard from "./components/dashboard/TraderDashboard";
+import TraderDashboard1 from "./components/dashboard/traderDashboard1";
 import ClubDashboard from "./components/clubDashboard/ClubDashboard";
 import TeamDetails from "./components/teams/TeamDetails";
 import RegisteredHomePage from "./components/registerHomePage/RegisteredHomePage";
@@ -126,7 +126,7 @@ function App() {
 
 									<Route
 										path="/traderdashboard"
-										element={<TraderDashboard />}
+										element={<TraderDashboard1 />}
 									/>
 									<Route path="/login" element={<Login />} />
 
@@ -214,7 +214,7 @@ function App() {
 											/>
 											<Route
 												path="/traderdashboard"
-												element={<TraderDashboard />}
+												element={<TraderDashboard1 />}
 											/>
 											<Route
 												path="/leaderboard"
@@ -292,7 +292,7 @@ function App() {
 											/>
 											<Route
 												path="/traderdashboard"
-												element={<TraderDashboard />}
+												element={<TraderDashboard1 />}
 											/>
 											<Route
 												path="/leaderboard"

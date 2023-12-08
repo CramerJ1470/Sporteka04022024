@@ -13,7 +13,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "BHA",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/14/78.png",
-			url: "https://youtu.be/t0pjrlLYO6E?si=PctaknTDBlt93CmK",
+			url: "https://www.youtube.com/embed/PF1oji4meUI?si=Xj_z3RWN8YQzu8fX",
 			founded: 1901,
 			type: "domestic",
 			placeholder: false,
@@ -343,7 +343,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "FUL",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/11/11.png",
-			url: "https://youtu.be/IyNsgPxRF5Y?si=hqw1nlgkZWQ7Vf5W",
+			url: "https://www.youtube.com/embed/IyNsgPxRF5Y?si=pcQ98uP50f6-lFZA",
 			founded: 1879,
 			type: "domestic",
 			placeholder: false,
@@ -673,7 +673,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "LIV",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/8/8.png",
-			url: "https://youtu.be/YhqiSO_UFxg?si=fgU_7jtd8KwfkbJY",
+			url: "https://www.youtube.com/embed/YhqiSO_UFxg?si=nI8Qb87k1X0cMk7r",
 			founded: 1892,
 			type: "domestic",
 			placeholder: false,
@@ -1016,7 +1016,7 @@ var TeamsPlayerBySeasonId = {
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/19/19.png",
 			founded: 1886,
-			url: "https://youtu.be/qa-xUC65Tx8?si=fvfCoa1Wu7jh86Ce",
+			url: "https://www.youtube.com/embed/d8WFH3hsCx4?si=TJ60hhYjoBsHmx1I",
 			type: "domestic",
 			placeholder: false,
 			last_played_at: "2023-12-05 20:15:00",
@@ -1333,7 +1333,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "WOL",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/29/29.png",
-			url: "https://youtu.be/rjYD8EizCws?si=ulyVlSwLBJPUd7Yh",
+			url: "https://www.youtube.com/embed/sCJxvrA8Gh8?si=z0bj1XyVJvdR7Ti3",
 			founded: 1877,
 			type: "domestic",
 			placeholder: false,
@@ -1711,7 +1711,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "LUT",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/19/115.png",
-			url: "https://youtu.be/R8i9KGqHL6Q?si=UrejgX1x2UvODcdA",
+			url: "https://www.youtube.com/embed/XeBCXAUjRSA?si=_Fvlvb3OMNIwsDqK",
 			founded: 1885,
 			type: "domestic",
 			placeholder: false,
@@ -2041,7 +2041,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "CRY",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/19/51.png",
-			url: "https://youtu.be/TXSrsQoOTRU?si=puQbwpfmL46fJjlQ",
+			url: "https://www.youtube.com/embed/TXSrsQoOTRU?si=7rshnYCqGKALBRl1",
 			founded: 1905,
 			type: "domestic",
 			placeholder: false,
@@ -2383,7 +2383,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "SHU",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/21/21.png",
-			url: "https://youtu.be/J8KvBhk7XHo?si=88AmXF84m6Z2V1eh",
+			url: "https://www.youtube.com/embed/tUeZw-Qw6pE?si=pW1qgrl3JMgi5p21",
 			founded: 1889,
 			type: "domestic",
 			placeholder: false,
@@ -2761,7 +2761,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "MUN",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/14/14.png",
-			url: "https://youtu.be/gepDLN64f04?si=g7fQ19_b_EhLArrQ",
+			url: "https://www.youtube.com/embed/ZC6Ppv6qlPw?si=YDjkjoOXgnzMuEDa",
 			founded: 1878,
 			type: "domestic",
 			placeholder: false,
@@ -3151,7 +3151,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "BRE",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/12/236.png",
-			url: "https://youtu.be/nqAi-GQ7DV8?si=CvRSmBG3BB77BmaP",
+			url: "https://www.youtube.com/embed/nqAi-GQ7DV8?si=k7acGktiaZ8hOboS",
 			founded: 1889,
 			type: "domestic",
 			placeholder: false,
@@ -3517,7 +3517,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "BOU",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/20/52.png",
-			url: "https://youtu.be/iOBv4flgWQ4?si=laB79PLTiYLCRxHz",
+			url: "https://www.youtube.com/embed/iOBv4flgWQ4?si=xcaAnsLPwCKy0ivi",
 			founded: 1899,
 			type: "domestic",
 			placeholder: false,
@@ -3883,7 +3883,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "NEW",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/20/20.png",
-			url: "https://youtu.be/dBWT3LsbYUU?si=ooDPw-wEbhPMVXjc",
+			url: "https://www.youtube.com/embed/dBWT3LsbYUU?si=VUXmVpQVfBcEBDcX",
 			founded: 1892,
 			type: "domestic",
 			placeholder: false,
@@ -4249,7 +4249,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "NFO",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/31/63.png",
-			url: "https://youtu.be/S5vL-0lhZio?si=DdTToPL4d5Mi7bNn",
+			url: "https://www.youtube.com/embed/Z0jvYqbC3HQ?si=MdrJTo66hU5Auuna",
 			founded: 1865,
 			type: "domestic",
 			placeholder: false,
@@ -4651,7 +4651,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "EVE",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/13/13.png",
-			url: "https://youtu.be/DfK62aXbPj4?si=Qayqu8XzcZvvu2qc",
+			url: "https://www.youtube.com/embed/DfK62aXbPj4?si=4ot2TZKBe1yid0_5",
 			founded: 1878,
 			type: "domestic",
 			placeholder: false,
@@ -4969,7 +4969,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "MCI",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/9/9.png",
-			url: "https://youtu.be/SkamwA43tJY?si=81517zNjmVjWzj0s",
+			url: "https://www.youtube.com/embed/JbyJ3WH32Iw?si=adoxEvlGIYA6K6xY",
 			founded: 1880,
 			type: "domestic",
 			placeholder: false,
@@ -5275,7 +5275,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "WHU",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/1/1.png",
-			url: "https://youtu.be/TDIqgABloTg?si=9TVtZHIEB1VkZj0u",
+			url: "https://www.youtube.com/embed/TDIqgABloTg?si=9PQOSUaOJbBIBYNk",
 			founded: 1895,
 			type: "domestic",
 			placeholder: false,
@@ -5593,7 +5593,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "CHE",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/18/18.png",
-			url: "https://youtu.be/ElQYb5yRSV0?si=XKh7ybP5CfvZvnFh",
+			url: "https://www.youtube.com/embed/hi-QaLoRWgY?si=sQuE3hG-vUlqxcT2",
 			founded: 1905,
 			type: "domestic",
 			placeholder: false,
@@ -5971,7 +5971,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "AVL",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/15/15.png",
-			url: "https://youtu.be/uAY54jvd8Eg?si=zJ_4auBGli7GZ4Tw",
+			url: "https://www.youtube.com/embed/yIIHgy9FeHg?si=PJ4yjBCwprDsCXDR",
 			founded: 1874,
 			type: "domestic",
 			placeholder: false,
@@ -6739,7 +6739,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "BUR",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/27/27.png",
-			url: "https://youtu.be/whRdg2mr0ag?si=ajI0duieennx2Rvg",
+			url: "https://www.youtube.com/embed/whRdg2mr0ag?si=DDpRIZSPJJVyZ4LX",
 			founded: 1882,
 			type: "domestic",
 			placeholder: false,

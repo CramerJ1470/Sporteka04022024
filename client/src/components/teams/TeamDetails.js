@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Video from "./videoPlayer/Video";
-import './videoPlayer/Video.css';
+import "./videoPlayer/Video.css";
 
 let team = {};
 function TeamDetails({ teams, isAuth }) {
@@ -23,6 +23,10 @@ function TeamDetails({ teams, isAuth }) {
 		url: team.url,
 	};
 
+	async function addClubToken() {
+		alert(`Deploy addClubToken`);
+	}
+
 	return (
 		<>
 			<div className="mid">
@@ -32,18 +36,14 @@ function TeamDetails({ teams, isAuth }) {
 					<p>Token: {team.short_code} </p>
 					<p>Country: {team.country}</p>
 					<p>Founded: {team.founded}</p>
-					
-					
 				</div>
 				<div className="cent">
-				<button className="button cent">
-						Purchase {team.short_code} token
+					<button className="button cent" onClick={addClubToken}>
+						Get current value/purchase {team.short_code} token
 					</button>
 					<Video video={video} />
-					</div>
+				</div>
 			</div>
-			
-					
 		</>
 	);
 }
