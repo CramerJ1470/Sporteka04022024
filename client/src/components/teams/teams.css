@@ -1,4 +1,11 @@
 /* teams.css */
+.page {
+  height: 95vh;
+}
+
+.page h3 {
+  font-size: 2.5em;
+}
 
 /* Style for the container of each team */
 .team-container {
@@ -43,5 +50,9 @@
   .team-container {
     width: 100%; /* Full width on smaller screens */
     margin: 0 10px; /* Adjusted margin for better spacing */
+  }
+
+  .page h3 {
+    font-size: 2em;
   }
 }

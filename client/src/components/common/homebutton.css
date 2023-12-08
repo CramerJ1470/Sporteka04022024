@@ -1,0 +1,25 @@
+/* HomeButton.css */
+
+button {
+    background: red; /* Red background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding around the button text */
+    font-size: 16px; /* Font size of the button text */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    text-decoration: none; /* Remove underlines from the link */
+  
+    /* Additional styles for better visual appearance */
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background: blue; /* Blue color on hover */
+  }
+  
+  /* Styling for the Link element (optional) */
+  a {
+    text-decoration: none; /* Remove underlines from the link */
+  }
+  
