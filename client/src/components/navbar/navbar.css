@@ -1,34 +1,128 @@
 /* navbar.css */
 
-/* Reset some default styles */
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Navigation Bar */
-/* navbar.css */
-
-/* Navbar container styles */
-.navbar {
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
-  height: 5vh;
-  background-color: red;
+/* Common styles for both desktop and mobile */
+nav {
+  background: red;
   color: white;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Make the header span the full width */
+}
+
+.nav-logo {
+  flex-grow: 1; /* Allow the logo to take available space */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content horizontally */
+}
+
+.nav-logo h3 {
+  margin: 0;
+  font-size: 1.75em; /* Increased font size */
+  text-align: center;
+  color: white;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menu li {
+  margin-left: auto; /* Float the li elements to the right */
+  margin-right: 20px;
+  position: relative;
+  padding-right: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Styles for the dropdown menu when it's shown */
+.menu.show-menu {
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* Adjust the top position as needed */
+  left: 0;
+  background-color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1;
+  width: 100%; /* Adjust the width as needed */
+  display: none; /* Initially hide the menu */
+}
+
+.menu.show-menu li {
+  margin: 0;
   text-align: center;
 }
 
-/* Logo styles */
-.logo-header {
-  color: #fff; /* Set text color to white or your preferred color */
-  margin: 0; /* Remove default margin */
-  font-size: 24px; /* Adjust font size as needed */
+.menu.show-menu a {
+  padding: 10px;
+  display: block;
 }
+
+.menu.show-menu a:hover {
+  background: blue;
+  color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  /* Adjust styles for screens with a maximum width of 768px */
+  .nav-logo h3 {
+    font-size: 1.5em; /* Adjusted font size for smaller screens */
+  }
+
+  .menu {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    display: none;
+  }
+
+  .menu li {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .menu.show-menu {
+    display: flex; /* Show the menu when the button is clicked */
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    order: -1; /* Move the button to the beginning of the flex container */
+    margin-left: auto; /* Move the menu icon to the right */
+  }
+
+  .menu-toggle:hover {
+    background: blue;
+  }
+}
+

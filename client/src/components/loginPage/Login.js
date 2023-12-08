@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useContext } from "react";
 import { GoogleLogin } from "@leecheuk/react-google-login";
-import Navbar from "../navbar/Navbar";
 import { login } from "../../services";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
@@ -32,7 +31,6 @@ const LoginPage = () => {
 
 	return (
 		<div>
-			<Navbar />
 			{/* LOGIN FORM */}
 			<div>
 				<form onSubmit={handleLogin}>
