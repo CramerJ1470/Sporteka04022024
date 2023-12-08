@@ -1,0 +1,47 @@
+.linkbutton {
+  text-decoration: none; /* Remove the default underline on links */
+  color: inherit; /* Inherit the text color from the parent */
+}
+
+.playercard {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 15px 0;
+  width: 250px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+  text-align: center;
+  background-color: #fff; /* Set a background color for the player card */
+}
+
+.playercard:hover {
+  box-shadow: 0 0 5px red;
+}
+
+
+.playercard img {
+  max-width: 50%; /* Ensure the image doesn't exceed the container width */
+  max-height: 50%;
+  border-radius: 5px; /* Add some border-radius to the image */
+  border: 1px solid black;
+
+}
+
+/* Additional styles for the information */
+.playercard h2 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.playercard p {
+  margin: 5px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .playercard {
+    width: 100%;
+    margin: 0 10px;
+  }
+}
