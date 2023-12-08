@@ -1,40 +1,37 @@
 import React from "react";
 import Player from "./Player";
+import "./players.css"; // Import the players.css file for styling
 import { playersList } from "../../assets/players";
 
 function Players({ players }) {
-	// Define your grid container style
+   // let playersList = players;
+  console.log(`players:`, players);
 
-	// let playersList = players;
-	console.log(`players:`, players);
-	const gridContainerStyle = {
-		width: "70%",
-		display: "-ms-grid",
+  // Define your grid container styles here
+  const flexContainerStyle = {
+    display: "flex", // Change to grid for correct display
+	flexWrap: "wrap", // Added to wrap the grid items
+	width: "100%", // Full width
+    padding: "20px", // Adjusted padding for better spacing
+    margin: "0 auto", // Centered horizontally
+    marginTop: "20px", // Added top margin
+  };
 
-		margin: "0 auto",
-		msGridColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-		gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-		gridGap: "10px",
-		padding: "20px", // Adjusted padding for better spacing
-		border: "1px solid #ccc",
-		boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Added a subtle box shadow
-		marginTop: "20px", // Added top margin
-	};
-
-	return (
-		<>
-			<div className="grid-container" style={{ ...gridContainerStyle }}>
-				{playersList.map((player) => (
-					<div key={player.id} className="grid-item">
-						<Player player={player.player} />
-					</div>
-				))}
-			</div>
-		</>
-	);
+  return (
+    <>
+      <div className="player-list" style={{ ...flexContainerStyle }}>
+        {playersList.map((player) => (
+          <div key={player.id} className="player-container">
+            <Player player={player.player} />
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }
 
 export default Players;
+
 
 //-------------NOTES-------------------------//
 // 1. Added a `key` prop to the mapped `Player` components to ensure a unique identifier for each player
