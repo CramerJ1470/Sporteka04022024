@@ -2,76 +2,167 @@
 
 /* Container styles */
 .trader-dashboard {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.trader-dashboard1 {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 30%;
+	margin: 0 auto;
+	padding: 2%;
 }
 
 /* Side panel styles */
 .side-panel {
-  flex: 1;
-  padding: 20px;
-  background-color: #f0f0f0;
-  transition: width 0.3s ease;
+	flex: 1;
+	padding: 20px;
+	background-color: #f0f0f0;
+	transition: width 0.3s ease;
 }
 
 .profile img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-bottom: 20px;
+	width: 20%;
+	height: auto;
+	border-radius: 50%;
+	margin: 20px;
 }
 
 .section-titles h4 {
-  cursor: pointer;
-  margin-bottom: 10px;
-  padding: 10px;
+	cursor: pointer;
+	margin-bottom: 10px;
+	padding: 10px;
+	color: white;
 }
 
 .section-titles h4:hover {
-  color: red;
-  background: white;
+	color: rgb(47, 20, 220);
+	background: white;
 }
 
+.left {
+	background-color: rgb(47, 20, 220);
+	border-style: hidden;
+	filter: drop-shadow(0 0 0.5rem black);
+	margin-left: 1%;
+}
 /* Main content styles */
 .main-content {
-  flex: 3;
-  padding: 20px;
-  background-color: #fff;
+	flex: 3;
+	padding: 20px;
+	background-color: #fff;
+}
+.buttwidth {
+	display: flex;
+
+}
+.butwidth button{
+	width: 100%;
+	
+	
 }
 
-.header h1 {
-  text-align: center;
-  margin-bottom: 20px;
+.header h2 {
+	position: fixed;
+	text-align: center;
+	top: 5%;
+	left: 40%;
+	width: 20%;
 }
-
+.padtop5 h2 {
+	top: 10%;
+}
+.padtop20 {
+	position: fixed;
+	top: 15%;
+	left: 20%;
+}
+.px120 {
+	width: 15%;
+}
+.px240 {
+	width:25%;
+}
 .dashboard-section {
-  margin-bottom: 30px;
+	margin-bottom: 30px;
+	
+	width: 20%;
+	margin-left: 1.5%;
+	border-color: #f0f0f0;
+	border-style: hidden;
+	filter: drop-shadow(0 0 0.5rem black);
+	padding: 5%;
+	padding-top: 9%;
+	color: white;
+	font-size: 120%;
+	background-image: url("https://clipart-library.com/new_gallery/386-3860323_3d-soccer-ball-png-ball.png");
+	background-size:cover;
+}
+.usermenu {
+	text-align: left;
+	top: 1%;
+	left: 5%;
 }
 
+.middle {
+	left: -10%;
+	top: 10%;
+}
+.marg5 {
+	padding-right: 5%;
+	width: 90%;
+}
+td {
+	padding-right: 5%;
+	width: 5%;
+}
+
+.tacenter {
+	text-align: center;
+	margin: 20%;
+}
+.bgwhite {
+	left: 20%;
+	background-color: white;
+	opacity: 0.7;
+	width: 90%;
+	filter: drop-shadow(0 0 0.5rem black);
+}
+
+.mb2vh {
+	place-items: left;
+	margin-bottom: 2vh;
+	margin-left: 10vw;
+	width: 700px;
+	display: block;
+	
+}
 /* Responsive styles */
 @media only screen and (max-width: 768px) {
-  .trader-dashboard {
-    flex-direction: row;
-  }
+	.trader-dashboard {
+		flex-direction: row;
+	}
 
-  .side-panel,
-  .main-content {
-    width: 100%;
-    padding: 10px;
-  }
+	.side-panel,
+	.main-content {
+		width: 100%;
+		padding: 10px;
+	}
 
-  .profile img {
-    width: 80px;
-    height: 80px;
-  }
+	.profile img {
+		width: 80px;
+		height: 80px;
+	}
 
-  .section-titles h4 {
-    font-size: 16px;
-    padding: 8px;
-  }
-
-  
+	.section-titles h4 {
+		font-size: 16px;
+		padding: 8px;
+	}
+}
+.lefttoright {
+	display: flex;
 }

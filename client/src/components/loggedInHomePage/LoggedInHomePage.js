@@ -70,13 +70,6 @@ function LoggedInHomePage({ teams }) {
 			</span>
 			<div className="buttons">
 				<>
-					<Link
-						id="connectButton"
-						className="button"
-						onClick={connectToWallet}
-					>
-						Connect to Wallet
-					</Link>
 					<NavLink to="/teams" id="teamsButton" className="button">
 						Team Tokens
 					</NavLink>
