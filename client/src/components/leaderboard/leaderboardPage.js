@@ -49,6 +49,7 @@ const LeaderboardPage = ({ isAuth, teams }) => {
 				</tbody>
 			</table>
 			<div className="bottom-icons-container">
+<<<<<<< HEAD
 				<a href="/loggedinhomepage">
 					<div className="icon">
 						<img src="home.svg" alt="Icon 1" />
@@ -80,6 +81,39 @@ const LeaderboardPage = ({ isAuth, teams }) => {
 					</div>
 				</a>
 			</div>
+=======
+        <a href="/loggedinhomepage">
+          <div className="icon">
+            <img src="home.svg" alt="Icon 1" />
+            <p>Home</p>
+          </div>
+        </a>
+        <a href="/clubs">
+          <div className="icon">
+            <img src="ion_football.svg" alt="Icon 2" />
+            <p>Clubs</p>
+          </div>
+        </a>
+        <a href="/player">
+          <div className="icon">
+            <img src="carbon_user-profile.svg" alt="Icon 3" />
+            <p>Player</p>
+          </div>
+        </a>
+        <a href="/predictions">
+          <div className="icon">
+            <img src="mdi_alphabet-b-box.svg" alt="Icon 4" />
+            <p>Prediction</p>
+          </div>
+        </a>
+        <a href="/trends">
+          <div className="icon">
+            <img src="mdi_chart-line.svg" alt="Icon 5" />
+            <p>Trends</p>
+          </div>
+        </a>
+      </div>
+>>>>>>> 1aa38be6342fb4899f62957bcfb4d576cab7493d
 		</div>
 	);
 };

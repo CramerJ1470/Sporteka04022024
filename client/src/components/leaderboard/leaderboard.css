@@ -58,3 +58,15 @@ a:hover {
 	color: white;
 	border-radius: 5px;
 }
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  background: lightgray;
+  color: white;
+  border-radius: 5px;
+}

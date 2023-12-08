@@ -1,7 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
-
 import "./loggedInHomePage.css";
-import Footer from "../footer/Footer";
 import AuthContext from "../../context/AuthContext";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../services";
@@ -116,7 +114,7 @@ function LoggedInHomePage({ teams }) {
 				</Link>
 			</div>
 
-			<Footer />
+			
 		</div>
 	);
 }
