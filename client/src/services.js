@@ -134,7 +134,7 @@ var requestOptions = {
 fetch(`https://api.sportmonks.com/v3/football/standings/live/leagues/8?api_token=${SPORTMONKS_API_TOKEN}`, requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
-  .catch(error => console.log('error', error))
+  .catch(error => console.log('error', error));
 	
 	// .then(response => response.text())
 	// .then(result => console.log(result))
