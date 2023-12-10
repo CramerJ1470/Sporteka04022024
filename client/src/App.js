@@ -15,7 +15,7 @@ import PlayersContext from "./context/TeamsContext";
 import {
 	getLeagues,
 	getCups,
-	getCountries,
+
 	getTeams,
 	getSportmonksTeams,
 	getSportmonksPlayers,
@@ -43,7 +43,7 @@ import LoggedInHomePage from "./components/loggedInHomePage/LoggedInHomePage";
 function App() {
 	const [players, setPlayers] = useState([]);
 	const [leagues, setLeagues] = useState([]);
-	const [countries, setCountries] = useState([]);
+	// const [countries, setCountries] = useState([]);
 	const [cups, setCups] = useState([]);
 	const [teams, setTeams] = useState([]);
 	const [isAuth, setIsAuth] = useState(localStorage.getItem("userData"));
@@ -52,13 +52,13 @@ function App() {
 		// getLeagues(setLeagues);
 		getSportmonksPlayers(setPlayers);
 		getLeagues(setLeagues);
-		getCountries(setCountries);
+		// getCountries(setCountries);
 		getCups(setCups);
 		getSportmonksTeams(setTeams);
 	}, []);
 	const updatePlayers = () => getSportmonksPlayers(setPlayers);
 	const updateLeagues = () => getLeagues(setLeagues);
-	const updateCountries = () => getCountries(setCountries);
+	// const updateCountries = () => getCountries(setCountries);
 	const updateCups = () => getCups(setCups);
 	const updateTeams = () => getTeams(setTeams);
 
@@ -70,13 +70,13 @@ function App() {
 					setLeagues,
 					updateLeagues,
 				}}
-			>
-				<CountriesContext.Provider
-					value={{
-						countries: countries,
-						setCountries,
-						updateCountries,
-					}}
+			// >
+			// 	<CountriesContext.Provider
+			// 		value={{
+			// 			countries: countries,
+			// 			setCountries,
+			// 			updateCountries,
+			// 		}}
 				>
 					<CupsContext.Provider
 						value={{
@@ -102,7 +102,7 @@ function App() {
 											<HomePage
 												teams={teams}
 												leagues={leagues}
-												countries={countries}
+											
 												cups={cups}
 												isAuth={isAuth}
 											/>
@@ -135,7 +135,7 @@ function App() {
 											<HomePage
 												teams={teams}
 												leagues={leagues}
-												countries={countries}
+												
 												cups={cups}
 												isAuth={isAuth}
 											/>
@@ -162,7 +162,7 @@ function App() {
 												path="/countries"
 												element={
 													<Countries
-														countries={countries}
+														
 													/>
 												}
 											/>
@@ -312,7 +312,7 @@ function App() {
 							</div>
 						</PlayersContext.Provider>
 					</CupsContext.Provider>
-				</CountriesContext.Provider>
+				{/* </CountriesContext.Provider> */}
 			</LeaguesContext.Provider>
 		</AuthContext.Provider>
 	);
