@@ -39,6 +39,7 @@ import ClubDashboard from "./components/clubDashboard/ClubDashboard";
 import TeamDetails from "./components/teams/TeamDetails";
 import RegisteredHomePage from "./components/registerHomePage/RegisteredHomePage";
 import LoggedInHomePage from "./components/loggedInHomePage/LoggedInHomePage";
+// import HomeButton from "./components/common/homeButton";
 
 function App() {
 	const [players, setPlayers] = useState([]);
@@ -94,7 +95,7 @@ function App() {
 						>
 							<div className="App">
 								{/* <Navbar /> */}
-
+								
 								<Routes>
 									<Route
 										path="/"
@@ -307,7 +308,7 @@ function App() {
 										</>
 									)}
 								</Routes>
-
+								{/* <HomeButton /> */}
 								<Footer />
 							</div>
 						</PlayersContext.Provider>

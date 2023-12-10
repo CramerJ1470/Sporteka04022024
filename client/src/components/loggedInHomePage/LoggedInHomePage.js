@@ -3,6 +3,7 @@ import "./loggedInHomePage.css";
 import AuthContext from "../../context/AuthContext";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../services";
+import Navbar from "../navbar/Navbar";
 
 function LoggedInHomePage({ teams }) {
 	const navigate = useNavigate();
@@ -58,6 +59,7 @@ function LoggedInHomePage({ teams }) {
 
 	return (
 		<div>
+			<Navbar />
 			<span className="top">
 				<div>
 					<p className="centPage2 top kavoon">Sporteka</p>
