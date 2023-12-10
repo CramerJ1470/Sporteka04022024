@@ -4,7 +4,6 @@ import "./trader.css";
 import UserHistory from "./UserHistory";
 import UserMenu from "./UserMenu";
 import TokensOwned from "./TokensOwned";
-//import Footer from "../footer/Footer";
 import AuthContext from "../../context/AuthContext";
 
 function TraderDashboard1() {

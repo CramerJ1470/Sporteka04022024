@@ -13,7 +13,7 @@ const tokensOwned = [
 
 const TokensOwned = () => {
    return (
-      <div>
+      <div className="tokens-owned-container">
          <table className="mb2vh bgwhite">
             <thead>
                <tr>
