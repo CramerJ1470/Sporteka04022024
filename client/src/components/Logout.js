@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Logout() {
+  localStorage.setItem("wallacc" , "");
   return (
     <div>
       Logout!
