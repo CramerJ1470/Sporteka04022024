@@ -1,6 +1,3 @@
-// let apiCallPLayersOnTeamBySeasonID =
-// 	"https://api.sportmonks.com/v3/football/teams/seasons/21646?api_token={{api_token}}&include=players;";
-
 var TeamsPlayerBySeasonId = {
 	data: [
 		{

@@ -1,6 +1,5 @@
 const config = require("./config/database");
 const dbConnection = require("./config/database");
-//const Stripe = require('stripe');//
 const app = require("express")();
 const createError = require("http-errors");
 const path = require("path");
@@ -10,6 +9,7 @@ const express = require("express");
 require("dotenv").config();
 
 const port = process.env.PORT;
+
 
 dbConnection().then(() => {
 		require("./config/express")(app);
@@ -42,5 +42,8 @@ dbConnection().then(() => {
 			port,
 			console.log(`Listening on port ${port}!`)
 		);
+
 	})
 	.catch(console.error);
+
+	

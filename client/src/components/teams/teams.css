@@ -45,6 +45,11 @@
   text-decoration: none; /* Removed text underline */
 }
 
+#endvalue {
+  display: none;
+}
+
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .team-container {

@@ -84,23 +84,23 @@ export const getCups = async (applyFunc) => {
 };
 
 export const getLeagues = async (applyFunc) => {
-	// const url = "https://api-football-v1.p.rapidapi.com/v3/leagues";
-	// const options = {
-	// 	method: "GET",
-	// 	headers: {
-	// 		"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
-	// 		"X-RapidAPI-Host": RAPIDAPI_ADDRESS,
-	// 	},
-	// };
-	// try {
-	// 	const response = await fetch(url, options);
-	// 	await response.json().then((leagues) => {
-	// 		// console.log("inside leagues", leagues.response);
-	// 		applyFunc([...leagues.response]);
-	// 	});
-	// } catch (error) {
-	// 	console.error(error);
-	// }
+	const url = "https://api-football-v1.p.rapidapi.com/v3/leagues";
+	const options = {
+		method: "GET",
+		headers: {
+			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
+			"X-RapidAPI-Host": RAPIDAPI_ADDRESS,
+		},
+	};
+	try {
+		const response = await fetch(url, options);
+		await response.json().then((leagues) => {
+			// console.log("inside leagues", leagues.response);
+			applyFunc([...leagues.response]);
+		});
+	} catch (error) {
+		console.error(error);
+	}
 };
 
 export const getSportmonksTeams = async (applyFunc) => {
@@ -113,27 +113,66 @@ export const getSportmonksPlayers = async (applyFunc) => {
 	applyFunc([...players]);
 };
 
-export const getliveStandingByLeagueData = async () => {
-	var liveLeagueData = liveStandingByLeagueData.data;
-	return liveLeagueData;
-};
 
-export const getCountries = async (applyFunc) => {
-	const url = "https://api-football-v1.p.rapidapi.com/v3/teams/countries";
-	const options = {
-		method: "GET",
-		headers: {
-			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
-			"X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
-		},
-	};
-
-	const response = await fetch(url, options);
-	await response.json().then((countries) => {
-		// console.log("inside countries", countries.response);
-		applyFunc([...countries.response]);
+export const getStandings = async (applyFunc) => {
+	const url = "http://localhost:8090/apisnt/standings";
+	const res = await fetch(url);
+	console.log(`getStandings res; `, res);
+	res.json().then((standings) => {
+		applyFunc([...standings]);
 	});
 };
+	
+	// .then(response => response.text())
+	// .then(result => console.log(result))
+	// .catch(error => console.log('error', error));
+	// let result = res.json();
+	// console.log(`result:` ,result.data)
+	// let currentTeam =result.data.filter((item) => {
+	// 	if (item.participant_id === team_id) {
+	// 		return item;
+	// 	}
+	// });
+	// let position = currentTeam[0].position;
+	// console.log(`position: `, position);
+	
+
+	//   let multiplier = 1;
+	  
+
+	//   if (position > 0 && position < 6) {
+	// 	  multiplier = 8;
+	//   } else if (position > 5 && position < 11) {
+	// 	  multiplier = 7;
+	//   } else if (position > 10 && position < 16) {
+	// 	  multiplier = 7;
+	//   } else if (position > 15 && position < 21) {
+	// 	  multiplier = 6;
+	//   }
+
+	//   let value = (38 * 50 * capacity * multiplier) / 1000000;
+	  
+	//   return value
+	  
+
+
+
+// export const getCountries = async (applyFunc) => {
+// 	const url = "https://api-football-v1.p.rapidapi.com/v3/teams/countries";
+// 	const options = {
+// 		method: "GET",
+// 		headers: {
+// 			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
+// 			"X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
+// 		},
+// 	};
+
+// 	const response = await fetch(url, options);
+// 	await response.json().then((countries) => {
+// 		// console.log("inside countries", countries.response);
+// 		applyFunc([...countries.response]);
+// 	});
+// };
 export const getTeams = async (applyFunc) => {
 	const url = "https://api-football-v1.p.rapidapi.com/v2/teams/league/2";
 	const options = {

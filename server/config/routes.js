@@ -5,8 +5,10 @@ module.exports = (app) => {
 
 	app.use("/apisnt/transactions", router.transactions);
 
+	app.use("/apisnt/standings",router.standings);
+
 	app.use("*", (req, res, next) => {
-		console.log(req.url);
+		// console.log(req.url);
 		res.status(500).json({ error: "Route not matching" });
 	});
 };
