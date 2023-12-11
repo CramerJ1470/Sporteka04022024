@@ -61,47 +61,47 @@ export const logout = async () => {
 	localStorage.removeItem("userData");
 	return result;
 };
-/************Leagues Section ***************** */
-export const getCups = async (applyFunc) => {
-	const url = "https://api-football-v1.p.rapidapi.com/v3/leagues?type=cup";
-	const options = {
-		method: "GET",
-		headers: {
-			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
-			"X-RapidAPI-Host": RAPIDAPI_ADDRESS,
-		},
-	};
+/************Cups Section ***************** */
+// export const getCups = async (applyFunc) => {
+// 	const url = "https://api-football-v1.p.rapidapi.com/v3/leagues?type=cup";
+// 	const options = {
+// 		method: "GET",
+// 		headers: {
+// 			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
+// 			"X-RapidAPI-Host": RAPIDAPI_ADDRESS,
+// 		},
+// 	};
 
-	try {
-		const response = await fetch(url, options);
-		await response.json().then((cups) => {
-			// console.log("inside cups",cups.response);
-			applyFunc([...cups.response]);
-		});
-	} catch (error) {
-		console.error(error);
-	}
-};
-
-export const getLeagues = async (applyFunc) => {
-	const url = "https://api-football-v1.p.rapidapi.com/v3/leagues";
-	const options = {
-		method: "GET",
-		headers: {
-			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
-			"X-RapidAPI-Host": RAPIDAPI_ADDRESS,
-		},
-	};
-	try {
-		const response = await fetch(url, options);
-		await response.json().then((leagues) => {
-			// console.log("inside leagues", leagues.response);
-			applyFunc([...leagues.response]);
-		});
-	} catch (error) {
-		console.error(error);
-	}
-};
+// 	try {
+// 		const response = await fetch(url, options);
+// 		await response.json().then((cups) => {
+// 			// console.log("inside cups",cups.response);
+// 			applyFunc([...cups.response]);
+// 		});
+// 	} catch (error) {
+// 		console.error(error);
+// 	}
+// };
+/***************** Leagues Section ***************************/
+// export const getLeagues = async (applyFunc) => {
+// 	const url = "https://api-football-v1.p.rapidapi.com/v3/leagues";
+// 	const options = {
+// 		method: "GET",
+// 		headers: {
+// 			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
+// 			"X-RapidAPI-Host": RAPIDAPI_ADDRESS,
+// 		},
+// 	};
+// 	try {
+// 		const response = await fetch(url, options);
+// 		await response.json().then((leagues) => {
+// 			// console.log("inside leagues", leagues.response);
+// 			applyFunc([...leagues.response]);
+// 		});
+// 	} catch (error) {
+// 		console.error(error);
+// 	}
+// };
 
 export const getSportmonksTeams = async (applyFunc) => {
 	var teams = sportmonksteams.data;
@@ -156,7 +156,7 @@ export const getStandings = async (applyFunc) => {
 	  
 
 
-
+/******************* Countries Section **********************/
 // export const getCountries = async (applyFunc) => {
 // 	const url = "https://api-football-v1.p.rapidapi.com/v3/teams/countries";
 // 	const options = {
@@ -195,58 +195,22 @@ export const getTeams = async (applyFunc) => {
 	}
 };
 
-/**********************Cart Section****************************/
 
-export const getCarts = async (applyFunc) => {
-	const url = "http://localhost:8090/api/carts";
+/*******************Infor Section ********************* */
+
+export const getInfo = async (applyFunc) => {
+	const url = "http://localhost:8090/api/info";
 	const res = await fetch(url);
-	res.json().then((carts) => {
-		applyFunc([...carts]);
+	console.log(`getInfo res; `, res);
+	res.json().then((info) => {
+		applyFunc([...info]);
 	});
 };
 
-export const addCart = async (cart) => {
-	const data = JSON.parse(localStorage.getItem("userData"));
-	const token = data.token;
-	const url = "http://localhost:8090/api/carts";
-
-	const body = cart.body;
-	console.log(`addCart body: `, body);
-	const headers = {
-		"Content-Type": "application/json",
-		Authorization: `Bearer ${token}`,
-	};
-	const res = await fetch(url, { method: "POST", body, headers });
-	const result = await res.json();
-	return result;
-};
-
-export const deleteCart = () => {
-	const data = JSON.parse(localStorage.getItem("userData"));
-	const token = data.token;
-	const url = "http://localhost:8090/api/carts";
-	const headers = {
-		"Content-Type": "application/json",
-		Authorization: `Bearer ${token}`,
-	};
-	fetch(url, { method: "DELETE", headers });
-};
-
-/*******************Order Section ********************* */
-
-export const getOrders = async (applyFunc) => {
-	const url = "http://localhost:8090/api/orders";
-	const res = await fetch(url);
-	console.log(`getOrders res; `, res);
-	res.json().then((orders) => {
-		applyFunc([...orders]);
-	});
-};
-
-export const addOrders = async (body) => {
+export const addInfo = async (body) => {
 	const { token } = JSON.parse(localStorage.getItem("userData"));
 
-	const url = "http://localhost:8090/api/orders";
+	const url = "http://localhost:8090/api/info";
 	//const item1 = JSON.stringify(item );
 	//const userId1 = JSON.stringify( userId);
 	body = JSON.stringify(body);
@@ -264,45 +228,45 @@ export const addOrders = async (body) => {
 	return result;
 };
 
-/****************EditCart/Order***********************/
-/* export const getEditReview = async (req, res) => {
+/****************Edit Info***********************/
+/* export const getEditInfo = async (req, res) => {
 	// parse the review id from the;
 	console.log(req.params);
 	let _id = req.params.id;
-	// Search database for the review
+	// Search database for the info
 
-	const course = await Course.findById(_id);
+	const info = await Info.findById(_id);
 
-	res.render("editCourse.hbs", {
+	res.render("editInfo.hbs", {
 		isAuth,
-		sessionUser: course.createdBy,
-		course,
+		sessionUser: info.createdBy,
+		info,
 		_id,
 	});
 };
  
-const postEditCourse = async (req, res) => {
-	console.log(`courseSenrOver: `.course);
+const postEditInfo = async (req, res) => {
+	console.log(`infoSenrOver: `,info);
 	let _id = req.params.id;
-	const course = await Course.findById(_id);
-	course.title = req.body.title;
-	course.description = req.body.description;
-	course.imageURL = req.body.imageURL;
+	const info = await Info.findById(_id);
+	info.title = req.body.title;
+	info.description = req.body.description;
+	info.imageURL = req.body.imageURL;
 	if (req.body.isPub == "on") {
-		course.isPublic = true;
+		info.isPublic = true;
 	} else {
-		course.isPublic = false;
+		info.isPublic = false;
 	}
 
-	await course.save();
+	await info.save();
 	res.redirect("/");
 };
 
 const getDelete = async (req, res) => {
 	let _id = req.params.id;
 	console.log("_id: ", _id);
-	const course = await Course.findById(_id);
-	await course.delete(_id);
+	const info = await Info.findById(_id);
+	await info.delete(_id);
 	res.redirect("/");
 };
 */
