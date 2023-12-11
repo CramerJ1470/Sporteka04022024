@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const env = process.env.NODE_ENV || "development";
 require("dotenv").config();
 
@@ -18,4 +19,7 @@ module.exports = async () => {
 		useUnifiedTopology: true,
 	
 	}).catch(err=> console.log(`err:`,err));
+
+	
 };
+

@@ -168,4 +168,15 @@ td {
 }
 .lefttoright {
 	display: flex;
+
 }
+
+.teamsbutton {
+	text-align: center;
+	font-size: 40%;
+	position: relative;
+	width: 200%;
+	height: auto;
+	margin: 2rem;
+}
+

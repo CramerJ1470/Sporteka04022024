@@ -5,7 +5,7 @@ import AuthContext from "../../context/AuthContext";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../services";
 
-function HomePage({ teams, leagues, countries, cups }) {
+function HomePage({ teams, leagues, countries, cups}) {
 
 
 	const { setIsAuth, isAuth } = useContext(AuthContext);
@@ -27,8 +27,8 @@ function HomePage({ teams, leagues, countries, cups }) {
 		navigate("/");
 	};
 
-	function leaderNavigate() {
-		navigate("/leaderboard");
+	function dashboardNavigate() {
+		navigate("/teams");
 	}
 	async function connect() {
 		if (typeof window.ethereum !== "undefined") {
@@ -93,13 +93,13 @@ function HomePage({ teams, leagues, countries, cups }) {
 						>
 							Connect to Wallet
 						</Link>
-						<Link
-							id="LeaderButton"
-							className="button"
-							onClick={leaderNavigate}
-						>
-							Go to leaderboard
-						</Link>
+						<NavLink
+						to="/traderdashboard"
+						id="traderdashboardButton"
+						className="button"
+					>
+						Trader Dashboard
+					</NavLink>
 						<Link
 							id="LogoutButton"
 							className="button"
@@ -107,6 +107,7 @@ function HomePage({ teams, leagues, countries, cups }) {
 						>
 							Logout
 						</Link>
+
 					</>
 				)}
 			</div>
