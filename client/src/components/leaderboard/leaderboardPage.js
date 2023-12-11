@@ -49,6 +49,7 @@ const LeaderboardPage = ({ isAuth, teams }) => {
 				</tbody>
 			</table>
 			<div className="bottom-icons-container">
+
         <a href="/loggedinhomepage">
           <div className="icon">
             <img src="home.svg" alt="Icon 1" />
@@ -80,6 +81,9 @@ const LeaderboardPage = ({ isAuth, teams }) => {
           </div>
         </a>
       </div>
+
+		
+
 		</div>
 	);
 };

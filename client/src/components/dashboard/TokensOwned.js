@@ -1,53 +1,44 @@
 import React from "react";
 import AdditionalTokens from "./AdditionalTokens";
 
-
-var tokensOwned = [
-	{
-		team_logo: "https://cdn.sportmonks.com/images/soccer/teams/14/78.png",
-		token_name: "TokenBHA",
-		club_name: "Brighton & Hove Albion",
-		amount_owned: 10230,
-		current_price: 916.13,
-	},
+const tokensOwned = [
+   {
+      team_logo: "https://cdn.sportmonks.com/images/soccer/teams/14/78.png",
+      token_name: "TokenBHA",
+      club_name: "Brighton & Hove Albion",
+      amount_owned: 10230,
+      current_price: 916.13,
+   },
 ];
 
-function TokensOwned() {
-	return (
-		<div>
-			<thead className="mb2vh bgwhite">
-				<tr>
-					<th className="px240">
-						<div className="d-flex align-items-center tacenter">
-							<p style={{ width: 0 }}></p>
-							<p style={{ width: 300, textAlign: "center" }}></p>
-						</div>
-					</th>
-
-					<th className="px240">Token Name</th>
-					<th scope="col" className="px240">
-						Club Name
-					</th>
-					<th scope="col" className="px240">
-						Ammount Owned
-					</th>
-					<th scope="col" className="px240">
-						Estimated Value
-					</th>
-					<th scope="col" className="px240">
-						{"option 1"}
-					</th>
-					<th scope="col" className="px240">
-						{"Option 2"}
-					</th>
-				</tr>
-			</thead>
-			{tokensOwned.map((token) => {
-				return <AdditionalTokens token={token} />;
-			})}
-			;
-		</div>
-	);
-}
+const TokensOwned = () => {
+   return (
+      <div className="tokens-owned-container">
+         <table className="mb2vh bgwhite">
+            <thead>
+               <tr>
+                  <th className="px240">
+                     <div className="d-flex align-items-center tacenter">
+                        <p style={{ width: 0 }}></p>
+                        <p style={{ width: 300, textAlign: "center" }}></p>
+                     </div>
+                  </th>
+                  <th className="px240">Token Name</th>
+                  <th className="px240">Club Name</th>
+                  <th className="px240">Amount Owned</th>
+                  <th className="px240">Estimated Value</th>
+                  <th className="px240">Option 1</th>
+                  <th className="px240">Option 2</th>
+               </tr>
+            </thead>
+            <tbody>
+               {tokensOwned.map((token, index) => (
+                  <AdditionalTokens key={index} token={token} />
+               ))}
+            </tbody>
+         </table>
+      </div>
+   );
+};
 
 export default TokensOwned;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./trader.css";
+import "./trader.css"; // Import your CSS file
 import UserHistory from "./UserHistory";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
@@ -7,7 +7,7 @@ function UserMenu({ traderData }) {
 	const [selectedSection, setSelectedSection] = useState("marketingInsights");
 
 	return (
-		<div>
+		<div className="user-menu-container">
 			<span className="lefttoright">
 				<div className="section-titles left">
 					<h4 onClick={() => setSelectedSection("marketingInsights")}>
