@@ -12,6 +12,11 @@
 .container {
 }
 
+.bluewhite {
+	background-color: blue;
+	color: white;
+}
+
 h2 {
 	text-align: center;
 	color: #333;

@@ -18,6 +18,7 @@ function LoggedInHomePage({ teams }) {
 	}
 	const logoutHandler = async () => {
 		const res = await logout();
+		localStorage.setItem("wallacc" , "");
 		console.log(res);
 		setIsAuth(false);
 		navigate("/");

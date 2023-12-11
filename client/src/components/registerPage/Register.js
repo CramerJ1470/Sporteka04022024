@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import "./register.css"; // Import the common styles
 import { GoogleLogin } from "@leecheuk/react-google-login";
 import AuthContext from "../../context/AuthContext";
@@ -14,10 +15,20 @@ const RegisterPage = () => {
 	//   const [userName, setUserName] = useState(""); // New state for user name
 	const [userType, setUserType] = useState("trader"); // Default to "Trader"
 	const [passwordMatchError, setPasswordMatchError] = useState(false);
-
+	
 	const navigate = useNavigate();
-	const handleRegister = (e) => {
-		e.preventDefault();
+
+localStorage.setItem("wallacc",undefined);
+
+	const handleRegister = () => {
+		
+		let wallacc = localStorage.getItem("wallacc");
+		console.log(`wallacc:`,wallacc);
+		if (!localStorage.getItem("wallacc"))  {document.getElementsByClassName("bluewhite")[0].style.display= "";
+		document.getElementsByClassName("bluewhite")[0].innerText = "Please Connect Metamask";
+		
+		} 
+		else  {
 		console.log(password, confirmPassword);
 
 		// Check if passwords match
@@ -37,6 +48,9 @@ const RegisterPage = () => {
 		register(username, password, userType);
 		setRegistered(true);
 		navigate("/registeredhomepage", { registered: registered });
+	}
+		
+		
 	};
 
 	const handleGoogleRegister = (googleData) => {
@@ -44,10 +58,54 @@ const RegisterPage = () => {
 		console.log("Google registration data:", googleData);
 	};
 
+	async function connectToWallet() {
+		try {
+		  await connect();
+		} catch (error) {
+		  console.error(error);
+		}
+	  }
+	
+	  async function connect() {
+		if (typeof window.ethereum !== "undefined") {
+		  try {
+			await window.ethereum.request({
+			  method: "eth_requestAccounts",
+			});
+	
+			const accounts = await window.ethereum.request({
+			  method: "eth_accounts",
+			});
+	
+			updateConnectButton(accounts[0]);
+			console.log(accounts);
+		  } catch (error) {
+			console.error(error);
+		  }
+		} else {
+		  updateConnectButton(undefined, "Please install MetaMask");
+		}
+	  }
+	
+	  function updateConnectButton(account, errorMessage) {
+		const connectButton = document.getElementById("connectButton");
+	
+		if (connectButton) {
+		  if (account === undefined) {
+			connectButton.innerHTML = errorMessage || "Please connect a wallet";
+		  } else {
+			connectButton.innerHTML = `Connected`;
+			localStorage.setItem("wallacc",account);
+			document.getElementsByClassName("bluewhite")[0].style.display= "none";
+		  }
+		}
+	  }
+
 	return (
 		<div>
 			{/* REGISTRATION FORM */}
 			<div className="container">
+				
 				<form onSubmit={handleRegister}>
 					{/* <label>
             User Name:
@@ -58,6 +116,10 @@ const RegisterPage = () => {
             />
           </label>
           <br /> */}
+				  <p className="bluewhite">*******In order to resister, you must connect a wallet to recieve Sporteka Coin to participate********</p>
+		  		 <Link id="connectButton" className="button" onClick={connectToWallet}>
+         			 Connect to Wallet
+        			</Link>
 					<label>
 						Email:
 						<input

@@ -173,60 +173,60 @@ export const getStandings = async (applyFunc) => {
 // 		applyFunc([...countries.response]);
 // 	});
 // };
-export const getTeams = async (applyFunc) => {
-	const url = "https://api-football-v1.p.rapidapi.com/v2/teams/league/2";
-	const options = {
-		method: "GET",
-		headers: {
-			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
-			"X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
-		},
-	};
+// export const getTeams = async (applyFunc) => {
+// 	const url = "https://api-football-v1.p.rapidapi.com/v2/teams/league/2";
+// 	const options = {
+// 		method: "GET",
+// 		headers: {
+// 			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
+// 			"X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
+// 		},
+// 	};
 
-	try {
-		const response = await fetch(url, options);
+// 	try {
+// 		const response = await fetch(url, options);
 
-		response.json().then((teams) => {
-			// console.log("inside teams", teams.api.teams);
-			applyFunc([...teams.api.teams]);
-		});
-	} catch (error) {
-		console.error(error);
-	}
-};
+// 		response.json().then((teams) => {
+// 			// console.log("inside teams", teams.api.teams);
+// 			applyFunc([...teams.api.teams]);
+// 		});
+// 	} catch (error) {
+// 		console.error(error);
+// 	}
+// };
 
 
 /*******************Infor Section ********************* */
 
-export const getInfo = async (applyFunc) => {
-	const url = "http://localhost:8090/api/info";
-	const res = await fetch(url);
-	console.log(`getInfo res; `, res);
-	res.json().then((info) => {
-		applyFunc([...info]);
-	});
-};
+// export const getInfo = async (applyFunc) => {
+// 	const url = "http://localhost:8090/api/info";
+// 	const res = await fetch(url);
+// 	console.log(`getInfo res; `, res);
+// 	res.json().then((info) => {
+// 		applyFunc([...info]);
+// 	});
+// };
 
-export const addInfo = async (body) => {
-	const { token } = JSON.parse(localStorage.getItem("userData"));
+// export const addInfo = async (body) => {
+// 	const { token } = JSON.parse(localStorage.getItem("userData"));
 
-	const url = "http://localhost:8090/api/info";
-	//const item1 = JSON.stringify(item );
-	//const userId1 = JSON.stringify( userId);
-	body = JSON.stringify(body);
-	console.log(`body: `, body);
-	const headers = {
-		"Content-Type": "application/json",
-		Authorization: `Bearer ${token}`,
-	};
-	const res = await fetch(url, {
-		method: "POST",
-		body,
-		headers,
-	});
-	const result = await res.json();
-	return result;
-};
+// 	const url = "http://localhost:8090/api/info";
+// 	//const item1 = JSON.stringify(item );
+// 	//const userId1 = JSON.stringify( userId);
+// 	body = JSON.stringify(body);
+// 	console.log(`body: `, body);
+// 	const headers = {
+// 		"Content-Type": "application/json",
+// 		Authorization: `Bearer ${token}`,
+// 	};
+// 	const res = await fetch(url, {
+// 		method: "POST",
+// 		body,
+// 		headers,
+// 	});
+// 	const result = await res.json();
+// 	return result;
+// };
 
 /****************Edit Info***********************/
 /* export const getEditInfo = async (req, res) => {

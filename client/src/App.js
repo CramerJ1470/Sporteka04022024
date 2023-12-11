@@ -7,17 +7,12 @@ import "./components/loginPage/login.css";
 import "./components/footer/footer.css";
 import "./css/workshop-styles.css";
 import AuthContext from "./context/AuthContext";
-import LeaguesContext from "./context/LeaguesContext";
 import CountriesContext from "./context/CountriesContext";
-import CupsContext from "./context/CupsContext";
 import TeamsContext from "./context/TeamsContext";
 import StandingsContext from "./context/StandingsContext";
 import PlayersContext from "./context/TeamsContext";
 import {
-	getLeagues,
-	getCups,
 getStandings,
-	getTeams,
 	getSportmonksTeams,
 	getSportmonksPlayers,
 } from "./services";
@@ -27,7 +22,6 @@ import Footer from "./components/footer/Footer";
 import HomePage from "./components/homePage/HomePage";
 import Countries from "./components/Countries";
 import LeaderboardPage from "./components/leaderboard/leaderboardPage";
-import Leagues from "./components/Leagues";
 import Login from "./components/loginPage/Login";
 import Logout from "./components/Logout";
 import Players from "./components/players/Players";
@@ -44,50 +38,22 @@ import LoggedInHomePage from "./components/loggedInHomePage/LoggedInHomePage";
 
 function App() {
 	const [players, setPlayers] = useState([]);
-	const [leagues, setLeagues] = useState([]);
 	const [standings,setStandings] = useState([]);
-	const [cups, setCups] = useState([]);
 	const [teams, setTeams] = useState([]);
 	const [isAuth, setIsAuth] = useState(localStorage.getItem("userData"));
 
 	useEffect(() => {
-		// getLeagues(setLeagues);
 		getSportmonksPlayers(setPlayers);
-		getLeagues(setLeagues);
 		getStandings(setStandings);
-		getCups(setCups);
 		getSportmonksTeams(setTeams);
 	}, []);
 	const updatePlayers = () => getSportmonksPlayers(setPlayers);
-	const updateLeagues = () => getLeagues(setLeagues);
 	const updateStandings = () => getStandings(setStandings);
-	const updateCups = () => getCups(setCups);
-	const updateTeams = () => getTeams(setTeams);
+	const updateTeams = () => getSportmonksTeams(setTeams);
 
 	return (
 		<AuthContext.Provider value={{ isAuth: isAuth, setIsAuth }}>
-			<LeaguesContext.Provider
-				value={{
-					leagues: leagues,
-					setLeagues,
-					updateLeagues,
-				}}
-			// >
-			// 	<CountriesContext.Provider
-			// 		value={{
-			// 			countries: countries,
-			// 			setCountries,
-			// 			updateCountries,
-			// 		}}
-				>
-					<CupsContext.Provider
-						value={{
-							cups: cups,
-							setCups,
-							updateCups,
-						}}
-					>
-						<StandingsContext.Provider
+					<StandingsContext.Provider
 						value={{
 							standings:standings,
 							setStandings,
@@ -100,9 +66,16 @@ function App() {
 								setPlayers,
 								updatePlayers,
 							}}
-						>
+						>	
+						<TeamsContext.Provider
+						value={{
+							teams: teams,
+							setTeams,
+							updateTeams
+						}}
+					>
 							<div className="App">
-								{/* <Navbar /> */}
+								
 								
 								<Routes>
 									<Route
@@ -110,9 +83,6 @@ function App() {
 										element={
 											<HomePage
 												teams={teams}
-												leagues={leagues}
-											
-												cups={cups}
 												isAuth={isAuth}
 											/>
 										}
@@ -143,9 +113,6 @@ function App() {
 										element={
 											<HomePage
 												teams={teams}
-												leagues={leagues}
-												
-												cups={cups}
 												isAuth={isAuth}
 											/>
 										}
@@ -194,8 +161,6 @@ function App() {
 												path="/landingpage"
 												element={
 													<LandingPage
-														leagues={leagues}
-														cups={cups}
 														teams={teams}
 													/>
 												}
@@ -232,12 +197,12 @@ function App() {
 									) : (
 										<>
 											<Route
-												path="/teamdetails/:id"
+												path="/teamdetails/id"
 												element={
 													<TeamDetails
-														teams={teams}
+													teams={teams}
 														standings = {standings}
-														isAuth={isAuth}
+														
 													/>
 												}
 											/>
@@ -274,16 +239,11 @@ function App() {
 												path="/landingpage"
 												element={
 													<LandingPage
-														leagues={leagues}
-														cups={cups}
 														teams={teams}
 													/>
 												}
 											/>
-
-
-											
-											<Route
+										<Route
 												path="/profile"
 												element={
 													<Profile isAuth={isAuth} />
@@ -322,15 +282,13 @@ function App() {
 										</>
 									)}
 								</Routes>
-								{/* <HomeButton /> */}
+							
 								<Footer />
 							</div>
+							</TeamsContext.Provider>
 						</PlayersContext.Provider>
 						</StandingsContext.Provider>
-					</CupsContext.Provider>
-				{/* </CountriesContext.Provider> */}
-			</LeaguesContext.Provider>
-		</AuthContext.Provider>
+				</AuthContext.Provider>
 	);
 }
 
