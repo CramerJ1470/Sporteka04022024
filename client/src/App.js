@@ -11,11 +11,12 @@ import LeaguesContext from "./context/LeaguesContext";
 import CountriesContext from "./context/CountriesContext";
 import CupsContext from "./context/CupsContext";
 import TeamsContext from "./context/TeamsContext";
+import StandingsContext from "./context/StandingsContext";
 import PlayersContext from "./context/TeamsContext";
 import {
 	getLeagues,
 	getCups,
-
+getStandings,
 	getTeams,
 	getSportmonksTeams,
 	getSportmonksPlayers,
@@ -44,7 +45,7 @@ import LoggedInHomePage from "./components/loggedInHomePage/LoggedInHomePage";
 function App() {
 	const [players, setPlayers] = useState([]);
 	const [leagues, setLeagues] = useState([]);
-	// const [countries, setCountries] = useState([]);
+	const [standings,setStandings] = useState([]);
 	const [cups, setCups] = useState([]);
 	const [teams, setTeams] = useState([]);
 	const [isAuth, setIsAuth] = useState(localStorage.getItem("userData"));
@@ -53,13 +54,13 @@ function App() {
 		// getLeagues(setLeagues);
 		getSportmonksPlayers(setPlayers);
 		getLeagues(setLeagues);
-		// getCountries(setCountries);
+		getStandings(setStandings);
 		getCups(setCups);
 		getSportmonksTeams(setTeams);
 	}, []);
 	const updatePlayers = () => getSportmonksPlayers(setPlayers);
 	const updateLeagues = () => getLeagues(setLeagues);
-	// const updateCountries = () => getCountries(setCountries);
+	const updateStandings = () => getStandings(setStandings);
 	const updateCups = () => getCups(setCups);
 	const updateTeams = () => getTeams(setTeams);
 
@@ -86,6 +87,13 @@ function App() {
 							updateCups,
 						}}
 					>
+						<StandingsContext.Provider
+						value={{
+							standings:standings,
+							setStandings,
+							updateStandings,
+						}}
+						>
 						<PlayersContext.Provider
 							value={{
 								players: players,
@@ -126,7 +134,7 @@ function App() {
 
 									<Route
 										path="/traderdashboard"
-										element={<TraderDashboard1 />}
+										element={<TraderDashboard1 standings={standings}/>}
 									/>
 									<Route path="/login" element={<Login />} />
 
@@ -228,6 +236,7 @@ function App() {
 												element={
 													<TeamDetails
 														teams={teams}
+														standings = {standings}
 														isAuth={isAuth}
 													/>
 												}
@@ -236,6 +245,7 @@ function App() {
 												path="/leaderboard"
 												element={
 													<LeaderboardPage
+													standings={standings}
 														isAuth={isAuth}
 														teams={teams}
 													/>
@@ -270,6 +280,9 @@ function App() {
 													/>
 												}
 											/>
+
+
+											
 											<Route
 												path="/profile"
 												element={
@@ -280,6 +293,7 @@ function App() {
 												path="/clubdashboard"
 												element={
 													<ClubDashboard
+													standings= {standings}
 														teams={teams}
 													/>
 												}
@@ -292,11 +306,11 @@ function App() {
 											/>
 											<Route
 												path="/traderdashboard"
-												element={<TraderDashboard1 />}
+												element={<TraderDashboard1 standings={standings}/>}
 											/>
 											<Route
 												path="/leaderboard"
-												element={<LeaderboardPage />}
+												element={<LeaderboardPage standings={standings}/>}
 											/>
 
 											<Route
@@ -312,6 +326,7 @@ function App() {
 								<Footer />
 							</div>
 						</PlayersContext.Provider>
+						</StandingsContext.Provider>
 					</CupsContext.Provider>
 				{/* </CountriesContext.Provider> */}
 			</LeaguesContext.Provider>

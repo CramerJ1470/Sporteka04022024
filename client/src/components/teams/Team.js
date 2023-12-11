@@ -14,7 +14,7 @@ function Team({ team }) {
           <img src={team.image_path} alt="logo" />
           <h2>{team.name}</h2>
           <p></p>
-          {/* Make these items show on the individual team pages */}
+          {/* Make these items show on the individual team pages.....okey doke(JC)*/}
           {/* <p>Founded: {team.founded}</p>
 				<p>Venue: {team.venue_name}</p>
 				<p>Country: {team.country}</p> */}

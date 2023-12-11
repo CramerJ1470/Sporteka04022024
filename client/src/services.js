@@ -113,28 +113,15 @@ export const getSportmonksPlayers = async (applyFunc) => {
 	applyFunc([...players]);
 };
 
-export const getliveStandingByLeagueData = async (team_id,capacity) => {
-console.log("getliveStandingByLeagueData");
-// 	var myHeaders = new Headers();
-// 	myHeaders.append("Content-Type", "application/json");
-// myHeaders.append("Accept", "application/json");
-// myHeaders.append("token", "d5UyLWKBEejRtvJwyK8jIuvx9gSUmmzerz1KeB9CRH41ZCpniu1woeq4ADqr");
 
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Accept", "application/json");
-myHeaders.append("token", `${SPORTMONKS_API_TOKEN}`);
-
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow'
+export const getStandings = async (applyFunc) => {
+	const url = "http://localhost:8090/apisnt/standings";
+	const res = await fetch(url);
+	console.log(`getStandings res; `, res);
+	res.json().then((standings) => {
+		applyFunc([...standings]);
+	});
 };
-
-fetch(`https://api.sportmonks.com/v3/football/standings/live/leagues/8?api_token=${SPORTMONKS_API_TOKEN}`, requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
 	
 	// .then(response => response.text())
 	// .then(result => console.log(result))
@@ -168,7 +155,7 @@ fetch(`https://api.sportmonks.com/v3/football/standings/live/leagues/8?api_token
 	//   return value
 	  
 
-};
+
 
 // export const getCountries = async (applyFunc) => {
 // 	const url = "https://api-football-v1.p.rapidapi.com/v3/teams/countries";

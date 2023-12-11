@@ -9,7 +9,7 @@ const TeamsPlayerBySeasonId =
 let team;
 let teams  = TeamsPlayerBySeasonId.data;
 console.log("details teams: ",teams)
-function TeamDetails() {
+function TeamDetails({teams,standings,isAuth}) {
 	console.log(teams);
 	const { id } = useParams();
 	console.log("Teamdetails id", id);
@@ -18,17 +18,17 @@ function TeamDetails() {
 			team = item;
 		}
 	});
+	console.log(`the team: `,team);
+	
 	console.log(team);
-	if (team.country_id === 462) {
-		team.country = "England";
+	function addClubToken() {
+		alert(`Deploy addClubToken`);
 	}
-	console.log(team);
-
 	
 
 	return (
 		<>
-			<TeamDetailsInside team={team} teams={teams}/>
+			<TeamDetailsInside team={team} teams={teams} standings={standings}/>
 		</>
 	);
 }

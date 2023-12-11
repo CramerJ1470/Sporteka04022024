@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./trader.css";
 import UserHistory from "./UserHistory";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 function UserMenu({ traderData }) {
 	const [selectedSection, setSelectedSection] = useState("marketingInsights");
@@ -104,6 +105,13 @@ function UserMenu({ traderData }) {
 						<p>{traderData.helpSupport}</p>
 					)}
 				</div>
+				<NavLink
+						to="/teams"
+						id="teamsbutton"
+						className="teamsbutton"
+					>
+						Teams Page
+					</NavLink>
 			</span>
 		</div>
 	);

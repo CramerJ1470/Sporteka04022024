@@ -5,5 +5,5 @@ export const RAPIDAPI_API_FOOTBALL_KEY =
 export const RAPIDAPI_API_FOOTBALL_KEY_BETA =
 	"18cfcb39c4msh2d398b4b4754e0bp105eb5jsn6fd6b1013069";
 export const RAPIDAPI_ADDRESS = "api-football-v1.p.rapidapi.com";
-export const SPORTMONKS_API_TOKEN ="sgGuKPrVaLCA9zrIGQtU8COYjU4h2GBw9NjHMgezGcKaOQuJfCtFoYJR59mg";
-// export const SPORTMONKS_API_TOKEN ="d5UyLWKBEejRtvJwyK8jIuvx9gSUmmzerz1KeB9CRH41ZCpniu1woeq4ADqR";
+// export const SPORTMONKS_API_TOKEN ="sgGuKPrVaLCA9zrIGQtU8COYjU4h2GBw9NjHMgezGcKaOQuJfCtFoYJR59mg";
+export const SPORTMONKS_API_TOKEN ="d5UyLWKBEejRtvJwyK8jIuvx9gSUmmzerz1KeB9CRH41ZCpniu1woeq4ADqR";

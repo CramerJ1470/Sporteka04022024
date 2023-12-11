@@ -29,7 +29,7 @@
 /* Add hover effect for buttons */
 .button:hover {
 	background: blue; /* Change the color on hover as desired */
-	color: black;
+	color: white;
 	text-transform: uppercase;
 	border: 2px solid white;
 	font-size: 14px;
