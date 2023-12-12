@@ -15,7 +15,7 @@ var TeamsPlayerBySeasonId = {
 			short_code: "BHA",
 			image_path:
 				"https://cdn.sportmonks.com/images/soccer/teams/14/78.png",
-			url: "https://www.youtube.com/embed/PF1oji4meUI?si=Xj_z3RWN8YQzu8fX",
+			url: "https://www.youtube.com/embed/t0pjrlLYO6E?si=1OdJYqltc1Swpc2f",
 			founded: 1901,
 			type: "domestic",
 			placeholder: false,

@@ -13,5 +13,8 @@
 	"license": "ISC",
 	"dependencies": {
 		"concurrently": "^7.6.0"
+	},
+	"devDependencies": {
+		"jshint": "^2.13.6"
 	}
 }

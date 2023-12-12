@@ -197,7 +197,7 @@ function App() {
 									) : (
 										<>
 											<Route
-												path="/teamdetails/id"
+												path="/teamdetails/:id"
 												element={
 													<TeamDetails
 													teams={teams}
