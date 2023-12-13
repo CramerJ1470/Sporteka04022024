@@ -83,7 +83,8 @@ function App() {
 										element={
 											<HomePage
 												teams={teams}
-												isAuth={isAuth}
+												standings = {standings}
+												
 											/>
 										}
 									/>
@@ -197,7 +198,7 @@ function App() {
 									) : (
 										<>
 											<Route
-												path="/teamdetails/id"
+												path="/teamdetails/:id"
 												element={
 													<TeamDetails
 													teams={teams}
