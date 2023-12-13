@@ -201,7 +201,7 @@ This Project was created by these awesome dedicated members
 <br />
  <a href="https://github.com/midnightmoet" target="_blank">**Lisa Miner**</a>
  <br />
- <a href="https://github.com/EndlessLucky" target="_blank">**Travon Jackson**</a>
+ <a href="https://github.com/EndlessLucky" target="_blank">**kj crypto**</a>
 #
 > ## Contributing to the project
 
