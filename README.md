@@ -124,13 +124,23 @@ $ npm install --save-dev "@nomiclabs/hardhat-waffle" "ethereum-waffle" "chai" "@
 #
 > ### Install Dependencies
 - Setup and install dependencies
-
+ 
 ```shell
-$ cd client
+$ npm install 
+
+$ cd client 
 
 $ npm install
 
-$ npm run dev
+$ cd..     //to get back to root
+
+$ cd server
+
+$ npm install
+
+$cd..
+
+$ npm run start
 ```
 
 
