@@ -132,13 +132,13 @@ $ cd client
 
 $ npm install
 
-$ cd..     //to get back to root
+$ cd..    
 
 $ cd server
 
 $ npm install
 
-$cd..
+$ cd..
 
 $ npm run start
 ```
