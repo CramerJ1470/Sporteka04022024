@@ -5,14 +5,14 @@ import AuthContext from "../../context/AuthContext";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../services";
 
-function HomePage({ teams, leagues, countries, cups}) {
+function HomePage({ teams, standings}) {
 
 
 	const { setIsAuth, isAuth } = useContext(AuthContext);
 
 	const navigate = useNavigate();
 	console.log(`teams:`,teams);
-	console.log(`leagues:`,leagues);
+	console.log(`standings:`, standings );
 	async function connectToWallet() {
 		try {
 			await connect();

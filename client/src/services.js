@@ -19,7 +19,7 @@ export const login = async (username, password, applyFunc) => {
 	const body = JSON.stringify({ username, password });
 	const headers = { "Content-Type": "application/json" };
 
-	const res = await fetch(url, { method: "POST", body, headers });
+						const res = await fetch(url, { method: "POST", body, headers });
 	if (res.ok) {
 		const result = await res.json();
 		console.log(result);

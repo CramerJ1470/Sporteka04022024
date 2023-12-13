@@ -83,7 +83,8 @@ function App() {
 										element={
 											<HomePage
 												teams={teams}
-												isAuth={isAuth}
+												standings = {standings}
+												
 											/>
 										}
 									/>
