@@ -13,7 +13,9 @@
 }
 
 .bluewhite {
-	background-color: blue;
+	width: 80vw;
+	border: 1px solid black;
+	background: blue;
 	color: white;
 }
 
@@ -40,7 +42,12 @@ input {
 	border-radius: 4px;
 }
 
-button {
+.btn-container {
+	display: flex;
+	justify-content: center;
+}
+
+.btn {
 	background: red;
 	color: #fff;
 	padding: 10px;
@@ -50,8 +57,8 @@ button {
 	cursor: pointer;
 }
 
-button:hover {
-	background-color: gray;
+.btn:hover {
+	background: gray;
 }
 
 .login-link {
