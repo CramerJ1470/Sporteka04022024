@@ -6,9 +6,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 const cors = require("cors");
 
 
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-App.use("cors");
+
 root.render(
 	<React.StrictMode>
 		<Router>

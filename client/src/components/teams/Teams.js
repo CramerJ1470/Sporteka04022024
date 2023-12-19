@@ -16,7 +16,7 @@ function Teams({ teams ,standings}) {
 			<div className="Players">
 				<div id="playerBack">
 					{teams.map((team) => {
-						return <Team key={team.id} team={team} standings={standings} />;
+						return <Team key={team.TeamId} team={team} standings={standings} />;
 					})}
 				</div>
 			</div>

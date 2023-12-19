@@ -61,52 +61,65 @@ export const logout = async () => {
 	localStorage.removeItem("userData");
 	return result;
 };
-/************Cups Section ***************** */
-// export const getCups = async (applyFunc) => {
-// 	const url = "https://api-football-v1.p.rapidapi.com/v3/leagues?type=cup";
-// 	const options = {
-// 		method: "GET",
-// 		headers: {
-// 			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
-// 			"X-RapidAPI-Host": RAPIDAPI_ADDRESS,
-// 		},
-// 	};
 
-// 	try {
-// 		const response = await fetch(url, options);
-// 		await response.json().then((cups) => {
-// 			// console.log("inside cups",cups.response);
-// 			applyFunc([...cups.response]);
-// 		});
-// 	} catch (error) {
-// 		console.error(error);
-// 	}
-// };
-/***************** Leagues Section ***************************/
-// export const getLeagues = async (applyFunc) => {
-// 	const url = "https://api-football-v1.p.rapidapi.com/v3/leagues";
-// 	const options = {
-// 		method: "GET",
-// 		headers: {
-// 			"X-RapidAPI-Key": RAPIDAPI_API_FOOTBALL_KEY,
-// 			"X-RapidAPI-Host": RAPIDAPI_ADDRESS,
-// 		},
-// 	};
-// 	try {
-// 		const response = await fetch(url, options);
-// 		await response.json().then((leagues) => {
-// 			// console.log("inside leagues", leagues.response);
-// 			applyFunc([...leagues.response]);
-// 		});
-// 	} catch (error) {
-// 		console.error(error);
-// 	}
-// };
+export const getVenues = async (applyFunc) => {
+	var myHeaders = new Headers();
+	myHeaders.append('Content-Type', 'application/json');
+	myHeaders.append('Accept', 'application/json');
+	
+	
+	
+	var requestOptions = {
+		mode: "cors",
+		method: 'GET',
+		headers: myHeaders,
+		redirect: 'follow'
+	};
+	
+	let url = "https://api.sportsdata.io/v4/soccer/scores/json/Venues?key=f735f03c7a8f40448fe3d4548abe179c";
+	try {
+	
+	const response = await fetch(url, requestOptions);
+		 const result = await response.json();
+		let venues = result;
+		
+		applyFunc([...venues]);
+	} catch (error) {
+			console.error(error);
+		}
+	};
 
-export const getSportmonksTeams = async (applyFunc) => {
-	var teams = sportmonksteams.data;
-	applyFunc([...teams]);
+
+export const getTeams = async (applyFunc) => {
+var myHeaders = new Headers();
+myHeaders.append('Content-Type', 'application/json');
+myHeaders.append('Accept', 'application/json');
+
+
+
+var requestOptions = {
+	mode: "cors",
+	method: 'GET',
+	headers: myHeaders,
+    redirect: 'follow'
 };
+
+let url = "https://api.sportsdata.io/v4/soccer/scores/json/Teams/1?key=f735f03c7a8f40448fe3d4548abe179c";
+try {
+
+const response = await fetch(url, requestOptions);
+ 	const result = await response.json();
+	let teams = result;
+	
+	applyFunc([...teams]);
+} catch (error) {
+		console.error(error);
+	}
+};
+	
+// 	var teams = sportmonksteams.data;
+// 	applyFunc([...teams]);
+// };
 
 export const getSportmonksPlayers = async (applyFunc) => {
 	var players = TeamsPlayerBySeasonId.data;
@@ -115,46 +128,32 @@ export const getSportmonksPlayers = async (applyFunc) => {
 
 
 export const getStandings = async (applyFunc) => {
-/**********************APII-FOOTBALL*********************/
-// const url = 'https://api-football-v1.p.rapidapi.com/v3/standings?season=2020&league=39';
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '0986cf5021mshf93698741a6b11ap1eec9bjsn92c9211ef7f1',
-// 		'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
-// 	}
-// };
-
-// try {
-// 	const response = await fetch(url, options);
-// 	const result = await response.json();
-// 	let standings = result.response[0].league.standings[0];
-// 	applyFunc([...standings]);
-
-// } catch (error) {
-// 	console.error(error);
-// }
 	
-// };
-
-/***************SPORTMONKS***********************/
-
 var myHeaders = new Headers();
 myHeaders.append('Content-Type', 'application/json');
 myHeaders.append('Accept', 'application/json');
-myHeaders.append("Authorization", "sgGuKPrVaLCA9zrIGQtU8COYjU4h2GBw9NjHMgezGcKaOQuJfCtFoYJR59mg");
 
 var requestOptions = {
- 	
-	 method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow'
+	mode: "cors",
+	method: 'GET',
+	headers: myHeaders,
+    redirect: 'follow'
 };
 
-await fetch("https://api.sportmonks.com/v3/football/standings/live/leagues/8?api_token=d5UyLWKBEejRtvJwyK8jIuvx9gSUmmzerz1KeB9CRH41ZCpniu1woeq4ADqR", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(`result:`,result))
-  .catch(error => console.log('error', error));
+let url = "https://api.sportsdata.io/v4/soccer/scores/json/Standings/1/2023?key=f735f03c7a8f40448fe3d4548abe179c";
+try {
+
+const response = await fetch(url, requestOptions);
+ 	const result = await response.json();
+	let standings = [];
+	for (let x=0; x < 20; x++) {standings.push(result[0].Standings[x]);
+
+	}
+	
+	applyFunc([...standings]);
+} catch (error) {
+		console.error(error);
+	}
 };
 
 // .then(response => response.text())

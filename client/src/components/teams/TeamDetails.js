@@ -6,15 +6,20 @@ import TeamDetailsInside from "./TeamDetailsInside";
 
 
 let team;
-function TeamDetails({teams, standings }) {
+function TeamDetails({teams, standings,venues }) {
 	console.log(teams);
+	console.log(venues);
+	
+	
 	const { id } = useParams();
 	console.log("Teamdetails id", id);
 	teams.forEach((item) => {
-		if (item.id === Number(id)) {
+		if (item.TeamId === Number(id)) {
 			team = item;
 		}
 	});
+	let venue = venues[team.TeamId];
+	console.log(`venue:`,venue);
 	console.log(`the team: `,team);
 	
 	console.log(team);
@@ -25,7 +30,7 @@ function TeamDetails({teams, standings }) {
 
 	return (
 		<>
-			<TeamDetailsInside team={team} teams={teams} standings={standings}/>
+			<TeamDetailsInside team={team} teams={teams} standings={standings} venue={venue}/>
 		</>
 	);
 }
