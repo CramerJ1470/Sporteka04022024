@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+
 import "./components/registerPage/register.css";
 import "./components/navbar/navbar.css";
 import "./components/loginPage/login.css";
@@ -10,11 +11,13 @@ import AuthContext from "./context/AuthContext";
 import CountriesContext from "./context/CountriesContext";
 import TeamsContext from "./context/TeamsContext";
 import StandingsContext from "./context/StandingsContext";
+import VenuesContext from "./context/VenuesContext";
 import PlayersContext from "./context/TeamsContext";
 import {
 getStandings,
-	getSportmonksTeams,
+	getTeams,
 	getSportmonksPlayers,
+	getVenues,
 } from "./services";
 
 import Connectmetamask from "./components/Connectmetamask";
@@ -36,20 +39,26 @@ import RegisteredHomePage from "./components/registerHomePage/RegisteredHomePage
 import LoggedInHomePage from "./components/loggedInHomePage/LoggedInHomePage";
 // import HomeButton from "./components/common/homeButton";
 
+
 function App() {
+
+
 	const [players, setPlayers] = useState([]);
 	const [standings,setStandings] = useState([]);
 	const [teams, setTeams] = useState([]);
+	const [ venues, setVenues] = useState([]);
 	const [isAuth, setIsAuth] = useState(localStorage.getItem("userData"));
 
 	useEffect(() => {
 		getSportmonksPlayers(setPlayers);
 		getStandings(setStandings);
-		getSportmonksTeams(setTeams);
+		getTeams(setTeams);
+		getVenues(setVenues);
 	}, []);
 	const updatePlayers = () => getSportmonksPlayers(setPlayers);
 	const updateStandings = () => getStandings(setStandings);
-	const updateTeams = () => getSportmonksTeams(setTeams);
+	const updateTeams = () => getTeams(setTeams);
+	const updateVenues = ()  => getVenues(setVenues);
 
 	return (
 		<AuthContext.Provider value={{ isAuth: isAuth, setIsAuth }}>
@@ -72,6 +81,13 @@ function App() {
 							teams: teams,
 							setTeams,
 							updateTeams
+						}}
+					>
+							<VenuesContext.Provider
+						value={{
+							venues: venues,
+							setVenues,
+							updateVenues
 						}}
 					>
 							<div className="App">
@@ -203,6 +219,7 @@ function App() {
 													<TeamDetails
 													teams={teams}
 														standings = {standings}
+														venues = {venues}
 														
 													/>
 												}
@@ -233,7 +250,7 @@ function App() {
 											<Route
 												path="/teams"
 												element={
-													<Teams teams={teams} />
+													<Teams teams={teams} standings = {standings} />
 												}
 											/>
 											<Route
@@ -286,6 +303,7 @@ function App() {
 							
 								<Footer />
 							</div>
+							</VenuesContext.Provider>
 							</TeamsContext.Provider>
 						</PlayersContext.Provider>
 						</StandingsContext.Provider>

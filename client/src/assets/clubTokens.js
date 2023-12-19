@@ -1,4 +1,4 @@
 export TeamTokens = [
-    {"short_code":"BHA","smartContractAddress":"0xef4b83027edf971a72a053d7ea9694ff9ce71045"},
+    {"short_code":"BHA","smartContractAddress":"0xb9c8e28c0109fb47ee0f547ac9d98ce4468fa25e"},
     
 ]

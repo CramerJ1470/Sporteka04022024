@@ -105,13 +105,7 @@ function UserMenu({ traderData }) {
 						<p>{traderData.helpSupport}</p>
 					)}
 				</div>
-				<NavLink
-						to="/teams"
-						id="teamsbutton"
-						className="teamsbutton"
-					>
-						Teams Page
-					</NavLink>
+			
 			</span>
 		</div>
 	);

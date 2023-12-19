@@ -1,13 +1,16 @@
 import React, { useEffect, useContext, useState } from "react";
-import { Link } from "react-router-dom";
+
 import "./trader.css";
 import UserHistory from "./UserHistory";
 import UserMenu from "./UserMenu";
 import TokensOwned from "./TokensOwned";
 import AuthContext from "../../context/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
+
 
 function TraderDashboard1() {
   const { isAuth, setIsAuth } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const traderData = {
     marketingInsights: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -75,28 +78,59 @@ function TraderDashboard1() {
     }
   }
 
+  async function teamsButton () {
+    console.log('team navigate');
+        navigate("/teams");
+  }
+
+  async function playersButton () {
+    navigate("/players");
+  }
+
   return (
     <div>
       <div className="header">
-        <h2>Trader Dashboard</h2>
+     
+      <h1>DASHBOARD</h1>
+      <h2>Tokens Owned</h2>
+
+
       </div>
       <span className="usermenu">
+        
+        
+
+         
+        
+        <div className="padtop20">
+        
         <div className="tokensowned header padtop5">
-          <h2>Tokens Owned</h2>
-          <div className="padtop20">
+        
             <TokensOwned />
+
           </div>
-        </div>
+          
+          </div>
+         
         <div className="profile">
+        
           <img src="profile_pic.jpg" alt="Profile" />
         </div>
         <div className="middle">
+       
           <UserMenu traderData={traderData} />
         </div>
-        <UserHistory traderData={traderData} />
-        <Link id="connectButton" className="button" onClick={connectToWallet}>
+        <span className="sidebyside">
+        <Link id="connectButton" className="button ball" onClick={connectToWallet}>
           Connect to Wallet
         </Link>
+        <button id="teamsButton" className="button ball" onClick={teamsButton}>
+         Teams Tokens
+        </button>
+        <button id="playersButton" className="button ball" onClick={playersButton}>
+         Players Tokens
+        </button>
+        </span>
       </span>
     </div>
   );

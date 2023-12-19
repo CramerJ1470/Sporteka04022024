@@ -14,27 +14,28 @@ const tokensOwned = [
 const TokensOwned = () => {
    return (
       <div className="tokens-owned-container">
-         <table className="mb2vh bgwhite">
+         <table className=" mb2vh bgwhite">
             <thead>
                <tr>
-                  <th className="px240">
-                     <div className="d-flex align-items-center tacenter">
-                        <p style={{ width: 0 }}></p>
-                        <p style={{ width: 300, textAlign: "center" }}></p>
-                     </div>
-                  </th>
-                  <th className="px240">Token Name</th>
-                  <th className="px240">Club Name</th>
-                  <th className="px240">Amount Owned</th>
-                  <th className="px240">Estimated Value</th>
-                  <th className="px240">Option 1</th>
-                  <th className="px240">Option 2</th>
+               <th className="px120"> </th>
+                 <th className="px120">Token Name</th>
+                 <th className="px120">Club Name</th>
+                 <th className="px120">Amount Owned</th>
+                  
+                  <th className="px120">Estimated Value</th>
+                   
                </tr>
             </thead>
             <tbody>
+             
                {tokensOwned.map((token, index) => (
                   <AdditionalTokens key={index} token={token} />
                ))}
+        
+             
+            
+              
+              
             </tbody>
          </table>
       </div>
