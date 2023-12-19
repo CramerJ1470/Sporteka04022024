@@ -3,20 +3,21 @@ import Video from "./videoPlayer/Video";
 
 
 
-
+let rank =0;
 function TeamDetailsInside({ team,teams ,standings}) {
 	let value = 0;
 	console.log(team);
-
+	let currentTeams = [];
+	let ranks= standings.forEach((standingTeam) => {const {group_id,id,league_id,participant_id,points,position,result,round_id,season_id,sport_id,stage_id,standing_rule_id,_id} = standingTeam;console.log(standingTeam);if (participant_id === team.id) {currentTeams.push(standingTeam)}});
+  let currentTeam = currentTeams[0];
+ rank = currentTeam.position;
+  console.log(rank);
 
 function getValue(e) {
 
 	var team_id= Number(e.target.id);
 	var capacity = Number(team.venue_capacity);
-console.log(`team_id:`, team_id, ` capacity:`,capacity , `standings:`,standings);
-let standingsList  = standings.forEach((item) => {if(Number(item.participant_id) === Number(team_id)) {console.log(item.participant_id);return item.position;}});
-let position = standingsList;
-console.log(standingsList);
+	let position = rank;
 
   let multiplier = 1;
 	  
@@ -31,7 +32,7 @@ console.log(standingsList);
 		  multiplier = 6;
 	  }
 console.log(`cap:`,capacity,"multi:",multiplier,"pos:",position);
-	  value = (38 * 50 * capacity * multiplier) / 1000000;
+	  value = (38 * 50 * capacity * multiplier) / 10000000;
 	document.getElementById("endvalue").style.display= "block";
 	document.getElementById("endvalue").innerText = `Current value: ${value} SPRTK (Sporteka Token) click to purchase ${team.short_code} (${team.name}) token`;
 	document.getElementById("endGame").style.display = "none";
@@ -58,6 +59,7 @@ console.log(`cap:`,capacity,"multi:",multiplier,"pos:",position);
 				<p>Country: {team.country}</p>
 				
 				<p>Venue Capacity: {team.venue_capacity}</p>
+				<p>Rank: {rank}</p>
 			</div>
 			<div id="getValue" className="cent">
 				<div id="endGame">

@@ -115,15 +115,49 @@ export const getSportmonksPlayers = async (applyFunc) => {
 
 
 export const getStandings = async (applyFunc) => {
-	const url = "http://localhost:8090/apisnt/standings";
-	const res = await fetch(url);
-	console.log(`getStandings res; `, res);
-	res.json().then((standings) => {
-		applyFunc([...standings]);
-	});
-};
+/**********************APII-FOOTBALL*********************/
+// const url = 'https://api-football-v1.p.rapidapi.com/v3/standings?season=2020&league=39';
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '0986cf5021mshf93698741a6b11ap1eec9bjsn92c9211ef7f1',
+// 		'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+// 	}
+// };
+
+// try {
+// 	const response = await fetch(url, options);
+// 	const result = await response.json();
+// 	let standings = result.response[0].league.standings[0];
+// 	applyFunc([...standings]);
+
+// } catch (error) {
+// 	console.error(error);
+// }
 	
-	// .then(response => response.text())
+// };
+
+/***************SPORTMONKS***********************/
+
+var myHeaders = new Headers();
+myHeaders.append('Content-Type', 'application/json');
+myHeaders.append('Accept', 'application/json');
+myHeaders.append("Authorization", "sgGuKPrVaLCA9zrIGQtU8COYjU4h2GBw9NjHMgezGcKaOQuJfCtFoYJR59mg");
+
+var requestOptions = {
+ 	
+	 method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+await fetch("https://api.sportmonks.com/v3/football/standings/live/leagues/8?api_token=d5UyLWKBEejRtvJwyK8jIuvx9gSUmmzerz1KeB9CRH41ZCpniu1woeq4ADqR", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(`result:`,result))
+  .catch(error => console.log('error', error));
+};
+
+// .then(response => response.text())
 	// .then(result => console.log(result))
 	// .catch(error => console.log('error', error));
 	// let result = res.json();

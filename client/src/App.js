@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+
 import "./components/registerPage/register.css";
 import "./components/navbar/navbar.css";
 import "./components/loginPage/login.css";
@@ -36,7 +37,10 @@ import RegisteredHomePage from "./components/registerHomePage/RegisteredHomePage
 import LoggedInHomePage from "./components/loggedInHomePage/LoggedInHomePage";
 // import HomeButton from "./components/common/homeButton";
 
+
 function App() {
+
+
 	const [players, setPlayers] = useState([]);
 	const [standings,setStandings] = useState([]);
 	const [teams, setTeams] = useState([]);
@@ -233,7 +237,7 @@ function App() {
 											<Route
 												path="/teams"
 												element={
-													<Teams teams={teams} />
+													<Teams teams={teams} standings = {standings} />
 												}
 											/>
 											<Route

@@ -69,41 +69,62 @@
 	
 }
 
-.header h2 {
+.header h1{
 	position: fixed;
 	text-align: center;
 	top: 5%;
 	left: 40%;
 	width: 20%;
 }
-.padtop5 h2 {
+.padtop5 h1 {
 	top: 10%;
 }
+.header h2{
+	position: fixed;
+	text-align: center;
+	top: 8%;
+	left: 40%;
+	width: 20%;
+}
+.padtop5 h2 {
+	top: 15%;
+}
+
 .padtop20 {
 	position: fixed;
 	top: 15%;
 	left: 20%;
 }
 .px120 {
-	width: 15%;
+	width: 9%;
+	
+}
+
+.flex {
+	display: flex;
 }
 .px240 {
-	width:25%;
+	 
+	width: 80%;
+	 
+	margin-bottom:  10px;
+
+	
 }
 .dashboard-section {
-	margin-bottom: 30px;
 	
-	width: 20%;
+	
+	width:100%;
 	margin-left: 1.5%;
 	border-color: #f0f0f0;
 	border-style: hidden;
 	filter: drop-shadow(0 0 0.5rem black);
 	padding: 5%;
-	padding-top: 9%;
+	
 	color: white;
-	font-size: 120%;
-	background-image: url("https://clipart-library.com/new_gallery/386-3860323_3d-soccer-ball-png-ball.png");
-	background-size:cover;
+	font-size: 175%;
+	
+	background-size:contain;
 }
 .usermenu {
 	text-align: left;
@@ -112,16 +133,21 @@
 }
 
 .middle {
-	left: -10%;
-	top: 10%;
+	left: -20%;
+	top: 20%;
+	
 }
+.ball {
+	background-image: url("https://clipart-library.com/new_gallery/386-3860323_3d-soccer-ball-png-ball.png");
+}
+
 .marg5 {
 	padding-right: 5%;
 	width: 90%;
 }
 td {
 	padding-right: 5%;
-	width: 5%;
+	width: 2%;
 }
 
 .tacenter {
@@ -129,19 +155,27 @@ td {
 	margin: 20%;
 }
 .bgwhite {
-	left: 20%;
+	display: flexbox;
 	background: white;
 	opacity: 0.7;
 	width: 90%;
 	filter: drop-shadow(0 0 0.5rem black);
+
 }
 
+
 .mb2vh {
-	place-items: left;
-	margin-bottom: 2vh;
-	margin-left: 10vw;
-	width: 700px;
-	display: block;
+	height: 10%;
+	border-style: solid;
+	border-width: 5px;
+	padding-left: 5px;
+	filter: drop-shadow(0 0 0.5rem black);
+	border-color: blue;;
+
+	
+	
+
+
 	
 }
 /* Responsive styles */
@@ -165,6 +199,9 @@ td {
 		font-size: clamp(1rem, 3vw, 1.5rem);
 		padding: 8px;
 	}
+
+	span.sidebyside {
+		display:block;	}
 }
 .lefttoright {
 	display: flex;
@@ -178,5 +215,9 @@ td {
 	width: 200%;
 	height: auto;
 	margin: 2rem;
+}
+
+.sidebyside {
+	display: flex;
 }
 

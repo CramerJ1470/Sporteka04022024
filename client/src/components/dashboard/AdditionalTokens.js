@@ -12,18 +12,15 @@ const AdditionalTokens = ({ token }) => {
    }
 
    return (
-      <div className="mb2vh">
-         <table className="bgwhite">
-            <tbody>
-               <tr>
-                  <td className="px240">
+   
+               <tr  className="mb2vh">
+               
+                  <td >
                      <div className="d-flex align-items-center tacenter">
                         <img
                            src={team_logo}
                            className="img-fluid rounded-3"
-                           style={{
-                              width: 150,
-                           }}
+                           style={{   width: 360}}                           
                            alt="Team Logo"
                         />
                         <div className="d-flex align-items-center tacenter">
@@ -31,39 +28,37 @@ const AdditionalTokens = ({ token }) => {
                         </div>
                      </div>
                   </td>
-                  <td className="align-middle px240">
+                  <td className="align-middle ">
                      <p className="mb-0" style={{ width: 100, fontWeight: 500 }}>
                         {token_name}
                      </p>
                   </td>
-                  <td className="align-middle px240">
-                     <p className="mb-0">{amount_owned}</p>
-                  </td>
-                  <td className="align-middle px240">
+                
+                  <td className="align-middle ">
                      <p className="mb-0" style={{ width: 100, fontWeight: 500 }}>
                         {club_name}
                      </p>
                   </td>
-                  <td className="align-middle px240">
-                     <p className="mb-0" style={{ fontWeight: 500 }}>
-                        {amount_owned}
-                     </p>
+                  <td className="align-middle">
+                     <p className="mb-0">{amount_owned}</p>
                   </td>
-                  <td className="align-middle px240">
+                  <td className="align-middle">
                      <p className="mb-0" style={{ fontWeight: 500 }}>
                         {current_price}
                      </p>
-                  </td>
-                  <td>
-                     <span className="lefttoright">
-                        <button onClick={revalueToken}>Revalue</button>
+
+                  
+                
+                 
+                     </td>
+                     
+                   <td>
+                     <button onClick={revalueToken}>Revalue</button>
                         <button onClick={purchaseToken}>Add Token(s)</button>
-                     </span>
-                  </td>
+                        </td>
+                  
                </tr>
-            </tbody>
-         </table>
-      </div>
+  
    );
 };
 

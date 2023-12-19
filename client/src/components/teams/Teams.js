@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import Team from "./Team";
 
 
-function Teams({ teams }) {
+function Teams({ teams ,standings}) {
 	console.log("teams", teams);
+
+
 
 	return (
 		<div className="page">
@@ -14,7 +16,7 @@ function Teams({ teams }) {
 			<div className="Players">
 				<div id="playerBack">
 					{teams.map((team) => {
-						return <Team key={team.id} team={team} />;
+						return <Team key={team.id} team={team} standings={standings} />;
 					})}
 				</div>
 			</div>
