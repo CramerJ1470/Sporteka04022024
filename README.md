@@ -124,13 +124,23 @@ $ npm install --save-dev "@nomiclabs/hardhat-waffle" "ethereum-waffle" "chai" "@
 #
 > ### Install Dependencies
 - Setup and install dependencies
-
+ 
 ```shell
-$ cd client
+$ npm install 
+
+$ cd client 
 
 $ npm install
 
-$ npm run dev
+$ cd..    
+
+$ cd server
+
+$ npm install
+
+$ cd..
+
+$ npm run start
 ```
 
 
@@ -191,7 +201,7 @@ This Project was created by these awesome dedicated members
 <br />
  <a href="https://github.com/midnightmoet" target="_blank">**Lisa Miner**</a>
  <br />
- <a href="https://github.com/EndlessLucky" target="_blank">**Travon Jackson**</a>
+ <a href="https://github.com/EndlessLucky" target="_blank">**kj crypto**</a>
 #
 > ## Contributing to the project
 
