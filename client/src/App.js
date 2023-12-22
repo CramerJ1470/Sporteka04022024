@@ -13,11 +13,13 @@ import TeamsContext from "./context/TeamsContext";
 import StandingsContext from "./context/StandingsContext";
 import VenuesContext from "./context/VenuesContext";
 import PlayersContext from "./context/TeamsContext";
+import ClubTokensContext from "./context/ClubTokensContext";
 import {
 getStandings,
 	getTeams,
 	getSportmonksPlayers,
 	getVenues,
+	getClubTokens,
 } from "./services";
 
 import Connectmetamask from "./components/Connectmetamask";
@@ -37,6 +39,7 @@ import ClubDashboard from "./components/clubDashboard/ClubDashboard";
 import TeamDetails from "./components/teams/TeamDetails";
 import RegisteredHomePage from "./components/registerHomePage/RegisteredHomePage";
 import LoggedInHomePage from "./components/loggedInHomePage/LoggedInHomePage";
+
 // import HomeButton from "./components/common/homeButton";
 
 
@@ -47,6 +50,7 @@ function App() {
 	const [standings,setStandings] = useState([]);
 	const [teams, setTeams] = useState([]);
 	const [ venues, setVenues] = useState([]);
+	const [clubtokens, setClubTokens] = useState([]);
 	const [isAuth, setIsAuth] = useState(localStorage.getItem("userData"));
 
 	useEffect(() => {
@@ -54,11 +58,13 @@ function App() {
 		getStandings(setStandings);
 		getTeams(setTeams);
 		getVenues(setVenues);
+		getClubTokens(setClubTokens);
 	}, []);
 	const updatePlayers = () => getSportmonksPlayers(setPlayers);
 	const updateStandings = () => getStandings(setStandings);
 	const updateTeams = () => getTeams(setTeams);
 	const updateVenues = ()  => getVenues(setVenues);
+	const updateClubTokens = () => getClubTokens(setClubTokens);
 
 	return (
 		<AuthContext.Provider value={{ isAuth: isAuth, setIsAuth }}>
@@ -88,6 +94,13 @@ function App() {
 							venues: venues,
 							setVenues,
 							updateVenues
+						}}
+					>
+								<ClubTokensContext.Provider
+						value={{
+							clubtokens: clubtokens,
+							setClubTokens,
+							updateClubTokens
 						}}
 					>
 							<div className="App">
@@ -171,7 +184,7 @@ function App() {
 											<Route
 												path="/teams"
 												element={
-													<Teams teams={teams} />
+													<Teams teams={teams} standing={standings}/>
 												}
 											/>
 											<Route
@@ -220,6 +233,7 @@ function App() {
 													teams={teams}
 														standings = {standings}
 														venues = {venues}
+														clubtokens = {clubtokens}
 														
 													/>
 												}
@@ -303,6 +317,7 @@ function App() {
 							
 								<Footer />
 							</div>
+							</ClubTokensContext.Provider>
 							</VenuesContext.Provider>
 							</TeamsContext.Provider>
 						</PlayersContext.Provider>

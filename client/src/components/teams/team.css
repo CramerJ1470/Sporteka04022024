@@ -15,7 +15,7 @@
   background-color: #fff; /* Set a background color for the player card */
 }
 
-.playercard:hover {
+.linkbutton:hover {
   box-shadow: 0 0 5px red;
 }
 

@@ -1,8 +1,8 @@
 const User = require("./User");
 const Transaction= require("./Transaction");
 const TokenBlacklist = require("./TokenBlacklist");
-
 const Standings = require("./Standings");
+const ClubToken= require("./ClubToken");
 
 
 module.exports = {
@@ -10,4 +10,5 @@ module.exports = {
 	Transaction,
 	TokenBlacklist,
 	Standings,
+	ClubToken,
 };

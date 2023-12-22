@@ -7,3 +7,5 @@ export const RAPIDAPI_API_FOOTBALL_KEY_BETA =
 export const RAPIDAPI_ADDRESS = "api-football-v1.p.rapidapi.com";
 // export const SPORTMONKS_API_TOKEN ="sgGuKPrVaLCA9zrIGQtU8COYjU4h2GBw9NjHMgezGcKaOQuJfCtFoYJR59mg";
 export const SPORTMONKS_API_TOKEN ="d5UyLWKBEejRtvJwyK8jIuvx9gSUmmzerz1KeB9CRH41ZCpniu1woeq4ADqR";
+
+export const SPORTDATA_API_TOKEN ="f735f03c7a8f40448fe3d4548abe179c";

@@ -21,6 +21,7 @@ function getValue(e) {
 
 	var TeamId= Number(e.target.TeamId);
 	var capacity = Number(venue.Capacity);
+
 	let position = rank;
 
   let multiplier = 1;
@@ -38,7 +39,7 @@ function getValue(e) {
 console.log(`cap:`,capacity,"multi:",multiplier,"pos:",position);
 	  value = (38 * 50 * capacity * multiplier) / 10000000;
 	document.getElementById("endvalue").style.display= "block";
-	document.getElementById("endvalue").innerText = `Current value: ${value} SPRTK (Sporteka Token) click to purchase ${team.short_code} (${team.name}) token`;
+	document.getElementById("endvalue").innerText = `Current value: ${value} SPRTK (Sporteka Token) click to purchase ${team.Key} (${team.Name}) token`;
 	document.getElementById("endGame").style.display = "none";
 	
 			
@@ -48,8 +49,21 @@ console.log(`cap:`,capacity,"multi:",multiplier,"pos:",position);
 	// 	url: team.url,
 	// };
 
-	function addToken() {
-		alert(`Deploy addClubToken`);
+	function buyClubToken() {
+		// ask if they are buying they need to pay to update price
+		// run chainlink function that updates price with ClubTokenName- returns price and date
+		//In mongodb add address to clubs price array
+		// Do calculation with price and User Sporteka balance in front end
+		
+
+
+		//run buyClubToken (string memory clubName, uint256 amountofToken) 
+
+		// get Users SportekaToken balance;
+		// get Club Symbol
+		// 
+	
+		alert(`Deploy buyClubToken`);
 	}
 
 	console.log(`inside team:`, team);
@@ -62,7 +76,7 @@ console.log(`cap:`,capacity,"multi:",multiplier,"pos:",position);
 				<p>Token: {team.Key} </p>
 				<p>Country: {team.AreaName}</p>
 				
-				<p>Venue Capacity: {venue.Capacity}</p>
+				{/* <p>Venue Capacity: {venue.Capacity}</p> */}
 				<p>Rank: {rank}</p>
 			</div>
 			<div id="getValue" className="cent">
@@ -72,7 +86,7 @@ console.log(`cap:`,capacity,"multi:",multiplier,"pos:",position);
 				</button>
 				</div>
                
-				<button id="endvalue" className="button cent endvalue" onClick={addToken}></button>
+				<button id="endvalue" className="button cent endvalue" onClick={buyClubToken}></button>
 {/* 				
 				<Video video={video} /> */}
 			</div>

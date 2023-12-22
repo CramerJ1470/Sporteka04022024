@@ -6,31 +6,22 @@ import TeamDetailsInside from "./TeamDetailsInside";
 
 
 let team;
-function TeamDetails({teams, standings,venues }) {
-	console.log(teams);
-	console.log(venues);
-	
+function TeamDetails({teams, standings,venues,clubtokens}) {
 	
 	const { id } = useParams();
-	console.log("Teamdetails id", id);
+	
 	teams.forEach((item) => {
 		if (item.TeamId === Number(id)) {
 			team = item;
 		}
 	});
-	let venue = venues[team.TeamId];
-	console.log(`venue:`,venue);
-	console.log(`the team: `,team);
+	let VenueId = team.VenueId;
 	
-	console.log(team);
-	function addClubToken() {
-		alert(`Deploy addClubToken`);
-	}
+	let venue = venues[team.VenueId-1];
 	
-
-	return (
+		return (
 		<>
-			<TeamDetailsInside team={team} teams={teams} standings={standings} venue={venue}/>
+			<TeamDetailsInside team={team} teams={teams} standings={standings} venue={venue} clubtokesn={clubtokens}/>
 		</>
 	);
 }

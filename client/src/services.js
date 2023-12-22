@@ -12,6 +12,7 @@ const TeamsPlayerBySeasonId =
 	require("./assets/TeamsPLayersBySeasonId").TeamsPlayerBySeasonId;
 const liveStandingByLeagueData =
 	require("./assets/liveStandingByLeague").liveStandingByLeagueData;
+const SPORTDATA_API_TOKEN = require("./configItems").SPORTDATA_API_TOKEN;
 
 /***********************User section******************* */
 export const login = async (username, password, applyFunc) => {
@@ -76,7 +77,7 @@ export const getVenues = async (applyFunc) => {
 		redirect: 'follow'
 	};
 	
-	let url = "https://api.sportsdata.io/v4/soccer/scores/json/Venues?key=f735f03c7a8f40448fe3d4548abe179c";
+	let url = `https://api.sportsdata.io/v4/soccer/scores/json/Venues?key=${SPORTDATA_API_TOKEN}`;
 	try {
 	
 	const response = await fetch(url, requestOptions);
@@ -104,7 +105,7 @@ var requestOptions = {
     redirect: 'follow'
 };
 
-let url = "https://api.sportsdata.io/v4/soccer/scores/json/Teams/1?key=f735f03c7a8f40448fe3d4548abe179c";
+let url = `https://api.sportsdata.io/v4/soccer/scores/json/Teams/1?key=${SPORTDATA_API_TOKEN}`;
 try {
 
 const response = await fetch(url, requestOptions);
@@ -140,7 +141,7 @@ var requestOptions = {
     redirect: 'follow'
 };
 
-let url = "https://api.sportsdata.io/v4/soccer/scores/json/Standings/1/2023?key=f735f03c7a8f40448fe3d4548abe179c";
+let url = `https://api.sportsdata.io/v4/soccer/scores/json/Standings/1/2023?key=${SPORTDATA_API_TOKEN}`;
 try {
 
 const response = await fetch(url, requestOptions);
@@ -231,14 +232,14 @@ const response = await fetch(url, requestOptions);
 
 /*******************Infor Section ********************* */
 
-// export const getInfo = async (applyFunc) => {
-// 	const url = "http://localhost:8090/api/info";
-// 	const res = await fetch(url);
-// 	console.log(`getInfo res; `, res);
-// 	res.json().then((info) => {
-// 		applyFunc([...info]);
-// 	});
-// };
+export const getClubTokens = async (applyFunc) => {
+	const url = "http://localhost:8090/apisnt/clubtokens";
+	const res = await fetch(url);
+	console.log(`clubtokens: `, res);
+	res.json().then((info) => {
+		applyFunc([...info]);
+	});
+};
 
 // export const addInfo = async (body) => {
 // 	const { token } = JSON.parse(localStorage.getItem("userData"));
