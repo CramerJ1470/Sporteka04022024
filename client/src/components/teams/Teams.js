@@ -11,7 +11,7 @@ function Teams({ teams ,standings}) {
 
 	return (
 		<div className="page">
-			<h3>Team Tokens</h3>
+			<h3 className="title">Team Tokens</h3>
 		<div className="teams-container">
 			<div className="Players">
 				<div id="playerBack">

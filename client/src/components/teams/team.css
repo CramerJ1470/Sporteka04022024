@@ -5,14 +5,14 @@
 
 .playercard {
   border: 1px solid #ccc;
-  margin: 10px;
+  margin: 20px;
   padding: 15px 0;
   width: 250px;
   box-sizing: border-box;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #ccc;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #444343;
   text-align: center;
-  background-color: #fff; /* Set a background color for the player card */
+  background-color: rgb(178, 178, 212); /* Set a background color for the player card */
 }
 
 .linkbutton:hover {
@@ -24,6 +24,7 @@
   max-width: 50%; /* Ensure the image doesn't exceed the container width */
   max-height: 50%;
   border-radius: 5px; /* Add some border-radius to the image */
+  
 
 }
 
@@ -55,4 +56,10 @@
   .teams-container h3 {
     font-size: 2em;
   }
+
+
+}
+.title {
+  text-shadow: 0 0 10px #444343 ;
+
 }
