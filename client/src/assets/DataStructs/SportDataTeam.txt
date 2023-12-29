@@ -1,0 +1,28 @@
+Active:true
+Address:"Dean Court, Kings Park"
+AreaId:68
+AreaName:"England"
+City:"Bournemouth"
+ClubColor1: "Red"
+ClubColor2:"Black"
+ClubColor3:null
+Email:"admin@afcb.co.uk"
+Fax:"+44 (01202) 726373"
+Founded:1890
+FullName:"Association Football Club Bournemouth"
+Gender:"Male"
+GlobalTeamId:90000508
+Key:"BOR"
+Name:"AFC Bournemouth"
+Nickname1:"The Cherries"
+Nickname2:"Boscombe"
+Nickname3:null
+Phone:"+44 (01202) 726300"
+TeamId:508
+Type:"Club"
+VenueId:1
+VenueName:"Vitality Stadium"
+Website:"http://www.afcb.co.uk"
+WikipediaLogoUrl:"https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/AFC_Bournemouth_%282013%29.svg/241px-AFC_Bournemouth_%282013%29.svg.png"
+WikipediaWordMarkUrl:""
+Zip:"BH7 7AF"

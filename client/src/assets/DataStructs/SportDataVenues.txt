@@ -1,0 +1,14 @@
+Address:"Dean Court, Kings Park"
+Capacity:12000
+City:"Bournemouth"
+Country:"England"
+GeoLat:50.73524
+GeoLong:-1.838309
+Name:"Vitality Stadium"
+Nickname1:"Fitness First Stadium"
+Nickname2:"Dean Court"
+Open:true
+Opened:null
+Surface:"Grass"
+VenueId:1
+Zip:"BH7 7AF"

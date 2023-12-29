@@ -89,7 +89,78 @@ export const getVenues = async (applyFunc) => {
 			console.error(error);
 		}
 	};
+export const getBettingEventsBySeasonUpcomingGames = async () => {
+	var myHeaders = new Headers();
+myHeaders.append('Content-Type', 'application/json');
+myHeaders.append('Accept', 'application/json');
 
+var requestOptions = {
+	mode: "cors",
+	method: 'GET',
+	headers: myHeaders,
+    redirect: 'follow'
+};
+ 
+let url = `https://api.sportsdata.io/v4/soccer/odds/json/BettingEventsBySeason/1/2024?key=${SPORTDATA_API_TOKEN}`;
+const response = fetch (url, requestOptions);
+
+// Execute the API request (Promise)
+const standingsResponse = await response;
+if (standingsResponse.error) {
+  console.error(standingsResponse.error);
+  throw Error("Request failed");
+}
+console.log(`response: `,Array.from(standingsResponse.data)[178]);
+const {AwayRotationNumber,AwayTeam,AwayTeamID,AwayTeamScore,BettingEventID,BettingEventType,BettingEventTypeID,
+BettingMarkets,
+CompetitionId,
+Created,
+GameID,
+GameStatus,
+GlobalAwayTeamID,
+GlobalGameID,
+GlobalHomeTeamID,
+HomeRotationNumber,
+HomeTeam,
+HomeTeamID,
+HomeTeamScore,
+Name,
+Quarter,
+Season,
+StartDate,
+TotalScore,
+Updated} = Array.from(standingsResponse.data)[178];
+let startDateSplit = StartDate.split("T");
+let newStartDateObj = {matchDate:startDateSplit[0], matchTime:startDateSplit[1]};
+console.log(`matchDate: `,newStartDateObj.matchDate);
+ console.log(`matchTime: `,newStartDateObj.matchTime);
+};
+
+export const getFuturesBySeason= async () => {
+	var myHeaders = new Headers();
+	myHeaders.append('Content-Type', 'application/json');
+	myHeaders.append('Accept', 'application/json');
+	
+	
+	
+	var requestOptions = {
+		mode: "cors",
+		method: 'GET',
+		headers: myHeaders,
+		redirect: 'follow'
+	};
+	
+	let url = `https://api.sportsdata.io/v4/soccer/odds/json/BettingEventsBySeason/1/2024?key=${SPORTDATA_API_TOKEN}`;
+	try {
+	
+	const response = await fetch(url, requestOptions);
+		 const result = await response.json();
+		let BetSeasonFutures = result;
+	return BetSeasonFutures
+	} catch (error) {
+			console.error(error);
+		}
+	};
 
 export const getTeams = async (applyFunc) => {
 var myHeaders = new Headers();

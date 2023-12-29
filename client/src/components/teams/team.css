@@ -50,7 +50,9 @@
 
   .playercard {
     width: 100%;
-    margin: 0 10px;
+    height: 75%;
+    margin:  10px;
+    
   }
 
   .teams-container h3 {

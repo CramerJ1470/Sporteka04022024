@@ -113,6 +113,7 @@ function App() {
 											<HomePage
 												teams={teams}
 												standings = {standings}
+												venues = {venues}
 												
 											/>
 										}

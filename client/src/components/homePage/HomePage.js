@@ -3,9 +3,9 @@ import "./home.css";
 import Footer from "../footer/Footer";
 import AuthContext from "../../context/AuthContext";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { logout } from "../../services";
+import { logout ,getFuturesBySeason} from "../../services";
 
-function HomePage({ teams, standings}) {
+function HomePage({ teams, standings,venues}) {
 
 
 	const { setIsAuth, isAuth } = useContext(AuthContext);
@@ -13,6 +13,12 @@ function HomePage({ teams, standings}) {
 	const navigate = useNavigate();
 	console.log(`teams:`,teams);
 	console.log(`standings:`, standings );
+	console.log('venues:',venues);
+	async function getFutures() {let responds =  await getFuturesBySeason();
+	console.log(`BetFutures: `,responds);
+}
+
+getFutures();
 	async function connectToWallet() {
 		try {
 			await connect();
