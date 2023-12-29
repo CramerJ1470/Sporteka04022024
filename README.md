@@ -193,11 +193,9 @@ $ npx hardhat coverage --network localhost --show-stack-traces
 
 This Project was created by these awesome dedicated members
 
- <a href="https://github.com/richieart123" target="_blank">**Richie**</a>
- <br />
+
+
  <a href="https://github.com/CramerJ1470" target="_blank">**John Cramer**</a>
-<br />
- <a href="https://github.com/EnebeliEmmanuel" target="_blank">**Emmanuel Enebeli**</a>
 <br />
  <a href="https://github.com/midnightmoet" target="_blank">**Lisa Miner**</a>
  <br />
