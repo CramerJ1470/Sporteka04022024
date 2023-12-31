@@ -1,21 +1,18 @@
 const { check } = require("express-validator");
 
-exports.signupValidation = [
-	check("username", "Username is required").not().isEmpty(),
-	// check("email", "Please include a valid email")
-	// 	.isEmail()
-	// 	.normalizeEmail({ gmail_remove_dots: true }),
-	check("password", "Password must be 6 or more characters").isLength({
-		min: 6,
-	}),
+const validateEmail = (field) =>
+  check(field, "Please include a valid email")
+    .isEmail()
+    .normalizeEmail({ gmail_remove_dots: true });
+
+const commonValidation = [
+  check("username", "Username is required").not().isEmpty(),
+  validateEmail("email"), // Use the validateEmail function for email validation
+  check("password", "Password must be 6 or more characters").isLength({
+    min: 6,
+  }),
 ];
 
-exports.loginValidation = [
-	check("username", "Username is required").not().isEmpty(),
-	// check("email", "Please include a valid email")
-	// 	.isEmail()
-	// 	.normalizeEmail({ gmail_remove_dots: true }),
-	check("password", "Password must be 6 or more characters").isLength({
-		min: 6,
-	}),
-];
+exports.signupValidation = [...commonValidation];
+
+exports.loginValidation = [...commonValidation];
