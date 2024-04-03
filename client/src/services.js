@@ -23,7 +23,7 @@ export const login = async (username, password, applyFunc) => {
 						const res = await fetch(url, { method: "POST", body, headers });
 	if (res.ok) {
 		const result = await res.json();
-		console.log(result);
+		console.log(`result: `,result);
 		localStorage.setItem(
 			"userData",
 			JSON.stringify({
@@ -150,7 +150,8 @@ export const getFuturesBySeason= async () => {
 		redirect: 'follow'
 	};
 	
-	let url = `https://api.sportsdata.io/v4/soccer/odds/json/BettingEventsBySeason/1/2024?key=${SPORTDATA_API_TOKEN}`;
+	// let url = `https://api.sportsdata.io/v4/soccer/odds/json/BettingEventsBySeason/1/2024?key=${SPORTDATA_API_TOKEN}`;
+	let url = "https://api-football-v1.p.rapidapi.com/v2/teams/league/2";
 	try {
 	
 	const response = await fetch(url, requestOptions);

@@ -59,6 +59,7 @@ function App() {
 		getTeams(setTeams);
 		getVenues(setVenues);
 		getClubTokens(setClubTokens);
+		
 	}, []);
 	const updatePlayers = () => getSportmonksPlayers(setPlayers);
 	const updateStandings = () => getStandings(setStandings);
@@ -223,6 +224,18 @@ function App() {
 											<Route
 												path="/leaderboard"
 												element={<LeaderboardPage />}
+											/>
+											<Route
+												path="/teamdetails/:id"
+												element={
+													<TeamDetails
+													teams={teams}
+														standings = {standings}
+														venues = {venues}
+														clubtokens = {clubtokens}
+														
+													/>
+												}
 											/>
 										</>
 									) : (

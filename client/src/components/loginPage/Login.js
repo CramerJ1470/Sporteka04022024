@@ -6,7 +6,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 
 const LoginPage = () => {
-	const { isAuth, setIsAuth } = useContext(AuthContext);
+	const [isAuth, setIsAuth] = useState(localStorage.getItem("userData"));
 	const navigate = useNavigate();
 
 	// Changed from 'username' to 'loginIdentifier'

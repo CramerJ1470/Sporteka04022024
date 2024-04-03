@@ -74,13 +74,13 @@ Sporteka aims to revolutionize the sports industry by providing a cutting-edge B
 To setup the repo, first fork the chainlink-hack Repo, then clone the forked repository to create a copy on the local machine.
 </p>
 
-    $ git clone https://github.com/Sporteka-chainlink-hack/Sporteka12052023.git
+    $ git clone https://github.com/CramerJ1470/Sporteka04022024.git
 
 <p align="justify">
 Change directory to the cloned repo and set the original Sporteka-chainlink-hack repository as the "upstream" and your forked repository as the "origin" using gitbash. and make sure to switch to dev branch
 </p>
 
-    $ git remote add upstream  https://github.com/Sporteka-chainlink-hack/Sporteka12052023.git
+    $ git remote add upstream  https://github.com/CramerJ1470/Sporteka04022024.git
 
 #
 

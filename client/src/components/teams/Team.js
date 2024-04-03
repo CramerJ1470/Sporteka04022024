@@ -4,7 +4,7 @@ import "./team.css";
 import Navbar from "../navbar/Navbar";
 
 function Team( {team,standings} ) {
-
+console.log('team: ',team);
   return (<Link key={team.TeamId} className="linkbutton" to={`/teamdetails/${team.TeamId}`}>
     
         <div id={team.TeamId} className="playercard">

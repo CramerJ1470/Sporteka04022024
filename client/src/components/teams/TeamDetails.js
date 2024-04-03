@@ -7,9 +7,9 @@ import TeamDetailsInside from "./TeamDetailsInside";
 
 let team;
 function TeamDetails({teams, standings,venues,clubtokens}) {
-	
+	console.log('TeamDetails');
 	const { id } = useParams();
-	
+	console.log(`id:`,id);
 	teams.forEach((item) => {
 		if (item.TeamId === Number(id)) {
 			team = item;
