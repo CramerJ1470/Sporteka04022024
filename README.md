@@ -186,7 +186,7 @@ $ npx hardhat coverage --network localhost --show-stack-traces
 
 
 - [Pitch Deck](https://docs.google.com/presentation/d/1NyY9OxkOy0HlC2H3XU0ofv7KopBk-TP1dqL_sMGRExY/edit#slide=id.g54491d1c7cb78e5c_53)
-- [Frontend Deployment](/)
+- [Frontend Deployment](https://youtu.be/JqRmuupEcAA?si=uh6msfaSpYxLcokM)
 - [Figma design](https://www.figma.com/file/ttyIDZ7GW2qwYCzefKVuWR?type=design)
 
 
