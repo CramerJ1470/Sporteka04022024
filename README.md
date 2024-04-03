@@ -66,6 +66,7 @@ Sporteka aims to revolutionize the sports industry by providing a cutting-edge B
 | :------------------ | :------------------ |
 | **`Solidity`**      | Smart contract      |
 | **`React JS`**      | Frontend            |
+| **`Express`**       | Backend             |
 
 #
 > ## Repo Setup
