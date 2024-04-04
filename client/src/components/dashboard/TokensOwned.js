@@ -4,7 +4,7 @@ import AdditionalTokens from "./AdditionalTokens";
 const tokensOwned = [
    {
       team_logo: "https://cdn.sportmonks.com/images/soccer/teams/14/78.png",
-      token_name: "TokenBHA",
+      token_name: "BHA",
       club_name: "Brighton & Hove Albion",
       amount_owned: 10230,
       current_price: 916.13,

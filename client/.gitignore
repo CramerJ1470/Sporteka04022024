@@ -14,6 +14,7 @@ server\utils\testJwt.js
 /coverage
 
 # production
+src/configItems.js
 /configItems.js
 # misc
 

@@ -5,7 +5,7 @@ export const RAPIDAPI_API_FOOTBALL_KEY =
 export const RAPIDAPI_API_FOOTBALL_KEY_BETA =
 	"18cfcb39c4msh2d398b4b4754e0bp105eb5jsn6fd6b1013069";
 export const RAPIDAPI_ADDRESS = "api-football-v1.p.rapidapi.com";
-// export const SPORTMONKS_API_TOKEN ="sgGuKPrVaLCA9zrIGQtU8COYjU4h2GBw9NjHMgezGcKaOQuJfCtFoYJR59mg";
-export const SPORTMONKS_API_TOKEN ="9EPUNyHwR9gqzhBANON4XAcoVvib2o1Avyr0iCoq8Rc8nqKWJGiA0ZKp3xQ2";
+
+export const SPORTMONKS_API_TOKEN ="ril5QywwUa3Zs3drUJcR7Yo2HDZeaoyjNRsuX5rjYoOu6nMhJuNt5EqiVfff";
 
 export const SPORTDATA_API_TOKEN ="059fd43194c74d2db03cb4c949c03ce7";

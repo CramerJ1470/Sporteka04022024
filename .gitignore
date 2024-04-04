@@ -14,7 +14,7 @@ node_modules
 /coverage
 
 # production
-/configItems.js
+client/src/configItems.js
 # misc
 
 .DS_Store
